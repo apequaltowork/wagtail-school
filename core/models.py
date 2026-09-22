@@ -2,11 +2,11 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
-from wagtail.contrib.settings.models import BaseSetting, register_setting
+from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 
 
 @register_setting(icon='site')
-class SchoolSettings(BaseSetting):
+class SchoolSettings(BaseSiteSetting):
     school_name = models.CharField(_('school name'), max_length=255, default='Kestrel Ridge College')
     address = models.TextField(_('address'), blank=True)
     phone = models.CharField(_('phone'), max_length=50, blank=True)
