@@ -13,7 +13,7 @@ from forms.models import ContactPage, FormPage
 for page in list(FormPage.objects.all()) + list(ContactPage.objects.all()):
     stored = set()
     for submission in FormSubmission.objects.filter(page=page):
-        stored.update(json.loads(submission.form_data).keys())
+        stored.update((submission.form_data if isinstance(submission.form_data, dict) else json.loads(submission.form_data)).keys())
     print('== {} ({} submissions)'.format(page.slug, FormSubmission.objects.filter(page=page).count()))
     for field in page.form_fields.all():
         status = 'matches data' if field.clean_name in stored else 'NOT IN DATA'

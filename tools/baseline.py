@@ -134,7 +134,7 @@ def field_keys(out):
         fields = OrderedDict((field.label, field.clean_name) for field in page.get_form_fields())
         stored = set()
         for submission in FormSubmission.objects.filter(page=page):
-            stored.update(json.loads(submission.form_data).keys())
+            stored.update((submission.form_data if isinstance(submission.form_data, dict) else json.loads(submission.form_data)).keys())
         data[page.slug] = OrderedDict([
             ('fields', fields),
             ('stored_keys', sorted(stored)),
