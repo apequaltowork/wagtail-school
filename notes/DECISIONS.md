@@ -54,3 +54,13 @@ tools/baseline.py, screenshot_targets.py and dump_db.py call django.setup() and 
 
 ## D15 — Leave deprecation warnings for the 7.4 hop
 `ugettext_lazy`, `url()`, `wagtail.core.*` imports, `classname=` on blocks, the `db` search backend and the `search()` partial-match warning all still work on 2.15, so they are recorded in notes/deprecations-2.15.txt rather than fixed.
+
+## D16 — run_before on the homepage migration (applied without a failure)
+The 2.11 upgrade considerations say the initial homepage migration from the old project template needs `run_before = [('wagtailcore', '0053_locale_model')]`. On a fresh database, `migrate` still succeeded without it (log 057). `home.0001` depends only on `wagtailcore.0040`, so Django's planner happened to run `home.0002` before `0053`. Nothing failed, but that ordering is luck, not a guarantee, and the setting is harmless on an already-migrated database. So I added it anyway, following the docs (16399a1). It isn't in UPGRADE_LOG because nothing broke.
+Docs: https://docs.wagtail.org/en/v2.15/releases/2.11.html
+
+## D17 — Fresh-DB check uses a throwaway database
+The gitignored settings/local.py reads `DB_NAME` from the environment (default `wagtail_school_215`), so migrations and seeding from empty can be tested on `wagtail_school_215_fresh` without touching the restored data. The throwaway DB is dropped after use.
+
+## D18 — Two key styles in one database
+A form created on 2.15 (fresh seed) stores snake_case keys (`parentguardians_full_name`, log 061). Forms carried over from 2.7 keep their hyphenated keys, backfilled by the legacy check. Both work. The restored database, the one that matters, keeps the 2.7 keys, so nothing is rewritten in the stored submissions.

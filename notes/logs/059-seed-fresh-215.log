@@ -1,0 +1,31 @@
+# rec 059-seed-fresh-215
+# time:    2026-09-22 10:43:45 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py seed_demo --reset
+# commit:  16399a1
+# ----------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\django\wagtail-school-215\manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "C:\Users\admin\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\uv\python\cpython-3.10.21-windows-x86_64-none\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\django\wagtail-school-215\core\management\commands\seed_demo.py", line 20, in <module>
+    from wagtail.documents.models import get_document_model
+ImportError: cannot import name 'get_document_model' from 'wagtail.documents.models' (D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\wagtail\documents\models.py)
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  1s

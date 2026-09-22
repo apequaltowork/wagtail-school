@@ -52,3 +52,11 @@ Format: ID · hop · symptom (exact error, first lines + log file) · cause (whi
 - **Fix:** 411af7e — tools/baseline.py tries `?export=csv` first, falls back to `?action=CSV`, and fails if neither returns text/csv.
 - **Docs:** https://docs.wagtail.org/en/v2.15/reference/contrib/forms/index.html
 - **Story value:** Medium — an undocumented URL change that breaks bookmarks, scripts and tooling, and fails silently.
+
+## B06 — seed_demo: get_document_model moved
+- **Hop:** 2.7 → 2.15
+- **Symptom:** `seed_demo` on a fresh 2.15 database → `ImportError: cannot import name 'get_document_model' from 'wagtail.documents.models'` (log 059). The running site isn't affected; only the management command imports it.
+- **Cause:** Wagtail 2.8 moved `get_document_model` to `wagtail.documents`. The old location went away after the deprecation period.
+- **Fix:** 784a595 — `from wagtail.documents.models import get_document_model` → `from wagtail.documents import get_document_model`. Seeding from empty now gives the same counts as 2.7 (log 060).
+- **Docs:** https://docs.wagtail.org/en/v2.15/releases/2.8.html#wagtail-documents-models-get-document-model-has-moved
+- **Story value:** Low — it only surfaces because we reseed from scratch; that's why you keep a clean-DB check in the upgrade.

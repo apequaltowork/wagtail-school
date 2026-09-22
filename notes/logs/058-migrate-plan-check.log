@@ -1,0 +1,11 @@
+# rec 058-migrate-plan-check
+# time:    2026-09-22 10:43:43 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py migrate --plan
+# commit:  abf291a
+# ----------------------------------------------------------------
+Planned operations:
+  No planned migration operations.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s
