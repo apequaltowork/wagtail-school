@@ -1,0 +1,7 @@
+<p>
+    <a href="{{ value.document.url }}">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2h8l6 6v14H6zM13 3.5V9h5.5"/></svg>
+        {% if value.label %}{{ value.label }}{% else %}{{ value.document.title }}{% endif %}
+        <span class="doc-meta">({{ value.document.file_extension|upper }})</span>
+    </a>
+</p>

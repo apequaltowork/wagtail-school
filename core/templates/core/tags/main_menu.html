@@ -1,0 +1,21 @@
+{% load wagtailcore_tags %}
+<ul class="navbar-nav ml-auto">
+    {% for menuitem in menuitems %}
+        {% if menuitem.menu_children %}
+            <li class="nav-item dropdown{% if menuitem.active %} active{% endif %}">
+                <a class="nav-link dropdown-toggle" href="{% pageurl menuitem %}" id="nav-{{ menuitem.slug }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ menuitem.title }}</a>
+                <div class="dropdown-menu" aria-labelledby="nav-{{ menuitem.slug }}">
+                    <a class="dropdown-item" href="{% pageurl menuitem %}">{{ menuitem.title }} overview</a>
+                    <div class="dropdown-divider"></div>
+                    {% for child in menuitem.menu_children %}
+                        <a class="dropdown-item" href="{% pageurl child %}">{{ child.title }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item{% if menuitem.active %} active{% endif %}">
+                <a class="nav-link" href="{% pageurl menuitem %}"{% if menuitem.active %} aria-current="page"{% endif %}>{{ menuitem.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
