@@ -11,3 +11,10 @@ Format: `[SCENE] <title> — log NNN / commit <sha> / screenshot <file> — why 
 [SCENE] Search 500 caught by the crawler — commit 6189150 — `{{ title|default:page.title }}` blows up in a non-page view. The baseline crawler earned its keep before the upgrade even started.
 [SCENE] The admin in 2019 — screenshots/2.7/a05-edit-event-page.png, a13-submissions-enquiry.png — the teal 2.x editor with StreamFieldPanel, SnippetChooserPanel and the old form-data listing. Pair these with the 7.4 versions.
 [SCENE] Stretched cards — commit 66d9b15 — the rendition's width/height attributes versus Bootstrap 4's card-img-top. A small real-world CSS bug, fixed before the baseline was recorded.
+
+## 2.7 → 2.15 hop
+[SCENE] psycopg2 wants a C compiler — log 036 — the first thing that breaks is the Postgres driver, not Wagtail: there's no Python 3.10 wheel for psycopg2-binary 2.8. (B01)
+[SCENE] "System check identified no issues", then every page crashes — logs 040 → 045 — `ModuleNotFoundError: No module named 'wagtail.core.middleware'` only shows on the first request. (B03)
+[SCENE] **THE clean_name MOMENT** — logs 044, 048, 049, 053, 055 — after migrate, all 14 clean_names are blank. The 10-field enrolment form renders as ONE field named "". The admin CSV has ten columns all called "Subscribe to our newsletter", every value None. Running `check` to repair it crashes: "requires the unidecode library". One `pip install Unidecode` + `check` later: "Added `clean_name` on 10 form field(s)", and all 30 enquiries are back. Show it as before / broken / fixed. (B04)
+[SCENE] New fields get new names — log 055 — "Parent/Guardian's full name" is stored as `parentguardians-full-name`, but a new field with the same label would get `parentguardians_full_name`. Two naming schemes in one form, forever.
+[SCENE] The CSV button that isn't — log 048 — `?action=CSV` quietly returns the HTML page on 2.15; it's `?export=csv` now. (B05)
