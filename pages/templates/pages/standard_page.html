@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-standardpage{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" with image=page.hero_image %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    <div class="row">
+        <article class="col-lg-8 streamfield">
+            {% if page.intro %}<p class="lead intro">{{ page.intro }}</p>{% endif %}
+            {{ page.body }}
+        </article>
+        <aside class="col-lg-4">
+            {% with children=page.get_children.live.in_menu %}
+                {% if children %}
+                    <nav class="section-nav" aria-label="In this section">
+                        <h2>In this section</h2>
+                        <ul>
+                            {% for child in children %}
+                                <li><a href="{% pageurl child %}">{{ child.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% elif page.get_parent.depth > 2 %}
+                    {% with siblings=page.get_siblings.live.in_menu %}
+                        {% if siblings %}
+                            <nav class="section-nav" aria-label="In this section">
+                                <h2>{{ page.get_parent.title }}</h2>
+                                <ul>
+                                    {% for sibling in siblings %}
+                                        <li{% if sibling.pk == page.pk %} class="current"{% endif %}><a href="{% pageurl sibling %}"{% if sibling.pk == page.pk %} aria-current="page"{% endif %}>{{ sibling.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        {% endif %}
+                    {% endwith %}
+                {% endif %}
+            {% endwith %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}
