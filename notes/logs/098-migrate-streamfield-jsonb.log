@@ -1,0 +1,15 @@
+# rec 098-migrate-streamfield-jsonb
+# time:    2026-09-22 11:05:51 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py migrate
+# commit:  2e9da0e
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailsearchpromotions, wagtailusers
+Running migrations:
+  Applying events.0002_streamfield_body_jsonb... OK
+  Applying home.0004_streamfield_body_jsonb... OK
+  Applying pages.0002_streamfield_body_jsonb... OK
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

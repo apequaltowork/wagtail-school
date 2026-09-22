@@ -1,0 +1,76 @@
+# rec 095-migrate-74
+# time:    2026-09-22 11:03:54 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py migrate
+# commit:  2e9da0e
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailsearchpromotions, wagtailusers
+Running migrations:
+  Applying forms.0003_alter_contactformfield_choices_and_more... OK
+  Applying taggit.0004_alter_taggeditem_content_type_alter_taggeditem_tag... OK
+  Applying taggit.0005_auto_20220424_2025... OK
+  Applying taggit.0006_rename_taggeditem_content_type_object_id_taggit_tagg_content_8fc721_idx... OK
+  Applying wagtailadmin.0004_editingsession... OK
+  Applying wagtailadmin.0005_editingsession_is_editing... OK
+  Applying wagtailadmin.0006_formstate... OK
+  Applying wagtailcore.0067_alter_pagerevision_content_json... OK
+  Applying wagtailcore.0068_log_entry_empty_object... OK
+  Applying wagtailcore.0069_log_entry_jsonfield... OK
+  Applying wagtailcore.0070_rename_pagerevision_revision... OK
+  Applying wagtailcore.0071_populate_revision_content_type... OK
+  Applying wagtailcore.0072_alter_revision_content_type_notnull... OK
+  Applying wagtailcore.0073_page_latest_revision... OK
+  Applying wagtailcore.0074_revision_object_str... OK
+  Applying wagtailcore.0075_populate_latest_revision_and_revision_object_str... OK
+  Applying wagtailcore.0076_modellogentry_revision... OK
+  Applying wagtailcore.0077_alter_revision_user... OK
+  Applying wagtailcore.0078_referenceindex... OK
+  Applying wagtailcore.0079_rename_taskstate_page_revision... OK
+  Applying wagtailcore.0080_generic_workflowstate... OK
+  Applying wagtailcore.0081_populate_workflowstate_content_type... OK
+  Applying wagtailcore.0082_alter_workflowstate_content_type_notnull... OK
+  Applying wagtailcore.0083_workflowcontenttype... OK
+  Applying wagtailcore.0084_add_default_page_permissions... OK
+  Applying wagtailcore.0085_add_grouppagepermission_permission... OK
+  Applying wagtailcore.0086_populate_grouppagepermission_permission... OK
+  Applying wagtailcore.0087_alter_grouppagepermission_unique_together_and_more... OK
+  Applying wagtailcore.0088_fix_log_entry_json_timestamps... OK
+  Applying wagtailcore.0089_log_entry_data_json_null_to_object... OK
+  Applying wagtailcore.0090_remove_grouppagepermission_permission_type... OK
+  Applying wagtailcore.0091_remove_revision_submitted_for_moderation... OK
+  Applying wagtailcore.0092_alter_collectionviewrestriction_password_and_more... OK
+  Applying wagtailcore.0093_uploadedfile... OK
+  Applying wagtailcore.0094_alter_page_locale... OK
+  Applying wagtailcore.0095_groupsitepermission... OK
+  Applying wagtailcore.0096_referenceindex_referenceindex_source_object_and_more... OK
+  Applying wagtailcore.0097_baselogentry_uuid_action_timestamp_indexes... OK
+  Applying wagtaildocs.0013_delete_uploadeddocument... OK
+  Applying wagtaildocs.0014_alter_document_file_size... OK
+  Applying wagtailforms.0005_alter_formsubmission_form_data... OK
+  Applying wagtailimages.0024_index_image_file_hash... OK
+  Applying wagtailimages.0025_alter_image_file_alter_rendition_file... OK
+  Applying wagtailimages.0026_delete_uploadedimage... OK
+  Applying wagtailimages.0027_image_description... OK
+  Applying wagtailredirects.0007_add_autocreate_fields... OK
+  Applying wagtailredirects.0008_add_verbose_name_plural... OK
+  Applying wagtailsearch.0007_delete_editorspick... OK
+  Applying wagtailsearch.0008_remove_query_and_querydailyhits_models... OK
+  Applying wagtailsearch.0009_remove_ngram_autocomplete... OK
+  Applying wagtailsearch.0010_add_text_fields... OK
+  Applying wagtailsearchpromotions.0001_initial... OK
+  Applying wagtailsearchpromotions.0002_capitalizeverbose... OK
+  Applying wagtailsearchpromotions.0003_query_querydailyhits... OK
+  Applying wagtailsearchpromotions.0004_copy_queries... OK
+  Applying wagtailsearchpromotions.0005_switch_query_model... OK
+  Applying wagtailsearchpromotions.0006_reset_query_sequence... OK
+  Applying wagtailsearchpromotions.0007_searchpromotion_external_link_text_and_more... OK
+  Applying wagtailsearchpromotions.0008_query_verbose_name... OK
+  Applying wagtailusers.0011_userprofile_dismissibles... OK
+  Applying wagtailusers.0012_userprofile_theme... OK
+  Applying wagtailusers.0013_userprofile_density... OK
+  Applying wagtailusers.0014_userprofile_contrast... OK
+  Applying wagtailusers.0015_userprofile_keyboard_shortcuts... OK
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  6s

@@ -1,0 +1,15 @@
+# rec 103-recover-search-queries
+# time:    2026-09-22 11:06:29 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe tools/recover_search_queries.py ../wagtail-school-215/dumps/wagtail_school_215.dump
+# commit:  c22c712
+# ----------------------------------------------------------------
+found 2 queries and 2 daily-hit rows in ../wagtail-school-215/dumps/wagtail_school_215.dump
+  query 'music': created
+  query 'scholarship': created
+  hits 9 on 2026-09-22 for 'music'
+  hits 5 on 2026-09-22 for 'scholarship'
+now: 2 queries, 2 daily-hit rows
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

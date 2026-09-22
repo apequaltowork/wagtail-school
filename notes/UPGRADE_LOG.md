@@ -131,3 +131,20 @@ Install went through on the first try (log 080: wagtail 7.4.3, Django 5.2.17, Pi
 - **Fix:** 8c1d046 — `BASE_URL = 'http://localhost:8000'` → `WAGTAILADMIN_BASE_URL = 'http://localhost:8074'` (this stage's port). Check is clean, with no Python warnings (log 092).
 - **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html
 - **Story value:** Low.
+
+## B15 — StreamField columns silently stay text (the migration that never came)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** nothing errors. `makemigrations` finds **no** StreamField changes, only 8 form-field AlterFields (log 093), and `migrate` runs 64 migrations cleanly (log 095). Wagtail's own migrations convert revisions, log entries and `form_data` to `jsonb`, but our three `body` columns stay `text` (logs 094 vs 096). Pages still render with 200, but any JSON query on a StreamField fails (log 097):
+  `ProgrammingError: operator does not exist: text @> jsonb`
+- **Cause:** Wagtail 3.0 introduced `use_json_field=True`; adding it generated an `AlterField` that converted the column to jsonb, and Wagtail 5.0 made it mandatory ("Wagtail 5.0 required older TextField-based streams to be migrated"). From 6.0, `use_json_field` is "ignored, but retained for compatibility with historical migrations" and isn't deconstructed, so Django sees no difference between the 2.7-era migration and the 7.4 model. A project that jumps from 2.x straight to 6.0+ never gets the conversion. A fresh 7.4 database creates `jsonb`, and this one keeps `text`: schema drift that no tool reports.
+- **Fix:** c22c712 — hand-written `RunSQL` migrations `home.0004`, `pages.0002` and `events.0002`: `ALTER TABLE … ALTER COLUMN body TYPE jsonb USING body::jsonb` (reversible; a no-op on databases already in jsonb; model state unchanged). All 24 bodies were valid JSON with no empty strings, so the cast needed no clean-up. Columns are now jsonb (log 099), the JSON query returns 2, the two Open Day events that carry a call to action (log 100), and `makemigrations --check` is clean (log 101).
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html · https://docs.wagtail.org/en/v7.4/releases/5.0.html · https://docs.wagtail.org/en/v7.4/releases/6.0.html
+- **Story value:** High — the scariest kind of upgrade bug: green checks, working pages, and a database that doesn't match the code.
+
+## B16 — Logged search queries lost in the jump
+- **Hop:** 2.15 → 7.4
+- **Symptom:** after `migrate`, `wagtailsearchpromotions_query` and `…_querydailyhits` are empty: "after migrate: queries = 0, daily hits = 0" (log 102). The restored 2.15 data had 2 queries ("music", "scholarship") with daily hits. The migrate log shows `wagtailsearch.0008_remove_query_and_querydailyhits_models` dropping the old tables, and `wagtailsearchpromotions.0004_copy_queries` "OK" without copying anything (log 095).
+- **Cause:** the Query model moved to `wagtail.contrib.search_promotions` in 5.0, whose `0004_copy_queries` copied the rows. In 6.0 that migration was **changed to a no-op**. Its source comment says any project needing the copy "would have already applied the real version of this migration while they were running Wagtail 5". Skipping Wagtail 5 means `0008` drops the tables with nothing copied. This is the direct cost of the one-step jump (DECISIONS D21).
+- **Fix:** 793b60c — `tools/recover_search_queries.py` reads `wagtailsearch_query` and `wagtailsearch_querydailyhits` out of the pre-upgrade dump (`pg_restore --data-only -t …`) and recreates them through the search_promotions models. Result: 2 queries and 2 daily-hit rows, "music" 9 hits and "scholarship" 5 (log 103). In a real project: take the dump before migrating, or pass through Wagtail 5.x once for this app.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/5.0.html · https://docs.wagtail.org/en/v7.4/releases/6.0.html (and the comment in `wagtail/contrib/search_promotions/migrations/0004_copy_queries.py`)
+- **Story value:** High — real data loss from skipping versions, and it's documented only in a code comment.

@@ -1,0 +1,14 @@
+# rec 102-search-queries-lost
+# time:    2026-09-22 11:06:27 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from wagtail.contrib.search_promotions.models import Query, QueryDailyHits
+print('after migrate: queries =', Query.objects.count(), ', daily hits =', QueryDailyHits.objects.count())
+# commit:  c22c712
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+after migrate: queries = 0 , daily hits = 0
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

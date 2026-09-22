@@ -1,0 +1,22 @@
+# rec 099-column-types-after-jsonb
+# time:    2026-09-22 11:05:53 +0530
+# folder:  /d/django/wagtail-school-74
+# command: /c/Program Files/PostgreSQL/16/bin/psql.exe -h localhost -U school -d wagtail_school_74 -f C:\Users\admin\AppData\Local\Temp\claude\D--django\cf33241d-2d3a-4f10-9051-6fd8d74d0c56\scratchpad\coltypes.sql
+# commit:  2e9da0e
+# ----------------------------------------------------------------
+                  col                  | data_type 
+---------------------------------------+-----------
+ events_eventpage.body                 | jsonb
+ home_homepage.body                    | jsonb
+ pages_standardpage.body               | jsonb
+ wagtailadmin_formstate.data           | text
+ wagtailcore_modellogentry.data        | jsonb
+ wagtailcore_pagelogentry.data         | jsonb
+ wagtailcore_revision.content          | jsonb
+ wagtailforms_formsubmission.form_data | jsonb
+ wagtailsearch_indexentry.body         | tsvector
+(9 rows)
+
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  0s

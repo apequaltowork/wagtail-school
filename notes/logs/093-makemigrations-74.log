@@ -1,0 +1,19 @@
+# rec 093-makemigrations-74
+# time:    2026-09-22 11:03:25 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py makemigrations
+# commit:  deb11cb
+# ----------------------------------------------------------------
+Migrations for 'forms':
+  forms\migrations\0003_alter_contactformfield_choices_and_more.py
+    ~ Alter field choices on contactformfield
+    ~ Alter field default_value on contactformfield
+    ~ Alter field from_address on contactpage
+    ~ Alter field to_address on contactpage
+    ~ Alter field choices on formfield
+    ~ Alter field default_value on formfield
+    ~ Alter field from_address on formpage
+    ~ Alter field to_address on formpage
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

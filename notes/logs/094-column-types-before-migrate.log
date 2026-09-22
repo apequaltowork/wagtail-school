@@ -1,0 +1,21 @@
+# rec 094-column-types-before-migrate
+# time:    2026-09-22 11:03:46 +0530
+# folder:  /d/django/wagtail-school-74
+# command: /c/Program Files/PostgreSQL/16/bin/psql.exe -h localhost -U school -d wagtail_school_74 -f C:\Users\admin\AppData\Local\Temp\claude\D--django\cf33241d-2d3a-4f10-9051-6fd8d74d0c56\scratchpad\coltypes.sql
+# commit:  deb11cb
+# ----------------------------------------------------------------
+                  col                  | data_type 
+---------------------------------------+-----------
+ events_eventpage.body                 | text
+ home_homepage.body                    | text
+ pages_standardpage.body               | text
+ wagtailcore_modellogentry.data_json   | text
+ wagtailcore_pagelogentry.data_json    | text
+ wagtailcore_pagerevision.content_json | text
+ wagtailforms_formsubmission.form_data | text
+ wagtailsearch_indexentry.body         | tsvector
+(8 rows)
+
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

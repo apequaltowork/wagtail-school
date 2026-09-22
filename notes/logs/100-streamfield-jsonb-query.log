@@ -1,0 +1,14 @@
+# rec 100-streamfield-jsonb-query
+# time:    2026-09-22 11:05:53 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from events.models import EventPage
+print('events with a call_to_action block:', EventPage.objects.filter(body__contains=[{'type': 'call_to_action'}]).count())
+# commit:  2e9da0e
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+events with a call_to_action block: 2
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

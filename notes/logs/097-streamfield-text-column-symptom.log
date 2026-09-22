@@ -1,0 +1,23 @@
+# rec 097-streamfield-text-column-symptom
+# time:    2026-09-22 11:05:26 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from events.models import EventPage
+from django.test import Client
+print('render /events/spring-open-morning/ ->', Client().get('/events/spring-open-morning/').status_code)
+print('first block type via ORM ->', EventPage.objects.first().body[0].block_type)
+try:
+    print(EventPage.objects.filter(body__contains=[{'type': 'call_to_action'}]).count())
+except Exception as e:
+    print(type(e).__name__ + ':', str(e).splitlines()[0])
+
+# commit:  2e9da0e
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+render /events/spring-open-morning/ -> 200
+first block type via ORM -> paragraph
+ProgrammingError: operator does not exist: text @> jsonb
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s
