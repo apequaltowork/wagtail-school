@@ -32,3 +32,12 @@ This is the 2.7 idiom, and it wraps each block in `<div class="block-<type>">`. 
 
 ## D09 — `data-baseline="dynamic"`
 Listings whose content depends on today's date (upcoming and past events, the home page's next three events, the "already taken place" note) carry `data-baseline="dynamic"`. The page-text baseline strips those elements, so a later stage run on a different day still compares like with like.
+
+## D10 — Baseline and screenshot order
+The thank-you screenshot has to submit the enrolment form. So the order is: seed → screenshots (admin first, then front end and the POST) → seed --reset → baseline → dump. The baseline and the dump both hold exactly 30 + 10 seeded submissions, while the screenshots show the same content (same seed, same day).
+
+## D11 — Tooling reads the DB through Django
+tools/baseline.py, screenshot_targets.py and dump_db.py call django.setup() and resolve page IDs and credentials at run time, with import fallbacks for `wagtail.models` (3.0+) and `wagtail.documents.get_document_model` (2.8+). The same tools should run on every stage with at most small edits, and any edits are logged as part of that hop.
+
+## D12 — Dev SECRET_KEY left in dev.py
+`wagtail start` 2.7 writes a development SECRET_KEY into settings/dev.py. It is kept, because the brief says to keep everything the template generates. It's a throwaway dev key, and local.py overrides it with a private one.

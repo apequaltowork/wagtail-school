@@ -1,0 +1,14 @@
+# rec 028-final-check-Wa
+# time:    2026-09-22 10:24:41 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe -Wa manage.py check
+# commit:  e9b9029
+# ----------------------------------------------------------------
+D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\utils\version.py:98: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  loose_version = LooseVersion(version)
+D:\django\.virtualenvs\wagtail-school\lib\site-packages\wagtail\admin\rich_text\converters\html_ruleset.py:2: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+System check identified no issues (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

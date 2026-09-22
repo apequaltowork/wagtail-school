@@ -1,0 +1,72 @@
+# rec 027-baseline-selfcheck
+# time:    2026-09-22 10:24:24 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe tools/baseline.py --out C:\Users\admin\AppData\Local\Temp\claude\D--django\cf33241d-2d3a-4f10-9051-6fd8d74d0c56\scratchpad\recheck --compare baseline
+# commit:  e9b9029
+# ----------------------------------------------------------------
+200 /
+200 /about/
+200 /about/principals-welcome/
+200 /about/our-history/
+200 /about/vision-and-values/
+200 /admissions/
+200 /admissions/enrolment-enquiry/
+200 /admissions/fees-and-scholarships/
+200 /learning/
+200 /learning/junior-school/
+200 /learning/senior-school/
+200 /learning/co-curricular/
+200 /learning/wellbeing/
+200 /events/
+200 /events/spring-open-morning/
+200 /events/senior-school-information-evening/
+200 /events/inter-house-athletics-carnival/
+200 /events/spring-music-concert/
+200 /events/year-12-valedictory-assembly/
+200 /events/community-working-bee/
+200 /events/junior-school-art-exhibition/
+200 /events/twilight-open-evening/
+200 /events/science-week-showcase/
+200 /events/grandparents-day/
+200 /events/winter-sports-presentation-night/
+200 /events/robotics-club-regional-challenge/
+200 /our-staff/
+200 /our-staff/miriam-okonkwo-hale/
+200 /our-staff/thomas-brennan-ruiz/
+200 /our-staff/priya-ramaswamy/
+200 /our-staff/callum-fraser/
+200 /our-staff/sophie-tran/
+200 /our-staff/daniel-kowalczyk/
+200 /our-staff/mei-lin-zhou/
+200 /our-staff/samuel-adeyemi/
+200 /our-staff/rosa-villanueva/
+200 /our-staff/liam-odriscoll/
+200 /our-staff/isabelle-moreau/
+200 /our-staff/kiri-walker-ngata/
+200 /our-staff/marcus-delaney/
+200 /our-staff/amira-haddad/
+200 /our-staff/grace-pemberton/
+200 /contact-us/
+200 /events/past/
+200 /events/?page=2
+200 /events/?category=sport
+200 /events/past/?category=academic
+200 /our-staff/?department=science
+200 /search/?query=music
+200 /search/?query=scholarship
+200 /search/
+404 /no-such-page/
+200 /documents/12/enrolment-information-pack.pdf
+200 /documents/11/term-dates.pdf
+200 /documents/10/uniform-price-list.pdf
+exported 30 rows from http://127.0.0.1:8027/admin/forms/submissions/135/?action=CSV
+exported 10 rows from http://127.0.0.1:8027/admin/forms/submissions/171/?action=CSV
+same    counts.json
+same    form_field_keys.json
+same    form_submissions_contact-us.csv
+same    form_submissions_enrolment-enquiry.csv
+same    page_text.json
+same    urls.txt
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  7s

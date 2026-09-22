@@ -1,0 +1,10 @@
+# rec 029-final-makemigrations-check
+# time:    2026-09-22 10:24:43 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py makemigrations --check --dry-run
+# commit:  e9b9029
+# ----------------------------------------------------------------
+No changes detected
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

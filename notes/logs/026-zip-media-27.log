@@ -1,0 +1,9 @@
+# rec 026-zip-media-27
+# time:    2026-09-22 10:24:11 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe -m zipfile -c dumps/media_27.zip media
+# commit:  e9b9029
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

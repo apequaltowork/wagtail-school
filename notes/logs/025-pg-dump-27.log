@@ -1,0 +1,11 @@
+# rec 025-pg-dump-27
+# time:    2026-09-22 10:24:10 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe tools/dump_db.py dumps/wagtail_school_27.dump
+# commit:  e9b9029
+# ----------------------------------------------------------------
+pg_dump -Fc wagtail_school -> dumps/wagtail_school_27.dump
+wrote dumps/wagtail_school_27.dump (215,458 bytes)
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

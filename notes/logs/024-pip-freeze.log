@@ -1,0 +1,9 @@
+# rec 024-pip-freeze
+# time:    2026-09-22 10:24:09 +0530
+# folder:  /d/django/wagtail-school
+# command: sh -c "D:\django\.virtualenvs/wagtail-school/Scripts/python.exe" -m pip freeze > baseline/pip-freeze.txt
+# commit:  e9b9029
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s
