@@ -172,3 +172,11 @@ Install went through on the first try (log 080: wagtail 7.4.3, Django 5.2.17, Pi
 - **Fix:** 2c0cbd5 — replaced it with `STORAGES = {'default': FileSystemStorage, 'staticfiles': ManifestStaticFilesStorage}` and removed `USE_L10N`. `collectstatic` now writes hashed files again (`schoolsite.bb8cd0ce72a6.css`, log 111).
 - **Docs:** https://docs.djangoproject.com/en/5.2/releases/5.1/#features-removed-in-5-1 · https://docs.djangoproject.com/en/5.2/ref/settings/#storages
 - **Story value:** High for production — a silent regression that only shows up as "why is the old CSS still there?"
+
+## B20 — seed_demo needs Unidecode (my requirements mistake)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `seed_demo` on a fresh 7.4 database → `ModuleNotFoundError: No module named 'unidecode'` (log 113). The restored site is unaffected; only the management command imports it.
+- **Cause:** our own `seed_demo` imports `unidecode` for slugs and demo email addresses. On 2.7 it came in transitively with Wagtail; at 2.15 it was pinned for Wagtail's clean_name backfill (B04). At the start of this hop I commented it out on the assumption that only Wagtail needed it, which was wrong. The transitive dependency hid a direct one.
+- **Fix:** 6f0514b — restored `Unidecode>=1.1,<2` in requirements.txt with the correct reason. Seeding a fresh 7.4 database now matches the 2.7 counts: 43 pages, 26 images, 3 documents, 5 + 9 snippets, 30 + 10 submissions (log 115). The throwaway DB was dropped and the unreferenced media it wrote pruned (log 116).
+- **Docs:** https://docs.wagtail.org/en/v2.15/releases/2.10.html (Wagtail's own switch away from unidecode)
+- **Story value:** Medium — "declare what you import": dependencies you got for free from an old version disappear on upgrade.

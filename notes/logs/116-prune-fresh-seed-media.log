@@ -1,0 +1,29 @@
+# rec 116-prune-fresh-seed-media
+# time:    2026-09-22 11:10:52 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+import os
+from django.conf import settings
+from wagtail.images import get_image_model
+from wagtail.documents import get_document_model
+Image = get_image_model(); Rendition = Image.get_rendition_model()
+keep = set(i.file.name for i in Image.objects.all()) | set(r.file.name for r in Rendition.objects.all()) | set(d.file.name for d in get_document_model().objects.all())
+removed = 0
+for folder in ('original_images', 'images', 'documents'):
+    root = os.path.join(settings.MEDIA_ROOT, folder)
+    for name in os.listdir(root):
+        rel = folder + '/' + name
+        if rel not in keep:
+            os.remove(os.path.join(root, name)); removed += 1
+print('referenced files:', len(keep), ' removed unreferenced:', removed)
+missing = [n for n in keep if not os.path.exists(os.path.join(settings.MEDIA_ROOT, n))]
+print('referenced but missing:', len(missing))
+# commit:  6f0514b
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+referenced files: 104  removed unreferenced: 33
+referenced but missing: 0
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s
