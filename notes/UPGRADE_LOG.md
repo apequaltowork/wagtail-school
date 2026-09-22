@@ -180,3 +180,20 @@ Install went through on the first try (log 080: wagtail 7.4.3, Django 5.2.17, Pi
 - **Fix:** 6f0514b — restored `Unidecode>=1.1,<2` in requirements.txt with the correct reason. Seeding a fresh 7.4 database now matches the 2.7 counts: 43 pages, 26 images, 3 documents, 5 + 9 snippets, 30 + 10 submissions (log 115). The throwaway DB was dropped and the unreferenced media it wrote pruned (log 116).
 - **Docs:** https://docs.wagtail.org/en/v2.15/releases/2.10.html (Wagtail's own switch away from unidecode)
 - **Story value:** Medium — "declare what you import": dependencies you got for free from an old version disappear on upgrade.
+
+## B21 — Radio and checkbox options turn bold (Django form widget markup)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** in the 7.4 screenshot, the enrolment form's "Preferred start term" and "How did you hear about us?" options render **bold, with no gap** between the box and the label, and the page is 32px shorter (screenshots/7.4/09-enrolment-form.png from log 117, compared with 2.7).
+- **Cause:** Django 4.0 changed the `RadioSelect` / `CheckboxSelectMultiple` templates from `<ul><li><label>` to `<div><div><label>`. Our 2019 CSS targeted `.school-form fieldset ul label` (normal weight) and `… ul input` (spacing), so nothing matched any more. The general `.school-form label { font-weight: 600 }` took over, and the 1rem bottom margin Bootstrap gave the `<ul>` disappeared.
+- **Fix:** 9a4e15c — the selectors now target `.school-form fieldset > div …`, and the wrapper gets back its `margin-bottom: 1rem`. The form is **pixel-identical to 2.7** again (1366×2289, zero-pixel diff).
+- **Docs:** https://docs.djangoproject.com/en/5.2/releases/4.0/#miscellaneous (RadioSelect / CheckboxSelectMultiple render as `<div>`)
+- **Story value:** High for the video — the one visual break a visitor would notice, found by pixel diffing the screenshots.
+
+## B22 — StreamField CSS classes renamed (w-block-*), and a note on B07
+- **Hop:** 2.15 → 7.4
+- **Symptom:** no visual change yet. Rendered StreamField wrappers now read `<div class="w-block-heading block-heading">` (7.4 adds the `w-block-` prefix). The legacy class is kept "for backwards compatibility" and "will be removed in a future release", so every rule in our CSS would break on a later upgrade.
+- **Cause:** Wagtail 7.4 introduced `w-block-<type>` class names for StreamField block rendering.
+- **Fix:** 7471747 — the 15 StreamField selectors in schoolsite.css now use `.streamfield .w-block-…`. Home, standard page, fees and event detail are still **pixel-identical** to 2.7.
+- **B07 follow-up:** 018001a — `PageListingViewSet` listed events and staff in tree order, not by date or department. `IndexView` subclasses with `default_ordering = 'start_date'` / `'department'` restore ModelAdmin's `ordering` (screenshots a10/a11).
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/7.4.html
+- **Story value:** Medium — it's future-proofing, but it's the change the brief asked us to watch for, and it shows the value of prefix-agnostic CSS.

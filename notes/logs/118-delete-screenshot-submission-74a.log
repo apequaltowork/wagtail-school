@@ -1,0 +1,14 @@
+# rec 118-delete-screenshot-submission-74a
+# time:    2026-09-22 11:14:07 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from wagtail.contrib.forms.models import FormSubmission
+print('deleted', FormSubmission.objects.filter(form_data__contains={'email-address': 'screenshot.tester@example.com'}).delete())
+# commit:  7471747
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+deleted (1, {'wagtailforms.FormSubmission': 1})
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

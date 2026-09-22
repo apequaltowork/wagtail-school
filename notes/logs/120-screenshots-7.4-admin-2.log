@@ -1,0 +1,25 @@
+# rec 120-screenshots-7.4-admin-2
+# time:    2026-09-22 11:15:24 +0530
+# folder:  /d/django/wagtail-school-74/tools/screenshots
+# command: node shoot.js --base http://127.0.0.1:8074 --out ../../notes/screenshots/7.4 --only admin
+# commit:  7471747
+# ----------------------------------------------------------------
+200 /admin/ -> ..\..\notes\screenshots\7.4\a01-dashboard.png
+200 /admin/pages/3/edit/ -> ..\..\notes\screenshots\7.4\a02-edit-home-page.png
+200 /admin/pages/131/edit/ -> ..\..\notes\screenshots\7.4\a03-edit-standard-page.png
+200 /admin/pages/142/edit/ -> ..\..\notes\screenshots\7.4\a04-edit-event-index-page.png
+200 /admin/pages/143/edit/ -> ..\..\notes\screenshots\7.4\a05-edit-event-page.png
+200 /admin/pages/155/edit/ -> ..\..\notes\screenshots\7.4\a06-edit-staff-index-page.png
+200 /admin/pages/156/edit/ -> ..\..\notes\screenshots\7.4\a07-edit-staff-page.png
+200 /admin/pages/135/edit/ -> ..\..\notes\screenshots\7.4\a08-edit-form-page.png
+200 /admin/pages/171/edit/ -> ..\..\notes\screenshots\7.4\a09-edit-contact-page.png
+200 /admin/events/ -> ..\..\notes\screenshots\7.4\a10-modeladmin-events.png
+200 /admin/staff/ -> ..\..\notes\screenshots\7.4\a11-modeladmin-staff.png
+200 /admin/forms/ -> ..\..\notes\screenshots\7.4\a12-forms-index.png
+200 /admin/forms/submissions/135/ -> ..\..\notes\screenshots\7.4\a13-submissions-enquiry.png
+200 /admin/forms/submissions/171/ -> ..\..\notes\screenshots\7.4\a14-submissions-contact.png
+200 /admin/settings/core/schoolsettings/ -> ..\..\notes\screenshots\7.4\a15-school-settings.png
+200 /admin/snippets/ -> ..\..\notes\screenshots\7.4\a16-snippets.png
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  30s
