@@ -3,10 +3,9 @@ schoolsite/settings/local.py
 .env
 
 # runtime data
-media/
-dumps/
-static/
-/staticfiles/
+/media/
+/dumps/
+/static/
 
 # python
 __pycache__/
