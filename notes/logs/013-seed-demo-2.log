@@ -1,0 +1,802 @@
+# rec 013-seed-demo-2
+# time:    2026-09-22 10:16:16 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py seed_demo --reset
+# commit:  d2b5052
+# ----------------------------------------------------------------
+Removing existing demo content...
+Created superuser "admin".
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237943.4984.13761545518532715288@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Anh McAllister
+Email address: anh.mcallister@example.com
+Phone number: (02) 5550 7868
+Student's first name: Eloise
+Year level of entry: Year 3
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Social media
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237944.4984.10627740441677411902@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Zoltan Quintero
+Email: zoltan.quintero@example.com
+Subject: General enquiry
+Message: Hi, is the school pool open to the community on weekends?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237944.4984.15496071028858466333@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Vanessa Castellano
+Email address: vanessa.castellano@example.com
+Phone number: (02) 5550 8574
+Student's first name: Theo
+Year level of entry: Year 4
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): Português
+How did you hear about us?: Friend or family
+Questions or comments: None
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237944.4984.7949768176514557085@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Tahlia Abernethy
+Email: tahlia.abernethy@example.com
+Subject: Admissions
+Message: What documents do we need for the enrolment application?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237945.4984.15037956242623531531@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Bronwyn McAllister
+Email address: bronwyn.mcallister@example.com
+Phone number: (02) 5550 2515
+Student's first name: Rafael
+Year level of entry: Year 4
+Preferred start term: Term 1
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Friend or family, Social media
+Questions or comments: Our daughter plays the violin. Could she join the string ensemble straight away?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237945.4984.9982000233734269725@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Aisha Abernethy
+Email address: aisha.abernethy@example.com
+Phone number: None
+Student's first name: Charlie
+Year level of entry: Year 1
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Other
+Questions or comments: Is there a bus service from the northern suburbs?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237945.4984.14174949071580259603@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Anh Baptiste
+Email address: anh.baptiste@example.com
+Phone number: (02) 5550 4745
+Student's first name: Zara
+Year level of entry: Year 4
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Korean
+How did you hear about us?: Social media
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237946.4984.8307520145300995093@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Chloé Yilmaz
+Email address: chloe.yilmaz@example.com
+Phone number: None
+Student's first name: Kai
+Year level of entry: Year 4
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Te reo Māori
+How did you hear about us?: Social media
+Questions or comments: Could we book a tour in the next few weeks?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237946.4984.9428326132863255931@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Quinn Dimitriou
+Email address: quinn.dimitriou@example.com
+Phone number: (02) 5550 9607
+Student's first name: Oscar
+Year level of entry: Year 2
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): Tiếng Việt
+How did you hear about us?: Website
+Questions or comments: We would like to know more about the robotics program.
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237946.4984.9303378754434838734@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Keiko Nakamura
+Email address: keiko.nakamura@example.com
+Phone number: (02) 5550 7126
+Student's first name: Oscar
+Year level of entry: Kindergarten
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Te reo Māori
+How did you hear about us?: Social media, Open Day
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237947.4984.3588320828163575744@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Zoltan Oyelaran
+Email address: zoltan.oyelaran@example.com
+Phone number: (02) 5550 8507
+Student's first name: Arlo
+Year level of entry: Kindergarten
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Friend or family
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237947.4984.11794313612143976053@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Ines Umeh
+Email address: ines.umeh@example.com
+Phone number: None
+Student's first name: Hugo
+Year level of entry: Year 9
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): Hindi and English
+How did you hear about us?: Other
+Questions or comments: Is there a bus service from the northern suburbs?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237947.4984.16847488001244497664@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Rania Thorne
+Email address: rania.thorne@example.com
+Phone number: (02) 5550 4954
+Student's first name: Eloise
+Year level of entry: Year 1
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Français
+How did you hear about us?: Other
+Questions or comments: What scholarships are available for Year 7 entry?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237948.4984.13296027138197747973@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Chloé Abernethy
+Email address: chloe.abernethy@example.com
+Phone number: (02) 5550 2807
+Student's first name: Hugo
+Year level of entry: Year 6
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): English
+How did you hear about us?: Website
+Questions or comments: My son has a peanut allergy. How does the canteen manage allergies?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237948.4984.401768463225019646@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Farid Petrakis
+Email address: farid.petrakis@example.com
+Phone number: (02) 5550 2481
+Student's first name: Jasper
+Year level of entry: Year 6
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Tiếng Việt
+How did you hear about us?: Friend or family
+Questions or comments: Our daughter plays the violin. Could she join the string ensemble straight away?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237949.4984.15305336982992231666@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Umar Umeh
+Email address: umar.umeh@example.com
+Phone number: (02) 5550 8572
+Student's first name: Rafael
+Year level of entry: Year 3
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Hindi and English
+How did you hear about us?: Open Day, Website
+Questions or comments: Do you offer before and after school care for the Junior School?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237949.4984.7891734110044141141@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Bronwyn Petrakis
+Email address: bronwyn.petrakis@example.com
+Phone number: (02) 5550 9840
+Student's first name: Kai
+Year level of entry: Year 9
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): Italiano
+How did you hear about us?: Open Day, Website
+Questions or comments: Can we meet the Head of Junior School before applying?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237949.4984.9643797187755730987@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Umar Jankowski
+Email address: umar.jankowski@example.com
+Phone number: (02) 5550 7989
+Student's first name: Rafael
+Year level of entry: Year 1
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Deutsch
+How did you hear about us?: Friend or family, Website
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237949.4984.5225632878489192225@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Maya Sørensen
+Email: maya.sorensen@example.com
+Subject: Admissions
+Message: We missed the Open Morning. Is there another chance to see the school this term?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237950.4984.11145730565526135407@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Delphine Nakamura
+Email: delphine.nakamura@example.com
+Subject: General enquiry
+Message: I'm a former student (class of 1988) — is there an alumni association?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237950.4984.10187949206095513575@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Vanessa Baptiste
+Email address: vanessa.baptiste@example.com
+Phone number: (02) 5550 5478
+Student's first name: Mateo
+Year level of entry: Year 11
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Hindi and English
+How did you hear about us?: Friend or family
+Questions or comments: None
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237950.4984.886519116663731240@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Xavier Nakamura
+Email address: xavier.nakamura@example.com
+Phone number: (02) 5550 2858
+Student's first name: Nina
+Year level of entry: Year 6
+Preferred start term: Term 1
+Languages spoken at home (e.g. Français, Español): Español
+How did you hear about us?: Friend or family
+Questions or comments: My son has a peanut allergy. How does the canteen manage allergies?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237951.4984.16816302777086536877@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Aisha Jankowski
+Email address: aisha.jankowski@example.com
+Phone number: (02) 5550 8303
+Student's first name: Nina
+Year level of entry: Year 6
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Open Day
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237951.4984.1696029013008181905@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Yasmin Jankowski
+Email: yasmin.jankowski@example.com
+Subject: Events
+Message: Are tickets needed for the Spring Music Concert?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237951.4984.11457272043749156155@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Aisha Petrakis
+Email address: aisha.petrakis@example.com
+Phone number: (02) 5550 8675
+Student's first name: Eloise
+Year level of entry: Kindergarten
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Hindi and English
+How did you hear about us?: Other
+Questions or comments: What scholarships are available for Year 7 entry?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237952.4984.2218864189559335392@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Ines Nakamura
+Email: ines.nakamura@example.com
+Subject: General enquiry
+Message: Can you tell me where to buy second-hand uniforms?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237952.4984.13674815192468262435@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Jarrah Thorne
+Email address: jarrah.thorne@example.com
+Phone number: (02) 5550 8365
+Student's first name: Mateo
+Year level of entry: Year 11
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Mandarin
+How did you hear about us?: Open Day
+Questions or comments: My son has a peanut allergy. How does the canteen manage allergies?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237952.4984.18422465787668313086@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Wiremu Lindqvist
+Email address: wiremu.lindqvist@example.com
+Phone number: (02) 5550 4067
+Student's first name: Leilani
+Year level of entry: Year 9
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Mandarin
+How did you hear about us?: Social media
+Questions or comments: Can we meet the Head of Junior School before applying?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237953.4984.14531374087752510080@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Luca Dimitriou
+Email: luca.dimitriou@example.com
+Subject: Events
+Message: Can grandparents attend the Junior School Art Exhibition?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237953.4984.16530891909973441967@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Jarrah Dimitriou
+Email address: jarrah.dimitriou@example.com
+Phone number: (02) 5550 9606
+Student's first name: Kai
+Year level of entry: Year 10
+Preferred start term: Term 1
+Languages spoken at home (e.g. Français, Español): Italiano
+How did you hear about us?: Friend or family
+Questions or comments: None
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237953.4984.12598580303590280144@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Maya Hoang
+Email address: maya.hoang@example.com
+Phone number: (02) 5550 9541
+Student's first name: Arlo
+Year level of entry: Year 6
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): English
+How did you hear about us?: Open Day
+Questions or comments: Is there a sibling discount on tuition fees?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237954.4984.17572714258689568212@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Quinn Castellano
+Email address: quinn.castellano@example.com
+Phone number: (02) 5550 4663
+Student's first name: Jasper
+Year level of entry: Year 12
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): English
+How did you hear about us?: Website, Other
+Questions or comments: My son has a peanut allergy. How does the canteen manage allergies?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237954.4984.14331890284674655096@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Ines Baptiste
+Email address: ines.baptiste@example.com
+Phone number: (02) 5550 7568
+Student's first name: Hugo
+Year level of entry: Year 4
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): Greek
+How did you hear about us?: Social media, Open Day
+Questions or comments: We're relocating from Melbourne mid-year — are there places available in Term 3?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237954.4984.5325460985370291539@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Jarrah Kaur
+Email: jarrah.kaur@example.com
+Subject: Accounts
+Message: We would like to set up a monthly payment plan for tuition fees.
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237955.4984.5062335932700121236@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Stefan Dimitriou
+Email: stefan.dimitriou@example.com
+Subject: Accounts
+Message: Could you resend our Term 3 fee statement? The link in the email expired.
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237955.4984.7472946452720114703@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Georgia Nakamura
+Email: georgia.nakamura@example.com
+Subject: Events
+Message: Is there parking near Ridgeway Oval for the athletics carnival?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237955.4984.6845897477444454995@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Tahlia Quintero
+Email address: tahlia.quintero@example.com
+Phone number: (02) 5550 2888
+Student's first name: Arlo
+Year level of entry: Year 3
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Mandarin
+How did you hear about us?: Social media
+Questions or comments: My son has a peanut allergy. How does the canteen manage allergies?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237956.4984.16358475219457880336@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Xavier Hoang
+Email address: xavier.hoang@example.com
+Phone number: (02) 5550 5577
+Student's first name: Mateo
+Year level of entry: Year 1
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Korean
+How did you hear about us?: Website
+Questions or comments: Do you offer before and after school care for the Junior School?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237956.4984.17108159044505404923@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Vanessa Oyelaran
+Email address: vanessa.oyelaran@example.com
+Phone number: None
+Student's first name: Beatrice
+Year level of entry: Year 4
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): English
+How did you hear about us?: Social media
+Questions or comments: Can we meet the Head of Junior School before applying?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:19 -0000
+Message-ID: <179005237956.4984.6454373512663585856@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Maya Abernethy
+Email address: maya.abernethy@example.com
+Phone number: (02) 5550 9139
+Student's first name: Willow
+Year level of entry: Year 6
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Social media
+Questions or comments: Is there a sibling discount on tuition fees?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Demo content ready:
+  Pages (live, excluding root)     43
+    StandardPage                   11
+    EventPage                      12
+    StaffPage                      15
+  Images                           26
+  Documents                        3
+  Event categories                 5
+  Departments                      9
+  Enquiry submissions              30
+  Contact submissions              10
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  3s

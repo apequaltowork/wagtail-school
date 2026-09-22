@@ -33,6 +33,8 @@ start=$(date +%s)
 } > "$log"
 
 export PYTHONUNBUFFERED=1
+# Windows: piped stdout defaults to cp1252; force UTF-8 so non-ASCII output (e.g. console emails) works.
+export PYTHONUTF8=1
 "$@" 2>&1 | tee -a "$log"
 code=${PIPESTATUS[0]}
 

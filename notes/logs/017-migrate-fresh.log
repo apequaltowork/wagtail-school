@@ -1,0 +1,107 @@
+# rec 017-migrate-fresh
+# time:    2026-09-22 10:17:09 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py migrate
+# commit:  d2b5052
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying wagtailcore.0001_squashed_0016_change_page_url_path_to_text_field... OK
+  Applying wagtailcore.0017_change_edit_page_permission_description... OK
+  Applying wagtailcore.0018_pagerevision_submitted_for_moderation_index... OK
+  Applying wagtailcore.0019_verbose_names_cleanup... OK
+  Applying wagtailcore.0020_add_index_on_page_first_published_at... OK
+  Applying wagtailcore.0021_capitalizeverbose... OK
+  Applying wagtailcore.0022_add_site_name... OK
+  Applying wagtailcore.0023_alter_page_revision_on_delete_behaviour... OK
+  Applying wagtailcore.0024_collection... OK
+  Applying wagtailcore.0025_collection_initial_data... OK
+  Applying wagtailcore.0026_group_collection_permission... OK
+  Applying wagtailcore.0027_fix_collection_path_collation... OK
+  Applying wagtailcore.0024_alter_page_content_type_on_delete_behaviour... OK
+  Applying wagtailcore.0028_merge... OK
+  Applying wagtailcore.0029_unicode_slugfield_dj19... OK
+  Applying wagtailcore.0030_index_on_pagerevision_created_at... OK
+  Applying wagtailcore.0031_add_page_view_restriction_types... OK
+  Applying wagtailcore.0032_add_bulk_delete_page_permission... OK
+  Applying wagtailcore.0033_remove_golive_expiry_help_text... OK
+  Applying wagtailcore.0034_page_live_revision... OK
+  Applying wagtailcore.0035_page_last_published_at... OK
+  Applying wagtailcore.0036_populate_page_last_published_at... OK
+  Applying wagtailcore.0037_set_page_owner_editable... OK
+  Applying wagtailcore.0038_make_first_published_at_editable... OK
+  Applying wagtailcore.0039_collectionviewrestriction... OK
+  Applying wagtailcore.0040_page_draft_title... OK
+  Applying wagtailcore.0041_group_collection_permissions_verbose_name_plural... OK
+  Applying core.0001_initial... OK
+  Applying taggit.0001_initial... OK
+  Applying wagtailimages.0001_squashed_0021... OK
+  Applying events.0001_initial... OK
+  Applying forms.0001_initial... OK
+  Applying home.0001_initial... OK
+  Applying home.0002_create_homepage... OK
+  Applying home.0003_auto_20260922_1015... OK
+  Applying pages.0001_initial... OK
+  Applying sessions.0001_initial... OK
+  Applying staff.0001_initial... OK
+  Applying taggit.0002_auto_20150616_2121... OK
+  Applying taggit.0003_taggeditem_add_unique_index... OK
+  Applying wagtailadmin.0001_create_admin_access_permissions... OK
+  Applying wagtaildocs.0001_initial... OK
+  Applying wagtaildocs.0002_initial_data... OK
+  Applying wagtaildocs.0003_add_verbose_names... OK
+  Applying wagtaildocs.0004_capitalizeverbose... OK
+  Applying wagtaildocs.0005_document_collection... OK
+  Applying wagtaildocs.0006_copy_document_permissions_to_collections... OK
+  Applying wagtaildocs.0005_alter_uploaded_by_user_on_delete_action... OK
+  Applying wagtaildocs.0007_merge... OK
+  Applying wagtaildocs.0008_document_file_size... OK
+  Applying wagtaildocs.0009_document_verbose_name_plural... OK
+  Applying wagtaildocs.0010_document_file_hash... OK
+  Applying wagtailembeds.0001_initial... OK
+  Applying wagtailembeds.0002_add_verbose_names... OK
+  Applying wagtailembeds.0003_capitalizeverbose... OK
+  Applying wagtailembeds.0004_embed_verbose_name_plural... OK
+  Applying wagtailembeds.0005_specify_thumbnail_url_max_length... OK
+  Applying wagtailforms.0001_initial... OK
+  Applying wagtailforms.0002_add_verbose_names... OK
+  Applying wagtailforms.0003_capitalizeverbose... OK
+  Applying wagtailredirects.0001_initial... OK
+  Applying wagtailredirects.0002_add_verbose_names... OK
+  Applying wagtailredirects.0003_make_site_field_editable... OK
+  Applying wagtailredirects.0004_set_unique_on_path_and_site... OK
+  Applying wagtailredirects.0005_capitalizeverbose... OK
+  Applying wagtailredirects.0006_redirect_increase_max_length... OK
+  Applying wagtailsearch.0001_initial... OK
+  Applying wagtailsearch.0002_add_verbose_names... OK
+  Applying wagtailsearch.0003_remove_editors_pick... OK
+  Applying wagtailsearch.0004_querydailyhits_verbose_name_plural... OK
+  Applying wagtailusers.0001_initial... OK
+  Applying wagtailusers.0002_add_verbose_name_on_userprofile... OK
+  Applying wagtailusers.0003_add_verbose_names... OK
+  Applying wagtailusers.0004_capitalizeverbose... OK
+  Applying wagtailusers.0005_make_related_name_wagtail_specific... OK
+  Applying wagtailusers.0006_userprofile_prefered_language... OK
+  Applying wagtailusers.0007_userprofile_current_time_zone... OK
+  Applying wagtailusers.0008_userprofile_avatar... OK
+  Applying wagtailusers.0009_userprofile_verbose_name_plural... OK
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  5s

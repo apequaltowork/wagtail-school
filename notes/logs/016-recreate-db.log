@@ -1,0 +1,11 @@
+# rec 016-recreate-db
+# time:    2026-09-22 10:17:08 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe tools/recreate_db.py --yes
+# commit:  d2b5052
+# ----------------------------------------------------------------
+Recreated database wagtail_school
+Removed D:\django\wagtail-school\media
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

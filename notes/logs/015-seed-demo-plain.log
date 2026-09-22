@@ -1,0 +1,10 @@
+# rec 015-seed-demo-plain
+# time:    2026-09-22 10:16:32 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py seed_demo
+# commit:  d2b5052
+# ----------------------------------------------------------------
+Demo content already exists. Use --reset to rebuild it.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

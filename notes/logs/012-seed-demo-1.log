@@ -1,0 +1,180 @@
+# rec 012-seed-demo-1
+# time:    2026-09-22 10:16:03 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py seed_demo --reset
+# commit:  d2b5052
+# ----------------------------------------------------------------
+Removing existing demo content...
+Created superuser "admin".
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236610.7136.6183083625940552324@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Anh McAllister
+Email address: anh.mcallister@example.com
+Phone number: (02) 5550 7868
+Student's first name: Eloise
+Year level of entry: Year 3
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Social media
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236610.7136.6770178645252873278@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Zoltan Quintero
+Email: zoltan.quintero@example.com
+Subject: General enquiry
+Message: Hi, is the school pool open to the community on weekends?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236611.7136.5735553996512301969@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Vanessa Castellano
+Email address: vanessa.castellano@example.com
+Phone number: (02) 5550 8574
+Student's first name: Theo
+Year level of entry: Year 4
+Preferred start term: Term 3
+Languages spoken at home (e.g. Français, Español): Português
+How did you hear about us?: Friend or family
+Questions or comments: None
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Website contact form
+From: website@kestrelridge.example
+To: enquiries@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236611.7136.13106064111342255057@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Your name: Tahlia Abernethy
+Email: tahlia.abernethy@example.com
+Subject: Admissions
+Message: What documents do we need for the enrolment application?
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236611.7136.17846480078932162348@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Bronwyn McAllister
+Email address: bronwyn.mcallister@example.com
+Phone number: (02) 5550 2515
+Student's first name: Rafael
+Year level of entry: Year 4
+Preferred start term: Term 1
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Friend or family, Social media
+Questions or comments: Our daughter plays the violin. Could she join the string ensemble straight away?
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236612.7136.91116800437433841@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Aisha Abernethy
+Email address: aisha.abernethy@example.com
+Phone number: None
+Student's first name: Charlie
+Year level of entry: Year 1
+Preferred start term: Term 4
+Languages spoken at home (e.g. Français, Español): None
+How did you hear about us?: Other
+Questions or comments: Is there a bus service from the northern suburbs?
+Subscribe to our newsletter: False
+-------------------------------------------------------------------------------
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: New enrolment enquiry
+From: website@kestrelridge.example
+To: admissions@kestrelridge.example
+Date: Tue, 22 Sep 2026 04:46:06 -0000
+Message-ID: <179005236612.7136.6240754306117410219@DESKTOP-3R3L32E>
+Auto-Submitted: auto-generated
+
+Parent/Guardian's full name: Anh Baptiste
+Email address: anh.baptiste@example.com
+Phone number: (02) 5550 4745
+Student's first name: Zara
+Year level of entry: Year 4
+Preferred start term: Term 2
+Languages spoken at home (e.g. Français, Español): Korean
+How did you hear about us?: Social media
+Questions or comments: None
+Subscribe to our newsletter: True
+-------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\management\__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\management\base.py", line 323, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\management\base.py", line 364, in execute
+    output = self.handle(*args, **options)
+  File "D:\django\wagtail-school\core\management\commands\seed_demo.py", line 74, in handle
+    self.create_submissions()
+  File "D:\django\wagtail-school\core\management\commands\seed_demo.py", line 393, in create_submissions
+    submissions = [self.submit(page, values) for page, values in jobs]
+  File "D:\django\wagtail-school\core\management\commands\seed_demo.py", line 393, in <listcomp>
+    submissions = [self.submit(page, values) for page, values in jobs]
+  File "D:\django\wagtail-school\core\management\commands\seed_demo.py", line 353, in submit
+    return page.process_form_submission(form)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\wagtail\contrib\forms\models.py", line 275, in process_form_submission
+    self.send_mail(form)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\wagtail\contrib\forms\models.py", line 287, in send_mail
+    send_mail(self.subject, content, addresses, self.from_address,)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\wagtail\admin\mail.py", line 46, in send_mail
+    return mail.send()
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\mail\message.py", line 306, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\mail\backends\console.py", line 34, in send_messages
+    self.write_message(message)
+  File "D:\django\.virtualenvs\wagtail-school\lib\site-packages\django\core\mail\backends\console.py", line 21, in write_message
+    self.stream.write('%s\n' % msg_data)
+  File "C:\Users\admin\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\uv\python\cpython-3.8.20-windows-x86_64-none\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0101' in position 591: character maps to <undefined>
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  3s
