@@ -108,21 +108,21 @@ main:focus { outline: none; }
 .breadcrumb { background: none; padding-left: 0; font-size: .95rem; }
 .intro { margin-bottom: 1.5rem; }
 
-/* StreamField blocks (Wagtail's block-<type> wrappers) */
-.streamfield .block-heading h2 { margin-top: 2rem; }
-.streamfield .block-heading h3 { margin-top: 1.5rem; }
-.streamfield .block-image figure { margin: 2rem 0; }
-.streamfield .block-image figcaption { font-size: .95rem; color: var(--muted); margin-top: .5rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
-.streamfield .block-quote blockquote { margin: 2rem 0; padding: 1.25rem 1.5rem; background: var(--cream); border-left: 5px solid var(--gold); font-family: 'Merriweather', Georgia, serif; font-size: 1.2rem; color: var(--navy); }
-.streamfield .block-quote blockquote footer { font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; color: var(--muted); margin-top: .5rem; }
-.streamfield .block-call_to_action aside { margin: 2rem 0; padding: 1.75rem; background: var(--navy); color: #fff; }
-.streamfield .block-call_to_action h2 { color: #fff; margin-top: 0; }
-.streamfield .block-document p a { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border: 1px solid #d9dce3; font-weight: 600; }
-.streamfield .block-document .doc-meta { color: var(--muted); font-weight: 400; }
-.streamfield .block-table table { width: 100%; margin: 1.5rem 0; border-collapse: collapse; }
-.streamfield .block-table th { background: var(--navy); color: #fff; }
-.streamfield .block-table th, .streamfield .block-table td { padding: .6rem .8rem; border: 1px solid #d9dce3; }
-.streamfield .block-table tbody tr:nth-child(even) { background: var(--cream); }
+/* StreamField blocks: Wagtail 7.4 wrappers carry w-block-<type> (legacy block-<type> is going away) */
+.streamfield .w-block-heading h2 { margin-top: 2rem; }
+.streamfield .w-block-heading h3 { margin-top: 1.5rem; }
+.streamfield .w-block-image figure { margin: 2rem 0; }
+.streamfield .w-block-image figcaption { font-size: .95rem; color: var(--muted); margin-top: .5rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.streamfield .w-block-quote blockquote { margin: 2rem 0; padding: 1.25rem 1.5rem; background: var(--cream); border-left: 5px solid var(--gold); font-family: 'Merriweather', Georgia, serif; font-size: 1.2rem; color: var(--navy); }
+.streamfield .w-block-quote blockquote footer { font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; color: var(--muted); margin-top: .5rem; }
+.streamfield .w-block-call_to_action aside { margin: 2rem 0; padding: 1.75rem; background: var(--navy); color: #fff; }
+.streamfield .w-block-call_to_action h2 { color: #fff; margin-top: 0; }
+.streamfield .w-block-document p a { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border: 1px solid #d9dce3; font-weight: 600; }
+.streamfield .w-block-document .doc-meta { color: var(--muted); font-weight: 400; }
+.streamfield .w-block-table table { width: 100%; margin: 1.5rem 0; border-collapse: collapse; }
+.streamfield .w-block-table th { background: var(--navy); color: #fff; }
+.streamfield .w-block-table th, .streamfield .w-block-table td { padding: .6rem .8rem; border: 1px solid #d9dce3; }
+.streamfield .w-block-table tbody tr:nth-child(even) { background: var(--cream); }
 
 .section-nav { background: var(--cream); padding: 1.5rem; border-top: 4px solid var(--gold); }
 .section-nav h2 { font-size: 1.15rem; }
