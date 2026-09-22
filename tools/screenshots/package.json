@@ -1,0 +1,11 @@
+{
+  "name": "wagtail-school-screenshots",
+  "private": true,
+  "description": "Full-page screenshots of the demo site for each upgrade stage",
+  "scripts": {
+    "shoot": "node shoot.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}
