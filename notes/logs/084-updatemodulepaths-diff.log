@@ -1,0 +1,30 @@
+# rec 084-updatemodulepaths-diff
+# time:    2026-09-22 11:00:58 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/wagtail.exe updatemodulepaths --list .
+# commit:  d48278c
+# ----------------------------------------------------------------
+core\blocks.py - 1 change
+core\models.py - 1 change
+core\management\commands\seed_demo.py - 1 change
+core\templatetags\navigation_tags.py - 1 change
+events\models.py - 3 changes
+events\migrations\0001_initial.py - 4 changes
+forms\models.py - 3 changes
+forms\migrations\0001_initial.py - 5 changes
+home\models.py - 3 changes
+home\migrations\0003_auto_20260922_1015.py - 3 changes
+pages\models.py - 3 changes
+pages\migrations\0001_initial.py - 3 changes
+schoolsite\urls.py - 1 change
+schoolsite\settings\base.py - 1 change
+search\views.py - 1 change
+staff\models.py - 3 changes
+staff\migrations\0001_initial.py - 3 changes
+tools\baseline.py - 1 change
+tools\screenshot_targets.py - 1 change
+
+Checked 62 .py files, 19 files to update.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

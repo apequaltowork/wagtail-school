@@ -1,0 +1,16 @@
+# rec 091-check-Wa-74-8
+# time:    2026-09-22 11:02:31 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py check
+# commit:  d3c6926
+# ----------------------------------------------------------------
+System check identified some issues:
+
+WARNINGS:
+?: (wagtailadmin.W003) The WAGTAILADMIN_BASE_URL setting is not defined
+	HINT: This should be the base URL used to access the Wagtail admin site. Without this, admin URLs outside of the admin (e.g. notification emails and the user bar) will not display correctly.
+
+System check identified 1 issue (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

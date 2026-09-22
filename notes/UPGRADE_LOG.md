@@ -60,3 +60,74 @@ Format: ID · hop · symptom (exact error, first lines + log file) · cause (whi
 - **Fix:** 784a595 — `from wagtail.documents.models import get_document_model` → `from wagtail.documents import get_document_model`. Seeding from empty now gives the same counts as 2.7 (log 060).
 - **Docs:** https://docs.wagtail.org/en/v2.15/releases/2.8.html#wagtail-documents-models-get-document-model-has-moved
 - **Story value:** Low — it only surfaces because we reseed from scratch; that's why you keep a clean-DB check in the upgrade.
+
+
+---
+
+# Hop 2: 2.15 → 7.4 LTS (one step)
+
+Install went through on the first try (log 080: wagtail 7.4.3, Django 5.2.17, Pillow 12.3.0, psycopg2-binary 2.9.13; pip check clean in 081). Then `python -Wa manage.py check` failed eight times in a row, each time on the first import it couldn't resolve. The one-step jump means every removal from 3.0 to 6.0 shows up as a hard ImportError, with no deprecation warning first.
+
+## B07 — ModelAdmin is gone
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ModuleNotFoundError: No module named 'wagtail.contrib.modeladmin'` (log 082), raised from INSTALLED_APPS before anything else loads.
+- **Cause:** `wagtail.contrib.modeladmin` was deprecated in 5.1 and removed in 6.0. It lives on as the external `wagtail-modeladmin` package.
+- **Fix:** d48278c — removed the app. `events/wagtail_hooks.py` and `staff/wagtail_hooks.py` now register a `PageListingViewSet` (`wagtail.admin.viewsets.pages`) through `register_admin_viewset`. It keeps the same menu labels, icons and order, with `list_display` / `list_filter` in place of ModelAdmin's. The listing screens are verified in the admin screenshots. Alternative (DECISIONS D23): the `wagtail-modeladmin` package.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/6.0.html · https://docs.wagtail.org/en/v7.4/reference/viewsets.html
+- **Story value:** High — the admin menus the client uses every day have to be rebuilt on a new API.
+
+## B08 — wagtail.core no longer exists
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ModuleNotFoundError: No module named 'wagtail.core'` (log 083).
+- **Cause:** Wagtail 3.0 moved `wagtail.core.*` to `wagtail.*` and `wagtail.admin.edit_handlers` to `wagtail.admin.panels`, with shims that 5.0 removed. None of it warned on 2.15 (see deprecations-2.15.txt).
+- **Fix:** ee0e4c1 — ran Wagtail's own `wagtail updatemodulepaths .` (preview in log 084, apply in 085). It rewrote 19 files and 42 lines, including the old migrations and `'wagtail.core'` → `'wagtail'` in INSTALLED_APPS. Its help text still says "Update a Wagtail project tree to use Wagtail 2.x module paths". It does **not** replace removed panel classes, and it leaves `wagtail.images.edit_handlers` / `wagtail.snippets.edit_handlers` alone (B10).
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html
+- **Story value:** High — the biggest diff of the upgrade, done by one command.
+
+## B09 — ugettext_lazy removed
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' … Did you mean: 'gettext_lazy'?` (log 086).
+- **Cause:** deprecated in Django 3.0, removed in 4.0. It warned 60+ times on 2.15.
+- **Fix:** 08e310e — `ugettext_lazy as _` → `gettext_lazy as _` in 7 files.
+- **Docs:** https://docs.djangoproject.com/en/5.2/releases/4.0/#features-removed-in-4-0
+- **Story value:** Low — Python suggests the fix itself.
+
+## B10 — StreamFieldPanel and the chooser panels removed
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ImportError: cannot import name 'StreamFieldPanel' from 'wagtail.admin.panels' … Did you mean: 'TitleFieldPanel'?` (log 087).
+- **Cause:** 3.0 folded `StreamFieldPanel`, `ImageChooserPanel`, `DocumentChooserPanel` and `SnippetChooserPanel` into `FieldPanel`; 5.0 removed them, along with `wagtail.images.edit_handlers` and `wagtail.snippets.edit_handlers`.
+- **Fix:** dffbf43 — 9 panels → `FieldPanel(...)`, and the imports from the `images` and `snippets` `edit_handlers` modules removed. `PageChooserPanel` still exists and stays.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html · https://docs.wagtail.org/en/v7.4/releases/5.0.html
+- **Story value:** Medium — the code gets simpler: one panel type instead of five.
+
+## B11 — BaseSetting removed
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ImportError: cannot import name 'BaseSetting' from 'wagtail.contrib.settings.models' … Did you mean: 'BaseSiteSetting'?` (log 088).
+- **Cause:** 4.0 split settings into `BaseSiteSetting` (per site) and `BaseGenericSetting` (global); 5.0 removed `BaseSetting`.
+- **Fix:** 72279ff — `SchoolSettings(BaseSetting)` → `SchoolSettings(BaseSiteSetting)`. That's the per-site behaviour we already had, so templates using `settings.core.SchoolSettings` don't change.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/4.0.html
+- **Story value:** Low.
+
+## B12 — django.conf.urls.url removed
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ImportError: cannot import name 'url' from 'django.conf.urls'` (log 089).
+- **Cause:** deprecated in Django 3.1, removed in 4.0.
+- **Fix:** b2fe321 — `from django.conf.urls import include, url` → `from django.urls import include, re_path`, with every `url(` → `re_path(`, so the regexes are unchanged. The smallest change; converting to `path()` would be a rewrite.
+- **Docs:** https://docs.djangoproject.com/en/5.2/releases/4.0/#features-removed-in-4-0
+- **Story value:** Low.
+
+## B13 — Search Query model moved
+- **Hop:** 2.15 → 7.4
+- **Symptom:** `ImportError: cannot import name 'Query' from 'wagtail.search.models'` (log 090), raised from the 2.7 project template's `search/views.py`.
+- **Cause:** 5.0 moved `Query` and `QueryDailyHits` to `wagtail.contrib.search_promotions`; 6.0 removed them from `wagtail.search`.
+- **Fix:** d3c6926 — added `'wagtail.contrib.search_promotions'` to INSTALLED_APPS; `from wagtail.search.models import Query` → `from wagtail.contrib.search_promotions.models import Query`. Whether the 2 logged queries survive is checked after migrate. Alternative (D24): drop query logging, as the current template does.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/5.0.html · https://docs.wagtail.org/en/v7.4/releases/6.0.html
+- **Story value:** Medium — even the file `wagtail start` generated for you breaks.
+
+## B14 — BASE_URL renamed (wagtailadmin.W003)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** once the app loads: `?: (wagtailadmin.W003) The WAGTAILADMIN_BASE_URL setting is not defined` (log 091).
+- **Cause:** 3.0 renamed `BASE_URL` to `WAGTAILADMIN_BASE_URL`; 5.0 stopped reading the old name.
+- **Fix:** 8c1d046 — `BASE_URL = 'http://localhost:8000'` → `WAGTAILADMIN_BASE_URL = 'http://localhost:8074'` (this stage's port). Check is clean, with no Python warnings (log 092).
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html
+- **Story value:** Low.
