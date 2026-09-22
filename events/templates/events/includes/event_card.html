@@ -1,0 +1,17 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<article class="card event-card h-100">
+    {% if event.image %}
+        {% image event.image fill-600x360 class="card-img-top" alt="" %}
+    {% endif %}
+    <div class="card-body">
+        {% if event.category %}
+            <span class="badge category-badge" style="background-color: {{ event.category.colour }}">{{ event.category.name }}</span>
+        {% endif %}
+        <h3 class="card-title"><a href="{% pageurl event %}">{{ event.title }}</a></h3>
+        <p class="event-when">
+            <time datetime="{{ event.start_date|date:'Y-m-d' }}">{{ event.start_date|date:"l j F Y" }}</time>{% if event.start_time %}, {{ event.start_time|time:"g:i A" }}{% endif %}
+        </p>
+        {% if event.location %}<p class="event-where">{{ event.location }}</p>{% endif %}
+        {% if event.summary %}<p class="card-text">{{ event.summary|truncatewords:24 }}</p>{% endif %}
+    </div>
+</article>

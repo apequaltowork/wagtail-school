@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-eventpage{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" with image=page.image %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    <div class="row">
+        <article class="col-lg-8 streamfield">
+            {% if page.summary %}<p class="lead intro">{{ page.summary }}</p>{% endif %}
+            {{ page.body }}
+        </article>
+        <aside class="col-lg-4">
+            <div class="event-details">
+                <h2>Event details</h2>
+                {% if page.category %}
+                    <p><span class="badge category-badge" style="background-color: {{ page.category.colour }}">{{ page.category.name }}</span></p>
+                {% endif %}
+                <dl>
+                    <dt>Date</dt>
+                    <dd>
+                        <time datetime="{{ page.start_date|date:'Y-m-d' }}">{{ page.start_date|date:"l j F Y" }}</time>
+                        {% if page.end_date and page.end_date != page.start_date %} &ndash; <time datetime="{{ page.end_date|date:'Y-m-d' }}">{{ page.end_date|date:"l j F Y" }}</time>{% endif %}
+                    </dd>
+                    {% if page.start_time %}
+                        <dt>Time</dt>
+                        <dd>{{ page.start_time|time:"g:i A" }}{% if page.end_time %} &ndash; {{ page.end_time|time:"g:i A" }}{% endif %}</dd>
+                    {% endif %}
+                    {% if page.location %}
+                        <dt>Location</dt>
+                        <dd>{{ page.location }}</dd>
+                    {% endif %}
+                </dl>
+                {% if page.is_past %}<p class="past-note" data-baseline="dynamic">This event has already taken place.</p>{% endif %}
+                <a class="btn btn-outline-navy" href="{% pageurl page.get_parent %}">All events</a>
+            </div>
+        </aside>
+    </div>
+</div>
+{% endblock content %}

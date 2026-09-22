@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailroutablepage_tags navigation_tags %}
+
+{% block body_class %}template-eventindexpage{% endblock %}
+
+{% block title %}{% if listing == 'past' %}Past events{% else %}{{ page.title }}{% endif %}{% endblock %}
+
+{% block content %}
+{% if listing == 'past' %}
+    {% include "includes/page_banner.html" with title="Past events" %}
+{% else %}
+    {% include "includes/page_banner.html" %}
+{% endif %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    {% if page.intro and listing != 'past' %}<div class="lead intro">{{ page.intro|richtext }}</div>{% endif %}
+
+    <div class="listing-tools d-md-flex justify-content-between align-items-center mb-4">
+        <ul class="nav nav-pills listing-tabs">
+            <li class="nav-item"><a class="nav-link{% if listing == 'upcoming' %} active{% endif %}" href="{% pageurl page %}">Upcoming</a></li>
+            <li class="nav-item"><a class="nav-link{% if listing == 'past' %} active{% endif %}" href="{% routablepageurl page 'past_events' %}">Past events</a></li>
+        </ul>
+        <form class="form-inline filter-form" method="get">
+            <label class="mr-2" for="category-filter">Category</label>
+            <select class="custom-select" id="category-filter" name="category" onchange="this.form.submit()">
+                <option value="">All categories</option>
+                {% for category in categories %}
+                    <option value="{{ category.slug }}"{% if current_category.pk == category.pk %} selected{% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            <noscript><button class="btn btn-navy ml-2" type="submit">Filter</button></noscript>
+        </form>
+    </div>
+
+    <div class="row" data-baseline="dynamic">
+        {% for event in events %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                {% include "events/includes/event_card.html" with event=event %}
+            </div>
+        {% empty %}
+            <div class="col">
+                <p>{% if listing == 'past' %}No past events{% else %}No upcoming events{% endif %}{% if current_category %} in {{ current_category.name }}{% endif %}.</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if events.paginator.num_pages > 1 %}
+        <nav aria-label="Event pages" data-baseline="dynamic">
+            <ul class="pagination justify-content-center">
+                {% if events.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ events.previous_page_number }}{% if current_category %}&amp;category={{ current_category.slug }}{% endif %}">Previous</a></li>
+                {% endif %}
+                {% for num in events.paginator.page_range %}
+                    <li class="page-item{% if num == events.number %} active{% endif %}"><a class="page-link" href="?page={{ num }}{% if current_category %}&amp;category={{ current_category.slug }}{% endif %}">{{ num }}</a></li>
+                {% endfor %}
+                {% if events.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ events.next_page_number }}{% if current_category %}&amp;category={{ current_category.slug }}{% endif %}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+</div>
+{% endblock content %}
