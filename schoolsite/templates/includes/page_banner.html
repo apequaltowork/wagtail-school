@@ -1,0 +1,11 @@
+{% load wagtailimages_tags %}
+<section class="page-banner{% if not image %} page-banner-plain{% endif %}">
+    {% if image %}
+        {% image image fill-1920x420 class="page-banner-image" alt="" %}
+    {% endif %}
+    <div class="page-banner-overlay">
+        <div class="container">
+            <h1>{{ title|default:page.title }}</h1>
+        </div>
+    </div>
+</section>

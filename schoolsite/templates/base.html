@@ -1,7 +1,5 @@
-{% load static wagtailuserbar %}
-
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+{% load static wagtailuserbar navigation_tags %}<!DOCTYPE html>
+<html class="no-js" lang="en-AU">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -14,10 +12,11 @@
                 {% endwith %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% endif %}{% endblock %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/schoolsite.css' %}">
 
         {% block extra_css %}
@@ -26,11 +25,21 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+        <a class="skip-link" href="#main-content">Skip to main content</a>
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        {% include "includes/header.html" %}
+
+        <main id="main-content" tabindex="-1">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% include "includes/footer.html" %}
 
         {# Global javascript #}
+        <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/popper/popper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/schoolsite.js' %}"></script>
 
         {% block extra_js %}

@@ -1,0 +1,47 @@
+{% with school=settings.core.SchoolSettings %}
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <h2 class="footer-heading">{{ school.school_name|default:"Kestrel Ridge College" }}</h2>
+                {% if school.footer_text %}<p>{{ school.footer_text }}</p>{% endif %}
+                <ul class="social list-inline">
+                    {% if school.facebook_url %}
+                    <li class="list-inline-item"><a href="{{ school.facebook_url }}" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+                    </a></li>
+                    {% endif %}
+                    {% if school.instagram_url %}
+                    <li class="list-inline-item"><a href="{{ school.instagram_url }}" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1a6.7 6.7 0 1 0 0 13.4 6.7 6.7 0 0 0 0-13.4zm0 11a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6zm6.9-11.3a1.6 1.6 0 1 1-3.1 0 1.6 1.6 0 0 1 3.1 0z"/></svg>
+                    </a></li>
+                    {% endif %}
+                    {% if school.youtube_url %}
+                    <li class="list-inline-item"><a href="{{ school.youtube_url }}" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                    </a></li>
+                    {% endif %}
+                    {% if school.linkedin_url %}
+                    <li class="list-inline-item"><a href="{{ school.linkedin_url }}" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.9-1.5 3.1 0 3.6 2 3.6 4.6V19z"/></svg>
+                    </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h2 class="footer-heading">Contact</h2>
+                <address>
+                    {{ school.address|linebreaksbr }}<br>
+                    {% if school.phone %}Phone: <a href="tel:{{ school.phone|cut:' ' }}">{{ school.phone }}</a><br>{% endif %}
+                    {% if school.email %}Email: <a href="mailto:{{ school.email }}">{{ school.email }}</a>{% endif %}
+                </address>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="footer-heading">Office hours</h2>
+                <p>{{ school.office_hours|linebreaksbr }}</p>
+            </div>
+        </div>
+        <p class="footer-small">&copy; {% now "Y" %} {{ school.school_name|default:"Kestrel Ridge College" }}. A fictional school created for a Wagtail upgrade demonstration.</p>
+    </div>
+</footer>
+{% endwith %}

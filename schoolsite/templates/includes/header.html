@@ -1,0 +1,35 @@
+{% load navigation_tags %}
+{% with school=settings.core.SchoolSettings %}
+<div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+        <span>
+            {% if school.phone %}Phone <a href="tel:{{ school.phone|cut:' ' }}">{{ school.phone }}</a>{% endif %}
+            {% if school.email %}&middot; <a href="mailto:{{ school.email }}">{{ school.email }}</a>{% endif %}
+        </span>
+        <form class="topbar-search" action="{% url 'search' %}" method="get" role="search">
+            <label class="sr-only" for="topbar-query">Search the site</label>
+            <input id="topbar-query" type="search" name="query" placeholder="Search" value="{{ search_query|default_if_none:'' }}">
+        </form>
+    </div>
+</div>
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <svg class="crest" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+                    <path d="M22 2 L40 8 V22 C40 32 32 39 22 42 C12 39 4 32 4 22 V8 Z" fill="#c9a227"/>
+                    <path d="M22 6 L36 11 V22 C36 30 30 36 22 38.5 C14 36 8 30 8 22 V11 Z" fill="#14284b"/>
+                    <path d="M12 26 L22 14 L32 26 L27 24 L22 30 L17 24 Z" fill="#c9a227"/>
+                </svg>
+                <span class="brand-text">{{ school.school_name|default:"Kestrel Ridge College" }}</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                {% main_menu %}
+            </div>
+        </div>
+    </nav>
+</header>
+{% endwith %}

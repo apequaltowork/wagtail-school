@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 
+{% block title %}Page not found{% endblock %}
+
 {% block body_class %}template-404{% endblock %}
 
 {% block content %}
+<div class="container page-body error-page">
     <h1>Page not found</h1>
-
-    <h2>Sorry, this page could not be found.</h2>
+    <p class="lead">Sorry, we couldn&rsquo;t find the page you were looking for. It may have moved, or the address may be mistyped.</p>
+    <form class="search-form my-4" action="{% url 'search' %}" method="get" role="search">
+        <label for="search-404">Try searching the site</label>
+        <div class="input-group">
+            <input class="form-control" id="search-404" type="search" name="query">
+            <div class="input-group-append"><button class="btn btn-gold" type="submit">Search</button></div>
+        </div>
+    </form>
+    <a class="btn btn-outline-navy" href="/">Go to the home page</a>
+</div>
 {% endblock %}
