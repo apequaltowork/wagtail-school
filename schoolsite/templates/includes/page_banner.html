@@ -5,7 +5,7 @@
     {% endif %}
     <div class="page-banner-overlay">
         <div class="container">
-            <h1>{{ title|default:page.title }}</h1>
+            <h1>{% if title %}{{ title }}{% else %}{{ page.title }}{% endif %}</h1>
         </div>
     </div>
 </section>
