@@ -1,0 +1,9 @@
+# rec 078-pg-restore-215-into-74
+# time:    2026-09-22 10:54:36 +0530
+# folder:  /d/django/wagtail-school-74
+# command: /c/Program Files/PostgreSQL/16/bin/pg_restore.exe --no-owner --no-privileges -h localhost -U school -d wagtail_school_74 ../wagtail-school-215/dumps/wagtail_school_215.dump
+# commit:  2a2620c
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

@@ -70,3 +70,15 @@
 - 18 remaining deprecation warnings are in notes/deprecations-2.15.txt, plus the known 3.0+ changes that don't warn on 2.15.
 - Final checks: pip check (068), check (069), makemigrations --check (070) and migrate (071) all clean. pip freeze saved to notes/check-2.15/pip-freeze.txt.
 - dumps/wagtail_school_215.dump (301 KB) and dumps/media_215.zip (2.5 MB). Tagged v2.15.
+
+---
+
+# Session log — 2.15 → 7.4 hop
+
+## 2026-09-22 11:40 — Setup
+- **What:** cloned wagtail-school-215 into wagtail-school-74 on branch `upgrade/7.4` (from tag v2.15). Created the `wagtail-school-74` virtualenv on the system CPython 3.12.10, and `wagtail_school_74` as the `school` role. Restored `wagtail_school_215.dump` (`--no-owner --no-privileges`), unzipped media_215.zip, and wrote a new gitignored local.py (its own SECRET_KEY, `DB_NAME` override).
+- **Logs:** 076-mkvirtualenv-74, 077-createdb-74, 078-pg-restore-215-into-74, 079-unzip-media-215.
+- **Result:** 44 page rows, 40 submissions, all 10 enquiry fields with clean_name, 46 page revisions, 2 logged search queries (with 2 daily-hit rows), 26 original images.
+
+## 2026-09-22 11:50 — Plan
+- Read the upgrade considerations for 2.16, 3.0, 4.0, 4.1, 4.2, 5.0, 5.1, 5.2, 6.0, 6.1, 6.2, 6.3, 6.4, 7.0, 7.1, 7.2, 7.3 and 7.4, and the Django 4.0 / 5.0 / 5.1 removals. The plan was approved with PageListingViewSet for the Page ModelAdmins and search_promotions for query logging (DECISIONS D21–D25).

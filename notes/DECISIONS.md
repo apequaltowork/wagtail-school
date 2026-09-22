@@ -70,3 +70,23 @@ From 2.15 the admin uses fixed-position sidebar and footer elements, which Playw
 
 ## D20 — The 404 screenshot shows Django's debug page
 With DEBUG=True, a 404 renders Django's technical page, not templates/404.html, on every stage, including the 2.7 baseline. The 2.7 stage is frozen, so this stays as it is. The 404 status is still verified by the crawler.
+
+---
+
+# 2.15 → 7.4 hop
+
+## D21 — One step from 2.15 to 7.4 (the owner's real-world process)
+Wagtail recommends upgrading one feature release at a time. We jump 2.15 → 7.4 in one go, because that's how the owner actually works. **Trade-off:** we never run the intermediate releases' deprecation warnings, since code removed in 5.0/6.0 just fails with ImportError instead of warning first. Data migrations for 18 releases run in one `migrate`, and if something breaks it's harder to tell which release caused it. **Mitigation:** I read the upgrade considerations for every release (2.16 → 7.4), started from notes/deprecations-2.15.txt, restored real 2.15 data, and verify byte for byte against the 2.7 baseline.
+
+## D22 — Python 3.12 from the system install
+The system Python 3.12.10 (C:\...\Python312) is used for the virtualenv instead of a uv-managed 3.12, because it's already installed. Wagtail 7.4 supports 3.10–3.14.
+
+## D23 — ModelAdmin (Events, Staff menus) → PageListingViewSet (owner's choice)
+`wagtail.contrib.modeladmin` was deprecated in 5.1 and removed in 6.0. Both of our ModelAdmins list **Page** models (EventPage, StaffPage), which SnippetViewSet can't register. Core Wagtail's `PageListingViewSet` gives a flat listing of one page type, which is the native replacement. **Alternative:** the external `wagtail-modeladmin` package (the smallest code change, just a new import path), which keeps a separately maintained dependency. Docs: https://docs.wagtail.org/en/v7.4/reference/viewsets.html
+
+## D24 — Search query logging kept through wagtail.contrib.search_promotions (owner's choice)
+The 2.7 search view logs hits with `Query.get(q).add_hit()`. The Query model moved to `wagtail.contrib.search_promotions` in 5.0 and was removed from `wagtail.search` in 6.0. The app gets added to INSTALLED_APPS and the import updated, so behaviour stays the same. **Alternative:** drop logging, as the current project template does.
+Docs: https://docs.wagtail.org/en/v7.4/releases/5.0.html
+
+## D25 — Keep psycopg2-binary 2.9
+Django 5.2 supports psycopg2 ≥ 2.8.4, and 2.9.x has Python 3.12 wheels. Moving to psycopg 3 is optional and not needed for this hop.

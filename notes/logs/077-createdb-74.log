@@ -1,0 +1,9 @@
+# rec 077-createdb-74
+# time:    2026-09-22 10:54:36 +0530
+# folder:  /d/django/wagtail-school-74
+# command: /c/Program Files/PostgreSQL/16/bin/createdb.exe -h localhost -U school -E UTF8 wagtail_school_74
+# commit:  2a2620c
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  0s
