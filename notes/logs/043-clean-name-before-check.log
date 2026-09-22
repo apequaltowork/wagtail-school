@@ -1,0 +1,10 @@
+# rec 043-clean-name-before-check
+# time:    2026-09-22 10:39:24 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py dbshell -- -f C:\Users\admin\AppData\Local\Temp\claude\D--django\cf33241d-2d3a-4f10-9051-6fd8d74d0c56\scratchpad\q.sql
+# commit:  722c6f4
+# ----------------------------------------------------------------
+CommandError: You appear not to have the 'psql' program installed or on your path.
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  1s

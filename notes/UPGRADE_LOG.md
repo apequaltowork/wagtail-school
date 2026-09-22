@@ -22,3 +22,11 @@ Format: ID · hop · symptom (exact error, first lines + log file) · cause (whi
 - **Fix:** 99be2ab — added `DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'` to settings/base.py. This keeps the existing integer IDs, with no migrations. BigAutoField would mean an ALTER on every table for no benefit here. Check is clean (log 040).
 - **Docs:** https://docs.djangoproject.com/en/3.2/releases/3.2/#customizing-type-of-auto-created-primary-keys
 - **Story value:** Low — a common first sight on Django 3.2 upgrades, and a one-line fix.
+
+## B03 — SiteMiddleware is gone from wagtail.core
+- **Hop:** 2.7 → 2.15
+- **Symptom:** the first request fails while loading middleware: `ModuleNotFoundError: No module named 'wagtail.core.middleware'` (log 045). `manage.py check` stays green, because middleware only loads on the first request.
+- **Cause:** Wagtail 2.9 deprecated `SiteMiddleware` and `request.site` because they clash with Django's sites framework. 2.11 moved the middleware to `wagtail.contrib.legacy.sitemiddleware`, so the old path no longer exists.
+- **Fix:** 075e7e5 — removed `'wagtail.core.middleware.SiteMiddleware'` from MIDDLEWARE. In `core/templatetags/navigation_tags.py`: `root = request.site.root_page` → `root = Site.find_for_request(request).root_page`. Pages return 200 again (log 046). The alternative (DECISIONS D14) is `wagtail.contrib.legacy.sitemiddleware.SiteMiddleware`.
+- **Docs:** https://docs.wagtail.org/en/v2.15/releases/2.9.html#sitemiddleware-and-request-site-deprecated · https://docs.wagtail.org/en/v2.15/releases/2.11.html
+- **Story value:** High — a classic "checks pass, site 500s" upgrade trap.

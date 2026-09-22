@@ -1,0 +1,11 @@
+# rec 046-request-no-checks-2
+# time:    2026-09-22 10:40:04 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c exec(open('tools/request_without_checks.py', encoding='utf-8').read())
+# commit:  722c6f4
+# ----------------------------------------------------------------
+200 /
+200 /admissions/enrolment-enquiry/
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  3s

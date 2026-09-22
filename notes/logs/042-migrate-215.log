@@ -1,0 +1,53 @@
+# rec 042-migrate-215
+# time:    2026-09-22 10:39:01 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py migrate
+# commit:  722c6f4
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+Running migrations:
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying forms.0002_auto_20260922_1038... OK
+  Applying wagtailadmin.0002_admin... OK
+  Applying wagtailadmin.0003_admin_managed... OK
+  Applying wagtailcore.0042_index_on_pagerevision_approved_go_live_at... OK
+  Applying wagtailcore.0043_lock_fields... OK
+  Applying wagtailcore.0044_add_unlock_grouppagepermission... OK
+  Applying wagtailcore.0045_assign_unlock_grouppagepermission... OK
+  Applying wagtailcore.0046_site_name_remove_null... OK
+  Applying wagtailcore.0047_add_workflow_models... OK
+  Applying wagtailcore.0048_add_default_workflows... OK
+  Applying wagtailcore.0049_taskstate_finished_by... OK
+  Applying wagtailcore.0050_workflow_rejected_to_needs_changes... OK
+  Applying wagtailcore.0051_taskstate_comment... OK
+  Applying wagtailcore.0052_pagelogentry... OK
+  Applying wagtailcore.0053_locale_model... OK
+  Applying wagtailcore.0054_initial_locale... OK
+  Applying wagtailcore.0055_page_locale_fields... OK
+  Applying wagtailcore.0056_page_locale_fields_populate... OK
+  Applying wagtailcore.0057_page_locale_fields_notnull... OK
+  Applying wagtailcore.0058_page_alias_of... OK
+  Applying wagtailcore.0059_apply_collection_ordering... OK
+  Applying wagtailcore.0060_fix_workflow_unique_constraint... OK
+  Applying wagtailcore.0061_change_promote_tab_helpt_text_and_verbose_names... OK
+  Applying wagtailcore.0062_comment_models_and_pagesubscription... OK
+  Applying wagtailcore.0063_modellogentry... OK
+  Applying wagtailcore.0064_log_timestamp_indexes... OK
+  Applying wagtailcore.0065_log_entry_uuid... OK
+  Applying wagtailcore.0066_collection_management_permissions... OK
+  Applying wagtaildocs.0011_add_choose_permissions... OK
+  Applying wagtaildocs.0012_uploadeddocument... OK
+  Applying wagtailembeds.0006_add_embed_hash... OK
+  Applying wagtailembeds.0007_populate_hash... OK
+  Applying wagtailembeds.0008_allow_long_urls... OK
+  Applying wagtailembeds.0009_embed_cache_until... OK
+  Applying wagtailforms.0004_add_verbose_name_plural... OK
+  Applying wagtailimages.0022_uploadedimage... OK
+  Applying wagtailimages.0023_add_choose_permissions... OK
+  Applying wagtailsearch.0005_create_indexentry... OK
+  Applying wagtailsearch.0006_customise_indexentry... OK
+  Applying wagtailusers.0010_userprofile_updated_comments_notifications... OK
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  4s
