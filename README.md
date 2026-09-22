@@ -1,5 +1,9 @@
 # Kestrel Ridge College — Wagtail 2.7 demo site
 
+> **This folder is the 2.15 stage** (`wagtail-school-215`, branch `upgrade/2.15`, tag `v2.15`):
+> Wagtail 2.15.6 LTS, Django 3.2, Python 3.10, database `wagtail_school_215`, runserver port 8215.
+> What broke and how it was fixed is in `notes/UPGRADE_LOG.md` (B01–B06). The rest of this README describes the original 2.7 build.
+
 A deliberately **period-accurate Wagtail 2.7 / Django 2.2 codebase** for a fictional Australian
 K–12 school. It exists to be upgraded on camera for
 *"I Upgraded Wagtail 2.7 → 7.4 — Everything That Broke"*.

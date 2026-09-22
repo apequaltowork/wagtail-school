@@ -44,3 +44,29 @@
 - **Why:** each stage gets its own folder, virtualenv and database; the 2.7 stage stays untouched.
 - **Logs:** 031-uv-python-310 (exit 2, harmless), 032-mkvirtualenv-215, 033-createdb-215, 034-pg-restore-27-into-215, 035-unzip-media-27.
 - **Result:** the restored DB has 44 page rows (including root), 40 form submissions and 26 original images. Nothing is installed in the new virtualenv yet.
+
+## 2026-09-22 10:50 — Plan approved
+- Read the upgrade considerations for 2.8–2.15. The plan and the SiteMiddleware choice (owner: replace it) are in DECISIONS D13–D15.
+
+## 2026-09-22 10:55 — Dependencies (B01)
+- Bumped to Django>=3.2,<3.3 and wagtail>=2.15,<2.16. psycopg2-binary 2.8 failed to build on Python 3.10 (log 036), so it's now 2.9, with the old line commented out. Installed wagtail 2.15.6, Django 3.2.25, psycopg2-binary 2.9.13 and Pillow 9.5.0. pip check is clean (log 038).
+
+## 2026-09-22 11:00 — Checks and middleware (B02, B03)
+- `-Wa check` showed six models.W042 warnings (log 039) → DEFAULT_AUTO_FIELD = AutoField (log 040 clean).
+- A request made without system checks crashed with ModuleNotFoundError 'wagtail.core.middleware' (log 045) → SiteMiddleware removed, and the menu tag now uses Site.find_for_request (log 046).
+
+## 2026-09-22 11:05 — Migrations and the clean_name investigation (B04, B05)
+- makemigrations: `forms.0002` adds clean_name to both form-field models (log 041). migrate on the restored data: OK (log 042).
+- After migrate, all 14 clean_names were blank (log 044). Without system checks, the enrolment form rendered as one field named "" and the admin and CSV lost every value (log 048). `?action=CSV` returned HTML (B05).
+- `manage.py check` crashed because the legacy backfill needs unidecode (log 049) → added Unidecode to requirements. check then backfilled 10 + 4 clean_names with the 2.7 hyphenated keys (log 053), and every value is back (logs 054, 055).
+- tools/baseline.py now exports with `?export=csv`.
+
+## 2026-09-22 11:15 — Clean-database check (B06, D16)
+- On a throwaway `wagtail_school_215_fresh`, migrate succeeded (log 057); the homepage migration happened to run before 0053_locale_model, and I added `run_before` anyway (D16). seed_demo failed on the `get_document_model` import (log 059) → fixed (log 060). A fresh seed stores snake_case keys (log 061, D18). The throwaway DB was dropped and media/ restored from media_27.zip.
+
+## 2026-09-22 11:25 — Verification
+- Crawl against runserver on port 8215 compared with the 2.7 baseline: all six files identical, byte for byte (log 062; final rerun log 072). That covers URL statuses, page text for 51 pages, counts, form field keys and both admin CSV exports.
+- Screenshots in notes/screenshots/2.15 (logs 063, 065). The 12 front-end pages are pixel-identical to 2.7; the 404 differs only in Django 3.2's debug page. Admin screenshots are now taken at full document height, because 2.15's fixed sidebar and footer broke fullPage stitching. The screenshot test submission was deleted (log 064; its keys were the hyphenated 2.7 ones).
+- 18 remaining deprecation warnings are in notes/deprecations-2.15.txt, plus the known 3.0+ changes that don't warn on 2.15.
+- Final checks: pip check (068), check (069), makemigrations --check (070) and migrate (071) all clean. pip freeze saved to notes/check-2.15/pip-freeze.txt.
+- dumps/wagtail_school_215.dump (301 KB) and dumps/media_215.zip (2.5 MB). Tagged v2.15.

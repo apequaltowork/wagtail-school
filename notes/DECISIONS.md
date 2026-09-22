@@ -64,3 +64,9 @@ The gitignored settings/local.py reads `DB_NAME` from the environment (default `
 
 ## D18 — Two key styles in one database
 A form created on 2.15 (fresh seed) stores snake_case keys (`parentguardians_full_name`, log 061). Forms carried over from 2.7 keep their hyphenated keys, backfilled by the legacy check. Both work. The restored database, the one that matters, keeps the 2.7 keys, so nothing is rewritten in the stored submissions.
+
+## D19 — Screenshot capture method for the admin
+From 2.15 the admin uses fixed-position sidebar and footer elements, which Playwright's fullPage stitching duplicates over the content. Admin shots now grow the viewport to the document height and take a single screenshot (tools/screenshots/shoot.js, `tall`). Front-end shots still use fullPage, so they stay comparable with 2.7.
+
+## D20 — The 404 screenshot shows Django's debug page
+With DEBUG=True, a 404 renders Django's technical page, not templates/404.html, on every stage, including the 2.7 baseline. The 2.7 stage is frozen, so this stays as it is. The 404 status is still verified by the crawler.

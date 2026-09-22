@@ -1,0 +1,13 @@
+# rec 071-final-migrate-215
+# time:    2026-09-22 10:48:11 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py migrate
+# commit:  57702ec
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+Running migrations:
+  No migrations to apply.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

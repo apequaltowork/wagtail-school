@@ -1,0 +1,9 @@
+# rec 075-zip-media-215
+# time:    2026-09-22 10:48:23 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe -m zipfile -c dumps/media_215.zip media
+# commit:  57702ec
+# ----------------------------------------------------------------
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s
