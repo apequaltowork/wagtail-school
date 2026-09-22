@@ -1,5 +1,7 @@
 from django import template
 
+from wagtail.core.models import Site
+
 register = template.Library()
 
 
@@ -7,7 +9,7 @@ register = template.Library()
 def main_menu(context):
     request = context['request']
     calling_page = context.get('page') or context.get('self')
-    root = request.site.root_page
+    root = Site.find_for_request(request).root_page
 
     menuitems = root.get_children().live().in_menu()
     for menuitem in menuitems:
