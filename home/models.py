@@ -5,11 +5,10 @@ from django.utils.translation import gettext_lazy as _
 
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import (
-    FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel, StreamFieldPanel
+    FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel
 )
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 from core.blocks import BaseStreamBlock
 
@@ -39,14 +38,14 @@ class HomePage(Page):
         MultiFieldPanel([
             FieldPanel('hero_title'),
             FieldPanel('hero_intro'),
-            ImageChooserPanel('hero_image'),
+            FieldPanel('hero_image'),
         ], heading=_('Hero')),
         MultiFieldPanel([
             PageChooserPanel('cta_page'),
             FieldPanel('cta_label'),
         ], heading=_('Call to action')),
         InlinePanel('quick_links', label=_('Quick links')),
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     max_count = 1

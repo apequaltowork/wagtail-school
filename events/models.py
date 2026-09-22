@@ -6,14 +6,12 @@ from django.template.response import TemplateResponse
 from django.utils.translation import gettext_lazy as _
 
 from wagtail.admin.panels import (
-    FieldPanel, FieldRowPanel, MultiFieldPanel, StreamFieldPanel
+    FieldPanel, FieldRowPanel, MultiFieldPanel
 )
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
-from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.snippets.models import register_snippet
 
 from core.blocks import BaseStreamBlock
@@ -140,10 +138,10 @@ class EventPage(Page):
             ]),
             FieldPanel('location'),
         ], heading=_('When and where')),
-        SnippetChooserPanel('category'),
-        ImageChooserPanel('image'),
+        FieldPanel('category'),
+        FieldPanel('image'),
         FieldPanel('summary'),
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     parent_page_types = ['events.EventIndexPage']

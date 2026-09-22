@@ -6,9 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, MultiFieldPanel
 from wagtail.fields import RichTextField
 from wagtail.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
-from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.snippets.models import register_snippet
 
 
@@ -101,9 +99,9 @@ class StaffPage(Page):
                 FieldPanel('last_name', classname='col6'),
             ]),
             FieldPanel('role'),
-            SnippetChooserPanel('department'),
+            FieldPanel('department'),
         ], heading=_('Name and role')),
-        ImageChooserPanel('photo'),
+        FieldPanel('photo'),
         MultiFieldPanel([
             FieldPanel('email'),
             FieldPanel('phone_extension'),

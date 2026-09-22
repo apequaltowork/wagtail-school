@@ -1,10 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from wagtail.admin.panels import FieldPanel, StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 from core.blocks import BaseStreamBlock
@@ -28,6 +27,6 @@ class StandardPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname='full'),
-        ImageChooserPanel('hero_image'),
-        StreamFieldPanel('body'),
+        FieldPanel('hero_image'),
+        FieldPanel('body'),
     ]
