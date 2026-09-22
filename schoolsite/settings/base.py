@@ -169,7 +169,7 @@ WAGTAIL_SITE_NAME = "Kestrel Ridge College"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://localhost:8000'
+WAGTAILADMIN_BASE_URL = 'http://localhost:8074'
 
 # Django 3.2+: keep 32-bit integer primary keys for existing tables
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
