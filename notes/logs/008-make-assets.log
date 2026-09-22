@@ -1,0 +1,38 @@
+# rec 008-make-assets
+# time:    2026-09-22 10:01:29 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe seed/make_assets.py
+# commit:  2a9c53d
+# ----------------------------------------------------------------
+wrote seed\assets\images\banner-campus.jpg
+wrote seed\assets\images\banner-grounds.jpg
+wrote seed\assets\images\banner-library.jpg
+wrote seed\assets\images\banner-pattern.jpg
+wrote seed\assets\images\banner-sport.jpg
+wrote seed\assets\images\banner-stage.jpg
+wrote seed\assets\images\category-academic.jpg
+wrote seed\assets\images\category-sport.jpg
+wrote seed\assets\images\category-arts.jpg
+wrote seed\assets\images\category-community.jpg
+wrote seed\assets\images\category-open-day.jpg
+wrote seed\assets\images\staff-miriam-okonkwo-hale.jpg
+wrote seed\assets\images\staff-thomas-brennan-ruiz.jpg
+wrote seed\assets\images\staff-priya-ramaswamy.jpg
+wrote seed\assets\images\staff-callum-fraser.jpg
+wrote seed\assets\images\staff-sophie-tran.jpg
+wrote seed\assets\images\staff-daniel-kowalczyk.jpg
+wrote seed\assets\images\staff-mei-lin-zhou.jpg
+wrote seed\assets\images\staff-samuel-adeyemi.jpg
+wrote seed\assets\images\staff-rosa-villanueva.jpg
+wrote seed\assets\images\staff-liam-odriscoll.jpg
+wrote seed\assets\images\staff-isabelle-moreau.jpg
+wrote seed\assets\images\staff-kiri-walker-ngata.jpg
+wrote seed\assets\images\staff-marcus-delaney.jpg
+wrote seed\assets\images\staff-amira-haddad.jpg
+wrote seed\assets\images\staff-grace-pemberton.jpg
+wrote seed\assets\documents\uniform-price-list.pdf
+wrote seed\assets\documents\term-dates.pdf
+wrote seed\assets\documents\enrolment-information-pack.pdf
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  4s

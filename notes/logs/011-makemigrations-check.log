@@ -1,0 +1,10 @@
+# rec 011-makemigrations-check
+# time:    2026-09-22 10:15:40 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py makemigrations --check --dry-run
+# commit:  2a9c53d
+# ----------------------------------------------------------------
+No changes detected
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

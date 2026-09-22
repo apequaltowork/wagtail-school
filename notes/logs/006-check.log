@@ -1,0 +1,10 @@
+# rec 006-check
+# time:    2026-09-22 09:53:34 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py check
+# commit:  2a9c53d
+# ----------------------------------------------------------------
+System check identified no issues (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

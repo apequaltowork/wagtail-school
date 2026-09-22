@@ -1,0 +1,40 @@
+# rec 009-makemigrations-2
+# time:    2026-09-22 10:15:28 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe manage.py makemigrations core home pages events staff forms
+# commit:  2a9c53d
+# ----------------------------------------------------------------
+Migrations for 'core':
+  core\migrations\0001_initial.py
+    - Create model SchoolSettings
+Migrations for 'events':
+  events\migrations\0001_initial.py
+    - Create model EventCategory
+    - Create model EventIndexPage
+    - Create model EventPage
+Migrations for 'forms':
+  forms\migrations\0001_initial.py
+    - Create model ContactPage
+    - Create model FormPage
+    - Create model FormField
+    - Create model ContactFormField
+Migrations for 'home':
+  home\migrations\0003_auto_20260922_1015.py
+    - Add field body to homepage
+    - Add field cta_label to homepage
+    - Add field cta_page to homepage
+    - Add field hero_image to homepage
+    - Add field hero_intro to homepage
+    - Add field hero_title to homepage
+    - Create model HomePageQuickLink
+Migrations for 'pages':
+  pages\migrations\0001_initial.py
+    - Create model StandardPage
+Migrations for 'staff':
+  staff\migrations\0001_initial.py
+    - Create model Department
+    - Create model StaffIndexPage
+    - Create model StaffPage
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s
