@@ -1,3 +1,4 @@
-Django>=2.2,<2.3
-wagtail>=2.7,<2.8
-psycopg2-binary>=2.8,<2.9
+Django>=3.2,<3.3
+wagtail>=2.15,<2.16
+# psycopg2-binary>=2.8,<2.9  -- dropped at 2.15: no Python 3.10 wheels (source build needs MSVC); see UPGRADE_LOG B01
+psycopg2-binary>=2.9,<2.10
