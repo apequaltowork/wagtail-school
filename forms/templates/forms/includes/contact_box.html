@@ -1,0 +1,14 @@
+{% with school=settings.core.SchoolSettings %}
+<div class="contact-box">
+    <h2>Get in touch</h2>
+    <address>
+        <strong>{{ school.school_name }}</strong><br>
+        {{ school.address|linebreaksbr }}
+    </address>
+    <dl>
+        {% if school.phone %}<dt>Phone</dt><dd><a href="tel:{{ school.phone|cut:' ' }}">{{ school.phone }}</a></dd>{% endif %}
+        {% if school.email %}<dt>Email</dt><dd><a href="mailto:{{ school.email }}">{{ school.email }}</a></dd>{% endif %}
+        {% if school.office_hours %}<dt>Office hours</dt><dd>{{ school.office_hours|linebreaksbr }}</dd>{% endif %}
+    </dl>
+</div>
+{% endwith %}

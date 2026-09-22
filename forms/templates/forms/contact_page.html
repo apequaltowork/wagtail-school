@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags %}
+
+{% block body_class %}template-contactpage{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    <div class="row">
+        <div class="col-lg-7 mb-4">
+            {% if page.intro %}<div class="intro">{{ page.intro|richtext }}</div>{% endif %}
+            <form class="school-form" action="{% pageurl page %}" method="POST" novalidate>
+                {% csrf_token %}
+                {% include "forms/includes/form_fields.html" %}
+                <button class="btn btn-gold btn-lg" type="submit">Send message</button>
+            </form>
+        </div>
+        <aside class="col-lg-5">
+            {% include "forms/includes/contact_box.html" %}
+            {% with map_url=settings.core.SchoolSettings.map_embed_url %}
+                {% if map_url %}
+                    <div class="map-embed embed-responsive embed-responsive-4by3">
+                        <iframe class="embed-responsive-item" src="{{ map_url }}" title="Map showing the location of {{ settings.core.SchoolSettings.school_name }}" loading="lazy"></iframe>
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

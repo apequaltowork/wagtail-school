@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags %}
+
+{% block body_class %}template-formpage{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    <div class="row">
+        <div class="col-lg-8">
+            {% if page.intro %}<div class="intro">{{ page.intro|richtext }}</div>{% endif %}
+            <form class="school-form" action="{% pageurl page %}" method="POST" novalidate>
+                {% csrf_token %}
+                {% include "forms/includes/form_fields.html" %}
+                <p class="form-note"><span class="required" aria-hidden="true">*</span> Required field</p>
+                <button class="btn btn-gold btn-lg" type="submit">Send enquiry</button>
+            </form>
+        </div>
+        <aside class="col-lg-4">
+            {% include "forms/includes/contact_box.html" %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

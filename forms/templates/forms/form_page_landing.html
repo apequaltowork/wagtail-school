@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags %}
+
+{% block body_class %}template-formpage-landing{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" with title="Thank you" %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    <div class="row">
+        <div class="col-lg-8 thank-you">
+            {{ page.thank_you_text|richtext }}
+            <a class="btn btn-outline-navy" href="/">Back to the home page</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
