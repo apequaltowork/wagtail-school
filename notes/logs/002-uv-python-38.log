@@ -1,0 +1,12 @@
+# rec 002-uv-python-38
+# time:    2026-09-22 09:27:15 +0530
+# folder:  /d/django/wagtail-school
+# command: py -3.12 -m uv python install 3.8
+# commit:  no commits yet
+# ----------------------------------------------------------------
+Downloading cpython-3.8.20-windows-x86_64-none (download) (20.6MiB)
+ Downloaded cpython-3.8.20-windows-x86_64-none (download)
+error: Missing expected target directory for Python minor version link at C:\Users\admin\AppData\Roaming\uv\python\cpython-3.8.20-windows-x86_64-none
+# ----------------------------------------------------------------
+# exit code: 2
+# duration:  8s

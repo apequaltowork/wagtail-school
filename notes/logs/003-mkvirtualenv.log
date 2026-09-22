@@ -1,0 +1,14 @@
+# rec 003-mkvirtualenv
+# time:    2026-09-22 09:27:37 +0530
+# folder:  /d/django/wagtail-school
+# command: cmd //c mkvirtualenv -p C:\Users\admin\AppData\Roaming\uv\python\cpython-3.8.20-windows-x86_64-none\python.exe wagtail-school
+# commit:  no commits yet
+# ----------------------------------------------------------------
+created virtual environment CPython3.8.20.final.0-64 in 6808ms
+  creator CPython3Windows(dest=D:\django\.virtualenvs\wagtail-school, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\admin\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==25.0.1, setuptools==75.3.2, wheel==0.45.1
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  8s

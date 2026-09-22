@@ -1,0 +1,17 @@
+# secrets / local config
+schoolsite/settings/local.py
+.env
+
+# runtime data
+media/
+dumps/
+static/
+/staticfiles/
+
+# python
+__pycache__/
+*.pyc
+
+# tools
+tools/screenshots/node_modules/
+.claude/

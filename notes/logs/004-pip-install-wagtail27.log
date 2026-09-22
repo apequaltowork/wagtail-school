@@ -1,0 +1,94 @@
+# rec 004-pip-install-wagtail27
+# time:    2026-09-22 09:27:52 +0530
+# folder:  /d/django/wagtail-school
+# command: D:\django\.virtualenvs/wagtail-school/Scripts/python.exe -m pip install wagtail>=2.7,<2.8 Django>=2.2,<2.3 psycopg2-binary>=2.8,<2.9
+# commit:  no commits yet
+# ----------------------------------------------------------------
+Collecting wagtail<2.8,>=2.7
+  Downloading wagtail-2.7.4-py3-none-any.whl.metadata (2.9 kB)
+Collecting Django<2.3,>=2.2
+  Downloading Django-2.2.28-py3-none-any.whl.metadata (3.6 kB)
+Collecting psycopg2-binary<2.9,>=2.8
+  Downloading psycopg2_binary-2.8.6-cp38-cp38-win_amd64.whl.metadata (4.4 kB)
+Collecting django-modelcluster<6.0,>=5.0 (from wagtail<2.8,>=2.7)
+  Downloading django_modelcluster-5.3-py2.py3-none-any.whl.metadata (6.4 kB)
+Collecting django-taggit<2.0,>=1.0 (from wagtail<2.8,>=2.7)
+  Downloading django_taggit-1.5.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting django-treebeard<5.0,>=4.2.0 (from wagtail<2.8,>=2.7)
+  Using cached django_treebeard-4.7.1-py3-none-any.whl.metadata (2.7 kB)
+Collecting djangorestframework<4.0,>=3.7.4 (from wagtail<2.8,>=2.7)
+  Using cached djangorestframework-3.15.2-py3-none-any.whl.metadata (10 kB)
+Collecting draftjs-exporter<3.0,>=2.1.5 (from wagtail<2.8,>=2.7)
+  Downloading draftjs_exporter-2.1.7-py3-none-any.whl.metadata (15 kB)
+Collecting Pillow<8.0.0,>=4.0.0 (from wagtail<2.8,>=2.7)
+  Downloading Pillow-7.2.0-cp38-cp38-win_amd64.whl.metadata (6.0 kB)
+Collecting beautifulsoup4<4.6.1,>=4.5.1 (from wagtail<2.8,>=2.7)
+  Downloading beautifulsoup4-4.6.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting html5lib<2,>=0.999 (from wagtail<2.8,>=2.7)
+  Using cached html5lib-1.1-py2.py3-none-any.whl.metadata (16 kB)
+Collecting Unidecode<2.0,>=0.04.14 (from wagtail<2.8,>=2.7)
+  Downloading Unidecode-1.4.0-py3-none-any.whl.metadata (13 kB)
+Collecting Willow<1.4,>=1.3 (from wagtail<2.8,>=2.7)
+  Downloading Willow-1.3-py2.py3-none-any.whl.metadata (930 bytes)
+Collecting requests<3.0,>=2.11.1 (from wagtail<2.8,>=2.7)
+  Using cached requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting pytz>=2016.6 (from wagtail<2.8,>=2.7)
+  Downloading pytz-2026.3.post1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting six<2.0,>=1.11 (from wagtail<2.8,>=2.7)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting sqlparse>=0.2.2 (from Django<2.3,>=2.2)
+  Using cached sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+INFO: pip is looking at multiple versions of django-treebeard to determine which version is compatible with other requirements. This could take a while.
+Collecting django-treebeard<5.0,>=4.2.0 (from wagtail<2.8,>=2.7)
+  Downloading django_treebeard-4.7-py3-none-any.whl.metadata (2.6 kB)
+  Downloading django_treebeard-4.6.1-py3-none-any.whl.metadata (2.6 kB)
+  Downloading django_treebeard-4.6.0-py3-none-any.whl.metadata (2.6 kB)
+  Downloading django_treebeard-4.5.1-py3-none-any.whl.metadata (2.8 kB)
+INFO: pip is looking at multiple versions of djangorestframework to determine which version is compatible with other requirements. This could take a while.
+Collecting djangorestframework<4.0,>=3.7.4 (from wagtail<2.8,>=2.7)
+  Downloading djangorestframework-3.15.1-py3-none-any.whl.metadata (11 kB)
+  Downloading djangorestframework-3.15.0-py3-none-any.whl.metadata (11 kB)
+  Downloading djangorestframework-3.14.0-py3-none-any.whl.metadata (10 kB)
+  Downloading djangorestframework-3.13.1-py3-none-any.whl.metadata (10 kB)
+Collecting webencodings (from html5lib<2,>=0.999->wagtail<2.8,>=2.7)
+  Using cached webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3.0,>=2.11.1->wagtail<2.8,>=2.7)
+  Downloading charset_normalizer-3.5.1-cp37-abi3-win_amd64.whl.metadata (46 kB)
+Collecting idna<4,>=2.5 (from requests<3.0,>=2.11.1->wagtail<2.8,>=2.7)
+  Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3.0,>=2.11.1->wagtail<2.8,>=2.7)
+  Downloading urllib3-2.2.3-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3.0,>=2.11.1->wagtail<2.8,>=2.7)
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Downloading wagtail-2.7.4-py3-none-any.whl (10.2 MB)
+   ---------------------------------------- 10.2/10.2 MB 1.4 MB/s eta 0:00:00
+Downloading Django-2.2.28-py3-none-any.whl (7.5 MB)
+   ---------------------------------------- 7.5/7.5 MB 20.9 MB/s eta 0:00:00
+Downloading psycopg2_binary-2.8.6-cp38-cp38-win_amd64.whl (1.1 MB)
+   ---------------------------------------- 1.1/1.1 MB 1.8 MB/s eta 0:00:00
+Downloading beautifulsoup4-4.6.0-py3-none-any.whl (86 kB)
+Downloading django_modelcluster-5.3-py2.py3-none-any.whl (26 kB)
+Downloading django_taggit-1.5.1-py3-none-any.whl (53 kB)
+Downloading django_treebeard-4.5.1-py3-none-any.whl (103 kB)
+Downloading djangorestframework-3.13.1-py3-none-any.whl (958 kB)
+   --------------------------------------- 958.3/958.3 kB 22.5 MB/s eta 0:00:00
+Downloading draftjs_exporter-2.1.7-py3-none-any.whl (43 kB)
+Using cached html5lib-1.1-py2.py3-none-any.whl (112 kB)
+Downloading Pillow-7.2.0-cp38-cp38-win_amd64.whl (2.1 MB)
+   ---------------------------------------- 2.1/2.1 MB 4.8 MB/s eta 0:00:00
+Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached sqlparse-0.5.5-py3-none-any.whl (46 kB)
+Downloading Unidecode-1.4.0-py3-none-any.whl (235 kB)
+Downloading Willow-1.3-py2.py3-none-any.whl (106 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading charset_normalizer-3.5.1-cp37-abi3-win_amd64.whl (199 kB)
+Downloading idna-3.15-py3-none-any.whl (72 kB)
+Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+Using cached webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Installing collected packages: Willow, webencodings, pytz, draftjs-exporter, beautifulsoup4, urllib3, Unidecode, sqlparse, six, psycopg2-binary, Pillow, idna, django-modelcluster, charset_normalizer, certifi, requests, html5lib, Django, djangorestframework, django-treebeard, django-taggit, wagtail
+Successfully installed Django-2.2.28 Pillow-7.2.0 Unidecode-1.4.0 Willow-1.3 beautifulsoup4-4.6.0 certifi-2026.7.22 charset_normalizer-3.5.1 django-modelcluster-5.3 django-taggit-1.5.1 django-treebeard-4.5.1 djangorestframework-3.13.1 draftjs-exporter-2.1.7 html5lib-1.1 idna-3.15 psycopg2-binary-2.8.6 pytz-2026.3.post1 requests-2.32.4 six-1.17.0 sqlparse-0.5.5 urllib3-2.2.3 wagtail-2.7.4 webencodings-0.5.1
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  44s

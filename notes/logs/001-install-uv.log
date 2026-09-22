@@ -1,0 +1,18 @@
+# rec 001-install-uv
+# time:    2026-09-22 09:27:09 +0530
+# folder:  /d/django/wagtail-school
+# command: py -3.12 -m pip install uv
+# commit:  no commits yet
+# ----------------------------------------------------------------
+Collecting uv
+  Downloading uv-0.12.17-py3-none-win_amd64.whl.metadata (11 kB)
+Downloading uv-0.12.17-py3-none-win_amd64.whl (18.0 MB)
+   ---------------------------------------- 18.0/18.0 MB 19.6 MB/s eta 0:00:00
+Installing collected packages: uv
+Successfully installed uv-0.12.17
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  6s

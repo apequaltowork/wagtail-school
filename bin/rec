@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# bin/rec <slug> <command...>
+# Run a command, tee its full output (stdout + stderr) to notes/logs/NNN-<slug>.log
+# and return the command's exit code.
+set -u
+
+if [ "$#" -lt 2 ]; then
+    echo "usage: bin/rec <slug> <command...>" >&2
+    exit 2
+fi
+
+slug="$1"
+shift
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+logdir="$root/notes/logs"
+mkdir -p "$logdir"
+
+last="$(ls "$logdir" 2>/dev/null | grep -E '^[0-9]{3}-' | sort | tail -n 1 | cut -c1-3)"
+next=$(printf '%03d' $(( 10#${last:-0} + 1 )))
+log="$logdir/$next-$slug.log"
+
+commit="$(git -C "$root" rev-parse --short HEAD 2>/dev/null || echo 'no commits yet')"
+start=$(date +%s)
+
+{
+    echo "# rec $next-$slug"
+    echo "# time:    $(date '+%Y-%m-%d %H:%M:%S %z')"
+    echo "# folder:  $(pwd)"
+    echo "# command: $*"
+    echo "# commit:  $commit"
+    echo "# ----------------------------------------------------------------"
+} > "$log"
+
+export PYTHONUNBUFFERED=1
+"$@" 2>&1 | tee -a "$log"
+code=${PIPESTATUS[0]}
+
+end=$(date +%s)
+{
+    echo "# ----------------------------------------------------------------"
+    echo "# exit code: $code"
+    echo "# duration:  $(( end - start ))s"
+} >> "$log"
+
+echo "[rec] $next-$slug.log  exit=$code  $(( end - start ))s" >&2
+exit "$code"
