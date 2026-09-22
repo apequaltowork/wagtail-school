@@ -1,0 +1,184 @@
+# rec 066-deprecations-check
+# time:    2026-09-22 10:47:21 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe -Wa manage.py check
+# commit:  098963e
+# ----------------------------------------------------------------
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.forms' defines default_app_config = 'wagtail.contrib.forms.apps.WagtailFormsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.modeladmin' defines default_app_config = 'wagtail.contrib.modeladmin.apps.WagtailModelAdminAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.routable_page' defines default_app_config = 'wagtail.contrib.routable_page.apps.WagtailRoutablePageAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.settings' defines default_app_config = 'wagtail.contrib.settings.apps.WagtailSettingsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.table_block' defines default_app_config = 'wagtail.contrib.table_block.apps.WagtailTableBlockAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.contrib.redirects' defines default_app_config = 'wagtail.contrib.redirects.apps.WagtailRedirectsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.embeds' defines default_app_config = 'wagtail.embeds.apps.WagtailEmbedsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.sites' defines default_app_config = 'wagtail.sites.apps.WagtailSitesAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.users' defines default_app_config = 'wagtail.users.apps.WagtailUsersAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.snippets' defines default_app_config = 'wagtail.snippets.apps.WagtailSnippetsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.documents' defines default_app_config = 'wagtail.documents.apps.WagtailDocsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.images' defines default_app_config = 'wagtail.images.apps.WagtailImagesAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.search' defines default_app_config = 'wagtail.search.apps.WagtailSearchAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.admin' defines default_app_config = 'wagtail.admin.apps.WagtailAdminAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\apps\registry.py:91: RemovedInDjango41Warning: 'wagtail.core' defines default_app_config = 'wagtail.core.apps.WagtailCoreAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+  app_config = AppConfig.create(entry)
+D:\django\wagtail-school-215\core\blocks.py:25: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  alt_text = blocks.CharBlock(required=False, help_text=_('Describe the image for screen readers'))
+D:\django\wagtail-school-215\core\blocks.py:55: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  label = blocks.CharBlock(required=False, help_text=_('Defaults to the document title'))
+D:\django\wagtail-school-215\core\blocks.py:68: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  embed = EmbedBlock(help_text=_('Paste a YouTube or Vimeo URL'))
+D:\django\wagtail-school-215\home\models.py:18: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  hero_title = models.CharField(_('hero title'), max_length=255, blank=True)
+D:\django\wagtail-school-215\home\models.py:19: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  hero_intro = models.TextField(_('hero intro'), blank=True)
+D:\django\wagtail-school-215\home\models.py:33: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name=_('call to action page'),
+D:\django\wagtail-school-215\home\models.py:35: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  cta_label = models.CharField(_('call to action label'), max_length=100, blank=True)
+D:\django\wagtail-school-215\home\models.py:43: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Hero')),
+D:\django\wagtail-school-215\home\models.py:47: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Call to action')),
+D:\django\wagtail-school-215\home\models.py:48: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  InlinePanel('quick_links', label=_('Quick links')),
+D:\django\wagtail-school-215\home\models.py:77: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  link_url = models.URLField(blank=True, help_text=_('Used if no page is chosen'))
+D:\django\wagtail-school-215\core\models.py:10: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  school_name = models.CharField(_('school name'), max_length=255, default='Kestrel Ridge College')
+D:\django\wagtail-school-215\core\models.py:11: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  address = models.TextField(_('address'), blank=True)
+D:\django\wagtail-school-215\core\models.py:12: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  phone = models.CharField(_('phone'), max_length=50, blank=True)
+D:\django\wagtail-school-215\core\models.py:13: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  email = models.EmailField(_('email'), blank=True)
+D:\django\wagtail-school-215\core\models.py:14: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  office_hours = models.TextField(_('office hours'), blank=True)
+D:\django\wagtail-school-215\core\models.py:16: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  _('map embed URL'), max_length=500, blank=True,
+D:\django\wagtail-school-215\core\models.py:17: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  help_text=_('The src of an embeddable map iframe'),
+D:\django\wagtail-school-215\core\models.py:20: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  facebook_url = models.URLField(_('Facebook URL'), blank=True)
+D:\django\wagtail-school-215\core\models.py:21: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  instagram_url = models.URLField(_('Instagram URL'), blank=True)
+D:\django\wagtail-school-215\core\models.py:22: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  youtube_url = models.URLField(_('YouTube URL'), blank=True)
+D:\django\wagtail-school-215\core\models.py:23: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  linkedin_url = models.URLField(_('LinkedIn URL'), blank=True)
+D:\django\wagtail-school-215\core\models.py:25: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  footer_text = models.TextField(_('footer text'), blank=True)
+D:\django\wagtail-school-215\core\models.py:35: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Contact details')),
+D:\django\wagtail-school-215\core\models.py:41: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Social media')),
+D:\django\wagtail-school-215\core\models.py:46: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('school settings')
+D:\django\wagtail-school-215\pages\models.py:14: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  intro = models.TextField(_('intro'), blank=True)
+D:\django\wagtail-school-215\events\models.py:24: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  name = models.CharField(_('name'), max_length=100)
+D:\django\wagtail-school-215\events\models.py:25: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  slug = models.SlugField(_('slug'), unique=True)
+D:\django\wagtail-school-215\events\models.py:27: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  _('colour'), max_length=7, default='#14284b',
+D:\django\wagtail-school-215\events\models.py:28: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  help_text=_('Hex colour used for the category badge, e.g. #14284b'),
+D:\django\wagtail-school-215\events\models.py:39: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('event category')
+D:\django\wagtail-school-215\events\models.py:40: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name_plural = _('event categories')
+D:\django\wagtail-school-215\events\models.py:47: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  intro = RichTextField(_('intro'), blank=True)
+D:\django\wagtail-school-215\events\models.py:102: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  start_date = models.DateField(_('start date'))
+D:\django\wagtail-school-215\events\models.py:103: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  end_date = models.DateField(_('end date'), null=True, blank=True)
+D:\django\wagtail-school-215\events\models.py:104: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  start_time = models.TimeField(_('start time'), null=True, blank=True)
+D:\django\wagtail-school-215\events\models.py:105: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  end_time = models.TimeField(_('end time'), null=True, blank=True)
+D:\django\wagtail-school-215\events\models.py:106: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  location = models.CharField(_('location'), max_length=255, blank=True)
+D:\django\wagtail-school-215\events\models.py:121: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  summary = models.TextField(_('summary'), blank=True)
+D:\django\wagtail-school-215\events\models.py:142: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('When and where')),
+D:\django\wagtail-school-215\events\models.py:153: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('event')
+D:\django\wagtail-school-215\staff\models.py:17: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  name = models.CharField(_('name'), max_length=100)
+D:\django\wagtail-school-215\staff\models.py:18: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  slug = models.SlugField(_('slug'), unique=True)
+D:\django\wagtail-school-215\staff\models.py:19: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  order = models.PositiveIntegerField(_('order'), default=0)
+D:\django\wagtail-school-215\staff\models.py:29: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('department')
+D:\django\wagtail-school-215\staff\models.py:36: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  intro = RichTextField(_('intro'), blank=True)
+D:\django\wagtail-school-215\staff\models.py:68: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  first_name = models.CharField(_('first name'), max_length=100)
+D:\django\wagtail-school-215\staff\models.py:69: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  last_name = models.CharField(_('last name'), max_length=100)
+D:\django\wagtail-school-215\staff\models.py:70: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  role = models.CharField(_('role'), max_length=255)
+D:\django\wagtail-school-215\staff\models.py:85: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  email = models.EmailField(_('email'), blank=True)
+D:\django\wagtail-school-215\staff\models.py:86: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  phone_extension = models.CharField(_('phone extension'), max_length=10, blank=True)
+D:\django\wagtail-school-215\staff\models.py:87: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  qualifications = models.CharField(_('qualifications'), max_length=255, blank=True)
+D:\django\wagtail-school-215\staff\models.py:88: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  bio = RichTextField(_('bio'), blank=True)
+D:\django\wagtail-school-215\staff\models.py:105: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Name and role')),
+D:\django\wagtail-school-215\staff\models.py:111: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Contact and qualifications')),
+D:\django\wagtail-school-215\staff\models.py:119: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('staff member')
+D:\django\wagtail-school-215\forms\models.py:18: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  intro = RichTextField(_('intro'), blank=True)
+D:\django\wagtail-school-215\forms\models.py:19: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  thank_you_text = RichTextField(_('thank you text'), blank=True)
+D:\django\wagtail-school-215\forms\models.py:24: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  InlinePanel('form_fields', label=_('Form fields')),
+D:\django\wagtail-school-215\forms\models.py:32: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Email')),
+D:\django\wagtail-school-215\forms\models.py:36: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('form page')
+D:\django\wagtail-school-215\forms\models.py:44: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  intro = RichTextField(_('intro'), blank=True)
+D:\django\wagtail-school-215\forms\models.py:45: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  thank_you_text = RichTextField(_('thank you text'), blank=True)
+D:\django\wagtail-school-215\forms\models.py:50: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  InlinePanel('form_fields', label=_('Form fields')),
+D:\django\wagtail-school-215\forms\models.py:58: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  ], heading=_('Email')),
+D:\django\wagtail-school-215\forms\models.py:64: RemovedInDjango40Warning: django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+  verbose_name = _('contact page')
+D:\django\wagtail-school-215\schoolsite\urls.py:12: RemovedInDjango40Warning: django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+  url(r'^django-admin/', admin.site.urls),
+D:\django\wagtail-school-215\schoolsite\urls.py:14: RemovedInDjango40Warning: django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+  url(r'^admin/', include(wagtailadmin_urls)),
+D:\django\wagtail-school-215\schoolsite\urls.py:15: RemovedInDjango40Warning: django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+  url(r'^documents/', include(wagtaildocs_urls)),
+D:\django\wagtail-school-215\schoolsite\urls.py:17: RemovedInDjango40Warning: django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+  url(r'^search/$', search_views.search, name='search'),
+D:\django\wagtail-school-215\schoolsite\urls.py:22: RemovedInDjango40Warning: django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+  url(r'', include(wagtail_urls)),
+System check identified no issues (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

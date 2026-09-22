@@ -1,0 +1,38 @@
+# rec 063-screenshots-2.15
+# time:    2026-09-22 10:44:58 +0530
+# folder:  /d/django/wagtail-school-215/tools/screenshots
+# command: node shoot.js --base http://127.0.0.1:8215 --out ../../notes/screenshots/2.15
+# commit:  098963e
+# ----------------------------------------------------------------
+200 /admin/ -> ..\..\notes\screenshots\2.15\a01-dashboard.png
+200 /admin/pages/3/edit/ -> ..\..\notes\screenshots\2.15\a02-edit-home-page.png
+200 /admin/pages/131/edit/ -> ..\..\notes\screenshots\2.15\a03-edit-standard-page.png
+200 /admin/pages/142/edit/ -> ..\..\notes\screenshots\2.15\a04-edit-event-index-page.png
+200 /admin/pages/143/edit/ -> ..\..\notes\screenshots\2.15\a05-edit-event-page.png
+200 /admin/pages/155/edit/ -> ..\..\notes\screenshots\2.15\a06-edit-staff-index-page.png
+200 /admin/pages/156/edit/ -> ..\..\notes\screenshots\2.15\a07-edit-staff-page.png
+200 /admin/pages/135/edit/ -> ..\..\notes\screenshots\2.15\a08-edit-form-page.png
+200 /admin/pages/171/edit/ -> ..\..\notes\screenshots\2.15\a09-edit-contact-page.png
+200 /admin/events/eventpage/ -> ..\..\notes\screenshots\2.15\a10-modeladmin-events.png
+200 /admin/staff/staffpage/ -> ..\..\notes\screenshots\2.15\a11-modeladmin-staff.png
+200 /admin/forms/ -> ..\..\notes\screenshots\2.15\a12-forms-index.png
+200 /admin/forms/submissions/135/ -> ..\..\notes\screenshots\2.15\a13-submissions-enquiry.png
+200 /admin/forms/submissions/171/ -> ..\..\notes\screenshots\2.15\a14-submissions-contact.png
+200 /admin/settings/core/schoolsettings/ -> ..\..\notes\screenshots\2.15\a15-school-settings.png
+200 /admin/snippets/ -> ..\..\notes\screenshots\2.15\a16-snippets.png
+200 / -> ..\..\notes\screenshots\2.15\01-home.png
+200 /about/principals-welcome/ -> ..\..\notes\screenshots\2.15\02-standard-page.png
+200 /admissions/fees-and-scholarships/ -> ..\..\notes\screenshots\2.15\03-fees.png
+200 /events/ -> ..\..\notes\screenshots\2.15\04-events-index.png
+200 /events/spring-open-morning/ -> ..\..\notes\screenshots\2.15\05-event-detail.png
+200 /events/past/ -> ..\..\notes\screenshots\2.15\06-past-events.png
+200 /our-staff/ -> ..\..\notes\screenshots\2.15\07-staff-index.png
+200 /our-staff/miriam-okonkwo-hale/ -> ..\..\notes\screenshots\2.15\08-staff-detail.png
+200 /admissions/enrolment-enquiry/ -> ..\..\notes\screenshots\2.15\09-enrolment-form.png
+200 /contact-us/ -> ..\..\notes\screenshots\2.15\11-contact.png
+200 /search/?query=music -> ..\..\notes\screenshots\2.15\12-search-results.png
+404 /no-such-page/ -> ..\..\notes\screenshots\2.15\13-not-found.png
+POST /admissions/enrolment-enquiry/ -> 10-form-thank-you.png (http://127.0.0.1:8215/admissions/enrolment-enquiry/)
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  44s

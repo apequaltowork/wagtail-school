@@ -24,11 +24,22 @@ const targets = JSON.parse(
   execFileSync(python, [path.join(__dirname, '..', 'screenshot_targets.py')], { encoding: 'utf8' })
 );
 
-async function shot(page, name, url) {
+async function shot(page, name, url, { tall = false } = {}) {
   const response = await page.goto(base + url, { waitUntil: 'networkidle' });
+  await page.mouse.move(0, 0);
   await page.waitForTimeout(300);
   const file = path.join(out, name + '.png');
-  await page.screenshot({ path: file, fullPage: true });
+  if (tall) {
+    // Newer admin UIs use fixed sidebars/footers that break fullPage stitching:
+    // grow the viewport to the document height and take a plain screenshot instead.
+    const height = await page.evaluate(() => document.documentElement.scrollHeight);
+    await page.setViewportSize({ width: 1366, height: Math.max(900, height) });
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: file });
+    await page.setViewportSize({ width: 1366, height: 900 });
+  } else {
+    await page.screenshot({ path: file, fullPage: true });
+  }
   console.log(`${response ? response.status() : '---'} ${url} -> ${path.relative(process.cwd(), file)}`);
 }
 
@@ -45,7 +56,7 @@ async function shot(page, name, url) {
     await page.fill('#id_username', 'admin');
     await page.fill('#id_password', password);
     await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle' }), page.click('button[type=submit]')]);
-    for (const [name, url] of targets.admin) await shot(page, name, url);
+    for (const [name, url] of targets.admin) await shot(page, name, url, { tall: true });
     await context.clearCookies();
   }
 

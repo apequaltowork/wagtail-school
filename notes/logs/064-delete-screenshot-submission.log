@@ -1,0 +1,18 @@
+# rec 064-delete-screenshot-submission
+# time:    2026-09-22 10:45:51 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c 
+import json
+from wagtail.contrib.forms.models import FormSubmission
+s = FormSubmission.objects.filter(form_data__contains='screenshot.tester@example.com')
+for sub in s: print('test submission keys:', sorted(json.loads(sub.form_data).keys()))
+print('deleted', s.delete())
+print('enquiry submissions now', FormSubmission.objects.filter(page__slug='enrolment-enquiry').count())
+# commit:  098963e
+# ----------------------------------------------------------------
+test submission keys: ['email-address', 'how-did-you-hear-about-us', 'languages-spoken-at-home-eg-francais-espanol', 'parentguardians-full-name', 'phone-number', 'preferred-start-term', 'questions-or-comments', 'students-first-name', 'subscribe-to-our-newsletter', 'year-level-of-entry']
+deleted (1, {'wagtailforms.FormSubmission': 1})
+enquiry submissions now 30
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

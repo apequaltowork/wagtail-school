@@ -1,0 +1,139 @@
+Deprecation warnings remaining on Wagtail 2.15.6 / Django 3.2.25 / Python 3.10 -- the to-do list for the 2.15 -> 7.4 hop
+Collected with python -Wa from: notes/logs/066-deprecations-check.log, notes/logs/067-deprecations-requests.log
+
+1. [RemovedInDjango41Warning] 'wagtail.contrib.forms' defines default_app_config = 'wagtail.contrib.forms.apps.WagtailFormsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+2. [RemovedInDjango41Warning] 'wagtail.contrib.modeladmin' defines default_app_config = 'wagtail.contrib.modeladmin.apps.WagtailModelAdminAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+3. [RemovedInDjango41Warning] 'wagtail.contrib.routable_page' defines default_app_config = 'wagtail.contrib.routable_page.apps.WagtailRoutablePageAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+4. [RemovedInDjango41Warning] 'wagtail.contrib.settings' defines default_app_config = 'wagtail.contrib.settings.apps.WagtailSettingsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+5. [RemovedInDjango41Warning] 'wagtail.contrib.table_block' defines default_app_config = 'wagtail.contrib.table_block.apps.WagtailTableBlockAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+6. [RemovedInDjango41Warning] 'wagtail.contrib.redirects' defines default_app_config = 'wagtail.contrib.redirects.apps.WagtailRedirectsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+7. [RemovedInDjango41Warning] 'wagtail.embeds' defines default_app_config = 'wagtail.embeds.apps.WagtailEmbedsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+8. [RemovedInDjango41Warning] 'wagtail.sites' defines default_app_config = 'wagtail.sites.apps.WagtailSitesAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+9. [RemovedInDjango41Warning] 'wagtail.users' defines default_app_config = 'wagtail.users.apps.WagtailUsersAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+10. [RemovedInDjango41Warning] 'wagtail.snippets' defines default_app_config = 'wagtail.snippets.apps.WagtailSnippetsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+11. [RemovedInDjango41Warning] 'wagtail.documents' defines default_app_config = 'wagtail.documents.apps.WagtailDocsAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+12. [RemovedInDjango41Warning] 'wagtail.images' defines default_app_config = 'wagtail.images.apps.WagtailImagesAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+13. [RemovedInDjango41Warning] 'wagtail.search' defines default_app_config = 'wagtail.search.apps.WagtailSearchAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+14. [RemovedInDjango41Warning] 'wagtail.admin' defines default_app_config = 'wagtail.admin.apps.WagtailAdminAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+15. [RemovedInDjango41Warning] 'wagtail.core' defines default_app_config = 'wagtail.core.apps.WagtailCoreAppConfig'. Django now detects this configuration automatically. You can remove default_app_config.
+     site-packages/django/apps/registry.py:91  |  app_config = AppConfig.create(entry)
+
+16. [RemovedInDjango40Warning] django.utils.translation.ugettext_lazy() is deprecated in favor of django.utils.translation.gettext_lazy().
+     core/blocks.py:25  |  alt_text = blocks.CharBlock(required=False, help_text=_('Describe the image for screen readers'))
+     core/blocks.py:55  |  label = blocks.CharBlock(required=False, help_text=_('Defaults to the document title'))
+     core/blocks.py:68  |  embed = EmbedBlock(help_text=_('Paste a YouTube or Vimeo URL'))
+     core/models.py:10  |  school_name = models.CharField(_('school name'), max_length=255, default='Kestrel Ridge College')
+     core/models.py:11  |  address = models.TextField(_('address'), blank=True)
+     core/models.py:12  |  phone = models.CharField(_('phone'), max_length=50, blank=True)
+     core/models.py:13  |  email = models.EmailField(_('email'), blank=True)
+     core/models.py:14  |  office_hours = models.TextField(_('office hours'), blank=True)
+     core/models.py:16  |  _('map embed URL'), max_length=500, blank=True,
+     core/models.py:17  |  help_text=_('The src of an embeddable map iframe'),
+     core/models.py:20  |  facebook_url = models.URLField(_('Facebook URL'), blank=True)
+     core/models.py:21  |  instagram_url = models.URLField(_('Instagram URL'), blank=True)
+     core/models.py:22  |  youtube_url = models.URLField(_('YouTube URL'), blank=True)
+     core/models.py:23  |  linkedin_url = models.URLField(_('LinkedIn URL'), blank=True)
+     core/models.py:25  |  footer_text = models.TextField(_('footer text'), blank=True)
+     core/models.py:35  |  ], heading=_('Contact details')),
+     core/models.py:41  |  ], heading=_('Social media')),
+     core/models.py:46  |  verbose_name = _('school settings')
+     events/models.py:102  |  start_date = models.DateField(_('start date'))
+     events/models.py:103  |  end_date = models.DateField(_('end date'), null=True, blank=True)
+     events/models.py:104  |  start_time = models.TimeField(_('start time'), null=True, blank=True)
+     events/models.py:105  |  end_time = models.TimeField(_('end time'), null=True, blank=True)
+     events/models.py:106  |  location = models.CharField(_('location'), max_length=255, blank=True)
+     events/models.py:121  |  summary = models.TextField(_('summary'), blank=True)
+     events/models.py:142  |  ], heading=_('When and where')),
+     events/models.py:153  |  verbose_name = _('event')
+     events/models.py:24  |  name = models.CharField(_('name'), max_length=100)
+     events/models.py:25  |  slug = models.SlugField(_('slug'), unique=True)
+     events/models.py:27  |  _('colour'), max_length=7, default='#14284b',
+     events/models.py:28  |  help_text=_('Hex colour used for the category badge, e.g. #14284b'),
+     events/models.py:39  |  verbose_name = _('event category')
+     events/models.py:40  |  verbose_name_plural = _('event categories')
+     events/models.py:47  |  intro = RichTextField(_('intro'), blank=True)
+     forms/models.py:18  |  intro = RichTextField(_('intro'), blank=True)
+     forms/models.py:19  |  thank_you_text = RichTextField(_('thank you text'), blank=True)
+     forms/models.py:24  |  InlinePanel('form_fields', label=_('Form fields')),
+     forms/models.py:32  |  ], heading=_('Email')),
+     forms/models.py:36  |  verbose_name = _('form page')
+     forms/models.py:44  |  intro = RichTextField(_('intro'), blank=True)
+     forms/models.py:45  |  thank_you_text = RichTextField(_('thank you text'), blank=True)
+     forms/models.py:50  |  InlinePanel('form_fields', label=_('Form fields')),
+     forms/models.py:58  |  ], heading=_('Email')),
+     forms/models.py:64  |  verbose_name = _('contact page')
+     home/models.py:18  |  hero_title = models.CharField(_('hero title'), max_length=255, blank=True)
+     home/models.py:19  |  hero_intro = models.TextField(_('hero intro'), blank=True)
+     home/models.py:33  |  verbose_name=_('call to action page'),
+     home/models.py:35  |  cta_label = models.CharField(_('call to action label'), max_length=100, blank=True)
+     home/models.py:43  |  ], heading=_('Hero')),
+     home/models.py:47  |  ], heading=_('Call to action')),
+     home/models.py:48  |  InlinePanel('quick_links', label=_('Quick links')),
+     home/models.py:77  |  link_url = models.URLField(blank=True, help_text=_('Used if no page is chosen'))
+     pages/models.py:14  |  intro = models.TextField(_('intro'), blank=True)
+     staff/models.py:105  |  ], heading=_('Name and role')),
+     staff/models.py:111  |  ], heading=_('Contact and qualifications')),
+     staff/models.py:119  |  verbose_name = _('staff member')
+     staff/models.py:17  |  name = models.CharField(_('name'), max_length=100)
+     staff/models.py:18  |  slug = models.SlugField(_('slug'), unique=True)
+     staff/models.py:19  |  order = models.PositiveIntegerField(_('order'), default=0)
+     staff/models.py:29  |  verbose_name = _('department')
+     staff/models.py:36  |  intro = RichTextField(_('intro'), blank=True)
+     staff/models.py:68  |  first_name = models.CharField(_('first name'), max_length=100)
+     staff/models.py:69  |  last_name = models.CharField(_('last name'), max_length=100)
+     staff/models.py:70  |  role = models.CharField(_('role'), max_length=255)
+     staff/models.py:85  |  email = models.EmailField(_('email'), blank=True)
+     staff/models.py:86  |  phone_extension = models.CharField(_('phone extension'), max_length=10, blank=True)
+     staff/models.py:87  |  qualifications = models.CharField(_('qualifications'), max_length=255, blank=True)
+     staff/models.py:88  |  bio = RichTextField(_('bio'), blank=True)
+
+17. [RemovedInDjango40Warning] django.conf.urls.url() is deprecated in favor of django.urls.re_path().
+     schoolsite/urls.py:12  |  url(r'^django-admin/', admin.site.urls),
+     schoolsite/urls.py:14  |  url(r'^admin/', include(wagtailadmin_urls)),
+     schoolsite/urls.py:15  |  url(r'^documents/', include(wagtaildocs_urls)),
+     schoolsite/urls.py:17  |  url(r'^search/$', search_views.search, name='search'),
+     schoolsite/urls.py:22  |  url(r'', include(wagtail_urls)),
+
+18. [RemovedInWagtail217Warning] The wagtail.search.backends.db search backend is deprecated and has been replaced by wagtail.search.backends.database. See https://docs.wagtail.io/en/stable/releases/2.15.html#database-search-backends-replaced
+     site-packages/wagtail/search/backends/db.py:8  |  warn(
+
+------------------------------------------------------------------------------
+NOT WARNED on 2.15, but known to change in 3.0+ (from the 7.4 upgrade docs, to check next hop):
+  - wagtail.core.* -> wagtail.* (models, fields, blocks, rich_text, urls): renamed in 3.0 without a 2.x deprecation warning
+  - wagtail.admin.edit_handlers -> wagtail.admin.panels; StreamFieldPanel / ImageChooserPanel /
+    DocumentChooserPanel / SnippetChooserPanel folded into FieldPanel (3.0)
+  - StreamField(..., use_json_field=True) / JSON storage (3.0 flag, required in 5.0+)
+  - wagtail.contrib.modeladmin removed from core (6.0) -> snippets ViewSets or wagtail-modeladmin package
+  - BaseSetting -> BaseSiteSetting, wagtail.contrib.settings.models.register_setting import path (4.0)
+  - wagtail.search.models.Query moved to wagtail.contrib.search_promotions (5.0)
+  - StreamField block wrapper markup / CSS class changes in templates (check the 7.4 release notes)
+  - HeadingBlock CharBlock(classname=...) -> form_classname (deprecated 2.11; no warning printed here)
+  - Page.search() partial_match deprecation (2.15; no warning printed for our query)
