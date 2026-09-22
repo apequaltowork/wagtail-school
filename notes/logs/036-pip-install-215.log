@@ -1,0 +1,184 @@
+# rec 036-pip-install-215
+# time:    2026-09-22 10:36:16 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe -m pip install -r requirements.txt
+# commit:  b8548bb
+# ----------------------------------------------------------------
+Collecting Django<3.3,>=3.2 (from -r requirements.txt (line 1))
+  Downloading Django-3.2.25-py3-none-any.whl.metadata (4.1 kB)
+Collecting wagtail<2.16,>=2.15 (from -r requirements.txt (line 2))
+  Downloading wagtail-2.15.6-py3-none-any.whl.metadata (3.5 kB)
+Collecting psycopg2-binary<2.9,>=2.8 (from -r requirements.txt (line 3))
+  Downloading psycopg2-binary-2.8.6.tar.gz (384 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting asgiref<4,>=3.3.2 (from Django<3.3,>=3.2->-r requirements.txt (line 1))
+  Using cached asgiref-3.12.1-py3-none-any.whl.metadata (9.4 kB)
+Collecting pytz (from Django<3.3,>=3.2->-r requirements.txt (line 1))
+  Using cached pytz-2026.3.post1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting sqlparse>=0.2.2 (from Django<3.3,>=3.2->-r requirements.txt (line 1))
+  Using cached sqlparse-0.6.0-py3-none-any.whl.metadata (6.0 kB)
+Collecting django-modelcluster<6.0,>=5.2 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached django_modelcluster-5.3-py2.py3-none-any.whl.metadata (6.4 kB)
+Collecting django-taggit<2.0,>=1.0 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached django_taggit-1.5.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting django-treebeard!=4.5,<5.0,>=4.2.0 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached django_treebeard-4.8.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting djangorestframework<4.0,>=3.11.1 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached djangorestframework-3.18.1-py3-none-any.whl.metadata (7.8 kB)
+Collecting django-filter<22,>=2.2 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading django_filter-21.1-py3-none-any.whl.metadata (5.1 kB)
+Collecting draftjs-exporter<3.0,>=2.1.5 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached draftjs_exporter-2.1.7-py3-none-any.whl.metadata (15 kB)
+Collecting Pillow<10.0.0,>=4.0.0 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading Pillow-9.5.0-cp310-cp310-win_amd64.whl.metadata (9.7 kB)
+Collecting beautifulsoup4<4.10,>=4.8 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading beautifulsoup4-4.9.3-py3-none-any.whl.metadata (4.2 kB)
+Collecting html5lib<2,>=0.999 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached html5lib-1.1-py2.py3-none-any.whl.metadata (16 kB)
+Collecting Willow<1.5,>=1.4 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading Willow-1.4.1-py2.py3-none-any.whl.metadata (1.1 kB)
+Collecting requests<3.0,>=2.11.1 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting l18n>=2018.5 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached l18n-2021.3-py3-none-any.whl.metadata (7.3 kB)
+Collecting xlsxwriter<4.0,>=1.2.8 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading xlsxwriter-3.2.9-py3-none-any.whl.metadata (2.7 kB)
+Collecting tablib>=0.14.0 (from tablib[xls,xlsx]>=0.14.0->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading tablib-3.10.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting anyascii>=0.1.5 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached anyascii-0.3.3-py3-none-any.whl.metadata (1.6 kB)
+Collecting telepath<1,>=0.1.1 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached telepath-0.3.1-py38-none-any.whl.metadata (1.7 kB)
+Collecting typing_extensions>=4 (from asgiref<4,>=3.3.2->Django<3.3,>=3.2->-r requirements.txt (line 1))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting soupsieve>1.2 (from beautifulsoup4<4.10,>=4.8->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached soupsieve-2.9.2-py3-none-any.whl.metadata (4.6 kB)
+INFO: pip is looking at multiple versions of django-treebeard to determine which version is compatible with other requirements. This could take a while.
+Collecting django-treebeard!=4.5,<5.0,>=4.2.0 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached django_treebeard-4.7.1-py3-none-any.whl.metadata (2.7 kB)
+INFO: pip is looking at multiple versions of djangorestframework to determine which version is compatible with other requirements. This could take a while.
+Collecting djangorestframework<4.0,>=3.11.1 (from wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached djangorestframework-3.18.0-py3-none-any.whl.metadata (7.8 kB)
+  Downloading djangorestframework-3.17.2-py3-none-any.whl.metadata (7.9 kB)
+  Using cached djangorestframework-3.17.1-py3-none-any.whl.metadata (7.9 kB)
+  Downloading djangorestframework-3.17.0-py3-none-any.whl.metadata (7.9 kB)
+  Using cached djangorestframework-3.16.1-py3-none-any.whl.metadata (11 kB)
+  Using cached djangorestframework-3.16.0-py3-none-any.whl.metadata (11 kB)
+  Using cached djangorestframework-3.15.2-py3-none-any.whl.metadata (10 kB)
+INFO: pip is still looking at multiple versions of djangorestframework to determine which version is compatible with other requirements. This could take a while.
+  Using cached djangorestframework-3.15.1-py3-none-any.whl.metadata (11 kB)
+Collecting six>=1.9 (from html5lib<2,>=0.999->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting webencodings (from html5lib<2,>=0.999->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached webencodings-0.6.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3.0,>=2.11.1->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading charset_normalizer-3.5.1-cp310-cp310-win_amd64.whl.metadata (46 kB)
+Collecting idna<4,>=2.5 (from requests<3.0,>=2.11.1->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests<3.0,>=2.11.1->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests<3.0,>=2.11.1->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting xlrd (from tablib[xls,xlsx]>=0.14.0->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading xlrd-2.0.2-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting xlwt (from tablib[xls,xlsx]>=0.14.0->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Downloading xlwt-1.3.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting openpyxl>=2.6.0 (from tablib[xls,xlsx]>=0.14.0->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting et-xmlfile (from openpyxl>=2.6.0->tablib[xls,xlsx]>=0.14.0->wagtail<2.16,>=2.15->-r requirements.txt (line 2))
+  Using cached et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+Downloading Django-3.2.25-py3-none-any.whl (7.9 MB)
+   ---------------------------------------- 7.9/7.9 MB 725.5 kB/s eta 0:00:00
+Downloading wagtail-2.15.6-py3-none-any.whl (13.3 MB)
+   ---------------------------------------- 13.3/13.3 MB 801.1 kB/s eta 0:00:00
+Using cached asgiref-3.12.1-py3-none-any.whl (25 kB)
+Downloading beautifulsoup4-4.9.3-py3-none-any.whl (115 kB)
+Downloading django_filter-21.1-py3-none-any.whl (81 kB)
+Using cached django_modelcluster-5.3-py2.py3-none-any.whl (26 kB)
+Using cached django_taggit-1.5.1-py3-none-any.whl (53 kB)
+Using cached django_treebeard-4.7.1-py3-none-any.whl (93 kB)
+Downloading djangorestframework-3.15.1-py3-none-any.whl (1.1 MB)
+   ---------------------------------------- 1.1/1.1 MB 677.6 kB/s eta 0:00:00
+Using cached draftjs_exporter-2.1.7-py3-none-any.whl (43 kB)
+Using cached html5lib-1.1-py2.py3-none-any.whl (112 kB)
+Downloading Pillow-9.5.0-cp310-cp310-win_amd64.whl (2.5 MB)
+   ---------------------------------------- 2.5/2.5 MB 966.2 kB/s eta 0:00:00
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.1-cp310-cp310-win_amd64.whl (206 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Using cached telepath-0.3.1-py38-none-any.whl (10 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading Willow-1.4.1-py2.py3-none-any.whl (106 kB)
+Downloading xlsxwriter-3.2.9-py3-none-any.whl (175 kB)
+Using cached anyascii-0.3.3-py3-none-any.whl (345 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached l18n-2021.3-py3-none-any.whl (51 kB)
+Using cached pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached soupsieve-2.9.2-py3-none-any.whl (37 kB)
+Using cached sqlparse-0.6.0-py3-none-any.whl (50 kB)
+Downloading tablib-3.10.0-py3-none-any.whl (50 kB)
+Using cached openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Using cached webencodings-0.6.1-py3-none-any.whl (8.7 kB)
+Downloading xlrd-2.0.2-py2.py3-none-any.whl (96 kB)
+Downloading xlwt-1.3.0-py2.py3-none-any.whl (99 kB)
+Building wheels for collected packages: psycopg2-binary
+  Building wheel for psycopg2-binary (pyproject.toml): started
+  Building wheel for psycopg2-binary (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Building wheel for psycopg2-binary (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [33 lines of output]
+      C:\Users\admin\AppData\Local\Temp\pip-build-env-mtiveign\overlay\Lib\site-packages\setuptools\dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running bdist_wheel
+      running build
+      running build_py
+      creating build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\compat.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\errorcodes.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\errors.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\extensions.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\extras.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\pool.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\sql.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\tz.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\_ipaddress.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\_json.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\_lru_cache.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\_range.py -> build\lib.win-amd64-cpython-310\psycopg2
+      copying lib\__init__.py -> build\lib.win-amd64-cpython-310\psycopg2
+      running build_ext
+      building 'psycopg2._psycopg' extension
+      error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for psycopg2-binary
+Failed to build psycopg2-binary
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: D:\django\.virtualenvs\wagtail-school-215\Scripts\python.exe -m pip install --upgrade pip
+ERROR: Failed to build installable wheels for some pyproject.toml based projects (psycopg2-binary)
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  52s
