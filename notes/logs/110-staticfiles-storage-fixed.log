@@ -1,0 +1,14 @@
+# rec 110-staticfiles-storage-fixed
+# time:    2026-09-22 11:09:11 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from django.conf import settings
+print('STORAGES[staticfiles] =', settings.STORAGES['staticfiles']['BACKEND'])
+# commit:  d2a07e0
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+STORAGES[staticfiles] = django.contrib.staticfiles.storage.ManifestStaticFilesStorage
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

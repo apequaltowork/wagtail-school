@@ -1,0 +1,11 @@
+# rec 111-collectstatic-74
+# time:    2026-09-22 11:09:13 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py collectstatic --noinput
+# commit:  d2a07e0
+# ----------------------------------------------------------------
+
+233 static files copied to 'D:\django\wagtail-school-74\static', 233 post-processed.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  7s

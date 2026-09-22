@@ -1,0 +1,44 @@
+{
+  "enrolment-enquiry": {
+    "fields": {
+      "Parent/Guardian's full name": "parentguardians-full-name",
+      "Email address": "email-address",
+      "Phone number": "phone-number",
+      "Student's first name": "students-first-name",
+      "Year level of entry": "year-level-of-entry",
+      "Preferred start term": "preferred-start-term",
+      "Languages spoken at home (e.g. Français, Español)": "languages-spoken-at-home-eg-francais-espanol",
+      "How did you hear about us?": "how-did-you-hear-about-us",
+      "Questions or comments": "questions-or-comments",
+      "Subscribe to our newsletter": "subscribe-to-our-newsletter"
+    },
+    "stored_keys": [
+      "email-address",
+      "how-did-you-hear-about-us",
+      "languages-spoken-at-home-eg-francais-espanol",
+      "parentguardians-full-name",
+      "phone-number",
+      "preferred-start-term",
+      "questions-or-comments",
+      "students-first-name",
+      "subscribe-to-our-newsletter",
+      "year-level-of-entry"
+    ],
+    "unmatched_labels": []
+  },
+  "contact-us": {
+    "fields": {
+      "Your name": "your-name",
+      "Email": "email",
+      "Subject": "subject",
+      "Message": "message"
+    },
+    "stored_keys": [
+      "email",
+      "message",
+      "subject",
+      "your-name"
+    ],
+    "unmatched_labels": []
+  }
+}

@@ -1,0 +1,153 @@
+# rec 104-requests-74-1
+# time:    2026-09-22 11:07:04 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py shell -c 
+from django.test import Client
+from django.contrib.auth import get_user_model
+c = Client(raise_request_exception=False)
+paths = ['/', '/about/', '/about/principals-welcome/', '/admissions/', '/admissions/fees-and-scholarships/', '/admissions/enrolment-enquiry/', '/learning/co-curricular/', '/events/', '/events/past/', '/events/?category=sport', '/events/spring-open-morning/', '/our-staff/', '/our-staff/?department=science', '/our-staff/miriam-okonkwo-hale/', '/contact-us/', '/search/?query=music', '/no-such-page/']
+for p in paths:
+    print(c.get(p).status_code, p)
+c.force_login(get_user_model().objects.get(username='admin'))
+from wagtail.models import Page
+for p in ['/admin/', '/admin/events/', '/admin/staff/', '/admin/forms/', '/admin/snippets/', '/admin/settings/core/schoolsettings/1/'] + ['/admin/pages/%d/edit/' % pk for pk in Page.objects.filter(depth__gt=1).values_list('pk', flat=True)[:50]]:
+    r = c.get(p); print(r.status_code, p)
+
+# commit:  c118aed
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+200 /
+200 /about/
+200 /about/principals-welcome/
+200 /admissions/
+200 /admissions/fees-and-scholarships/
+200 /admissions/enrolment-enquiry/
+200 /learning/co-curricular/
+200 /events/
+200 /events/past/
+200 /events/?category=sport
+200 /events/spring-open-morning/
+200 /our-staff/
+200 /our-staff/?department=science
+200 /our-staff/miriam-okonkwo-hale/
+200 /contact-us/
+200 /search/?query=music
+Not Found: /no-such-page/
+404 /no-such-page/
+200 /admin/
+200 /admin/events/
+200 /admin/staff/
+200 /admin/forms/
+200 /admin/snippets/
+Not Found: /admin/settings/core/schoolsettings/1/
+404 /admin/settings/core/schoolsettings/1/
+200 /admin/pages/3/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CB0E470>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/130/edit/
+200 /admin/pages/131/edit/
+200 /admin/pages/132/edit/
+200 /admin/pages/133/edit/
+200 /admin/pages/134/edit/
+200 /admin/pages/135/edit/
+200 /admin/pages/136/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CCD6F80>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/137/edit/
+200 /admin/pages/138/edit/
+200 /admin/pages/139/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CA65DB0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/140/edit/
+200 /admin/pages/141/edit/
+200 /admin/pages/142/edit/
+200 /admin/pages/143/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CB8BF10>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/144/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD039A0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/145/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CC2C3A0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/146/edit/
+200 /admin/pages/147/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CC24520>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/148/edit/
+200 /admin/pages/149/edit/
+200 /admin/pages/150/edit/
+200 /admin/pages/151/edit/
+200 /admin/pages/152/edit/
+200 /admin/pages/153/edit/
+200 /admin/pages/154/edit/
+200 /admin/pages/155/edit/
+200 /admin/pages/156/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CBE59C0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/157/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD26830>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/158/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD81E10>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/159/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CC2FF70>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/160/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD13340>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/161/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD91390>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/162/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CDD4FD0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/163/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CCC9E40>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/164/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD91930>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/165/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CDE5930>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/166/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CE24520>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/167/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CE45510>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/168/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD927A0>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/169/edit/
+D:\django\.virtualenvs\wagtail-school-74\Lib\site-packages\wagtail\images\models.py:598: ResourceWarning: Unclosed file <tempfile.SpooledTemporaryFile object at 0x0000025E8CD25360>
+  rendition, created = self.renditions.get_or_create(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+200 /admin/pages/170/edit/
+200 /admin/pages/171/edit/
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  8s

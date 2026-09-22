@@ -1,0 +1,24 @@
+{
+  "pages_total": 43,
+  "pages_live": 43,
+  "pages_by_type": {
+    "events.eventindexpage": 1,
+    "events.eventpage": 12,
+    "forms.contactpage": 1,
+    "forms.formpage": 1,
+    "home.homepage": 1,
+    "pages.standardpage": 11,
+    "staff.staffindexpage": 1,
+    "staff.staffpage": 15
+  },
+  "images": 26,
+  "documents": 3,
+  "snippets": {
+    "events.eventcategory": 5,
+    "staff.department": 9
+  },
+  "form_submissions": {
+    "enrolment-enquiry": 30,
+    "contact-us": 10
+  }
+}

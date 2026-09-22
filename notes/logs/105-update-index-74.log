@@ -1,0 +1,24 @@
+# rec 105-update-index-74
+# time:    2026-09-22 11:07:42 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py update_index
+# commit:  c118aed
+# ----------------------------------------------------------------
+Updating backend: default
+default: Rebuilding index <modelsearch.backends.database.postgres.postgres.PostgresIndex object at 0x0000019CBA893E90>
+default: home.HomePage             .
+default: pages.StandardPage        .
+default: events.EventIndexPage     .
+default: events.EventPage          .
+default: staff.StaffIndexPage      .
+default: staff.StaffPage           .
+default: forms.FormPage            .
+default: forms.ContactPage         .
+default: wagtaildocs.Document      .
+default: wagtailimages.Image       .
+default: wagtailcore.Page          .
+default: indexed 73 objects
+
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

@@ -148,3 +148,27 @@ Install went through on the first try (log 080: wagtail 7.4.3, Django 5.2.17, Pi
 - **Fix:** 793b60c — `tools/recover_search_queries.py` reads `wagtailsearch_query` and `wagtailsearch_querydailyhits` out of the pre-upgrade dump (`pg_restore --data-only -t …`) and recreates them through the search_promotions models. Result: 2 queries and 2 daily-hit rows, "music" 9 hits and "scholarship" 5 (log 103). In a real project: take the dump before migrating, or pass through Wagtail 5.x once for this app.
 - **Docs:** https://docs.wagtail.org/en/v7.4/releases/5.0.html · https://docs.wagtail.org/en/v7.4/releases/6.0.html (and the comment in `wagtail/contrib/search_promotions/migrations/0004_copy_queries.py`)
 - **Story value:** High — real data loss from skipping versions, and it's documented only in a code comment.
+
+## B17 — form_data is a dict now (tooling)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** the baseline crawler crashed at `stored.update(json.loads(submission.form_data).keys())` with `TypeError: the JSON object must be str, bytes or bytearray, not dict` (log 107).
+- **Cause:** Wagtail 3.0 changed `AbstractFormSubmission.form_data` from TextField to JSONField. The migration converted the column to jsonb (log 096), and the ORM now returns a dict. Any custom code that `json.loads()` the submission data breaks, which usually means reports, exports and CRM syncs.
+- **Fix:** d2a07e0 — `tools/baseline.py` and `tools/form_keys_report.py` accept either a dict or a string, so they keep working on the earlier stages. The site code wasn't affected: `seed_demo` goes through `process_form_submission()`.
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/3.0.html
+- **Story value:** Medium — it breaks the scripts around the site, not the site.
+
+## B18 — Search results changed (accepted behaviour change, not fixed)
+- **Hop:** 2.15 → 7.4
+- **Symptom:** the only page-text differences from the 2.7 baseline are `/search/?query=music` ("1 result" → "7 results") and `/search/?query=scholarship` (1 → 2, adding the Registrar's staff page) (log 108). The other 49 pages, all StreamField content included, are identical.
+- **Cause:** 2.15 deprecated the `db` search backend, and 7.4's default is the `database` backend, populated by `update_index` (log 105: 73 objects). The old backend, searching `Page.objects`, only matched Page's own fields (titles). The new one searches the indexed `search_fields` of each specific page type (StandardPage body, StaffPage bio …), so "music" now also finds the Director of Music, Co-curricular, the Junior and Senior School pages and more.
+- **Fix:** none; this is the documented, better behaviour. The comparison records it as an expected difference (notes/check-7.4/README.md).
+- **Docs:** https://docs.wagtail.org/en/v7.4/releases/2.15.html (database search backends replaced)
+- **Story value:** Medium — "search got smarter and the page changed": a visible behaviour change for a client.
+
+## B19 — ManifestStaticFilesStorage silently switched off
+- **Hop:** 2.15 → 7.4
+- **Symptom:** no error or warning anywhere. The 2.7 template's `STATICFILES_STORAGE = '…ManifestStaticFilesStorage'` is still in settings, but the storage in use is plain `StaticFilesStorage` (`settings.STORAGES['staticfiles'] = {'BACKEND': '…StaticFilesStorage'}`, log 109). In production that means no hashed filenames, so browsers keep serving stale CSS after each deploy. The template's own comment warns about exactly this "after a Wagtail upgrade".
+- **Cause:** Django 4.2 replaced `STATICFILES_STORAGE` / `DEFAULT_FILE_STORAGE` with `STORAGES`; 5.1 removed the old settings, and Django ignores unknown settings. `USE_L10N` (removed in 5.0) was also dead config.
+- **Fix:** 2c0cbd5 — replaced it with `STORAGES = {'default': FileSystemStorage, 'staticfiles': ManifestStaticFilesStorage}` and removed `USE_L10N`. `collectstatic` now writes hashed files again (`schoolsite.bb8cd0ce72a6.css`, log 111).
+- **Docs:** https://docs.djangoproject.com/en/5.2/releases/5.1/#features-removed-in-5-1 · https://docs.djangoproject.com/en/5.2/ref/settings/#storages
+- **Story value:** High for production — a silent regression that only shows up as "why is the old CSS still there?"

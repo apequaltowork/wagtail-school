@@ -1,0 +1,75 @@
+# rec 107-baseline-compare-74-1
+# time:    2026-09-22 11:08:04 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe tools/baseline.py --base http://127.0.0.1:8074 --out notes/check-7.4 --compare baseline
+# commit:  c118aed
+# ----------------------------------------------------------------
+200 /
+200 /about/
+200 /about/principals-welcome/
+200 /about/our-history/
+200 /about/vision-and-values/
+200 /admissions/
+200 /admissions/enrolment-enquiry/
+200 /admissions/fees-and-scholarships/
+200 /learning/
+200 /learning/junior-school/
+200 /learning/senior-school/
+200 /learning/co-curricular/
+200 /learning/wellbeing/
+200 /events/
+200 /events/spring-open-morning/
+200 /events/senior-school-information-evening/
+200 /events/inter-house-athletics-carnival/
+200 /events/spring-music-concert/
+200 /events/year-12-valedictory-assembly/
+200 /events/community-working-bee/
+200 /events/junior-school-art-exhibition/
+200 /events/twilight-open-evening/
+200 /events/science-week-showcase/
+200 /events/grandparents-day/
+200 /events/winter-sports-presentation-night/
+200 /events/robotics-club-regional-challenge/
+200 /our-staff/
+200 /our-staff/miriam-okonkwo-hale/
+200 /our-staff/thomas-brennan-ruiz/
+200 /our-staff/priya-ramaswamy/
+200 /our-staff/callum-fraser/
+200 /our-staff/sophie-tran/
+200 /our-staff/daniel-kowalczyk/
+200 /our-staff/mei-lin-zhou/
+200 /our-staff/samuel-adeyemi/
+200 /our-staff/rosa-villanueva/
+200 /our-staff/liam-odriscoll/
+200 /our-staff/isabelle-moreau/
+200 /our-staff/kiri-walker-ngata/
+200 /our-staff/marcus-delaney/
+200 /our-staff/amira-haddad/
+200 /our-staff/grace-pemberton/
+200 /contact-us/
+200 /events/past/
+200 /events/?page=2
+200 /events/?category=sport
+200 /events/past/?category=academic
+200 /our-staff/?department=science
+200 /search/?query=music
+200 /search/?query=scholarship
+200 /search/
+404 /no-such-page/
+200 /documents/12/enrolment-information-pack.pdf
+200 /documents/11/term-dates.pdf
+200 /documents/10/uniform-price-list.pdf
+Traceback (most recent call last):
+  File "D:\django\wagtail-school-74\tools\baseline.py", line 220, in <module>
+    main()
+  File "D:\django\wagtail-school-74\tools\baseline.py", line 213, in main
+    field_keys(args.out)
+  File "D:\django\wagtail-school-74\tools\baseline.py", line 137, in field_keys
+    stored.update(json.loads(submission.form_data).keys())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  7s

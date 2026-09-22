@@ -1,0 +1,34 @@
+# rec 106-rebuild-references-index-74
+# time:    2026-09-22 11:07:44 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py rebuild_references_index
+# commit:  c118aed
+# ----------------------------------------------------------------
+Rebuilding reference index
+<class 'home.models.HomePage'>
+.
+<class 'pages.models.StandardPage'>
+.
+<class 'events.models.EventIndexPage'>
+.
+<class 'events.models.EventPage'>
+.
+<class 'staff.models.StaffIndexPage'>
+.
+<class 'staff.models.StaffPage'>
+.
+<class 'forms.models.FormPage'>
+.
+<class 'forms.models.ContactPage'>
+.
+<class 'wagtail.documents.models.Document'>
+.
+<class 'wagtail.images.models.Image'>
+.
+<class 'wagtail.models.Page'>
+.
+Indexed 116 objects
+
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

@@ -1,0 +1,19 @@
+# rec 109-staticfiles-storage-symptom
+# time:    2026-09-22 11:08:58 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from django.conf import settings
+from django.contrib.staticfiles.storage import staticfiles_storage
+print('settings.STATICFILES_STORAGE =', getattr(settings, 'STATICFILES_STORAGE', None))
+print('actual staticfiles storage   =', type(staticfiles_storage._wrapped if hasattr(staticfiles_storage, '_wrapped') else staticfiles_storage).__name__ if (staticfiles_storage._setup() or True) else '')
+print('settings.STORAGES[staticfiles] =', settings.STORAGES['staticfiles'])
+# commit:  d2a07e0
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+settings.STATICFILES_STORAGE = django.contrib.staticfiles.storage.ManifestStaticFilesStorage
+actual staticfiles storage   = StaticFilesStorage
+settings.STORAGES[staticfiles] = {'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage'}
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s
