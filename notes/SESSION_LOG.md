@@ -34,3 +34,13 @@
 ## 2026-09-22 10:26 — Step 6: final checks
 - **Logs:** 028-final-check-Wa (no issues; Python 3.8 prints two DeprecationWarnings from the 2.7 stack itself), 029-final-makemigrations-check (no changes), 030 showmigrations (95 applied, 0 pending).
 - **Result:** done. README written; tagged v2.7-baseline.
+
+---
+
+# Session log — 2.7 → 2.15 hop
+
+## 2026-09-22 10:45 — Setup
+- **What:** cloned wagtail-school into wagtail-school-215 on branch `upgrade/2.15`. Installed CPython 3.10.21 through uv (the same Windows minor-version link error as for 3.8; the interpreter is fine) and created the `wagtail-school-215` virtualenv. Created `wagtail_school_215` as the `school` role, which has CREATEDB, so no superuser was needed. Restored `wagtail_school_27.dump` with `pg_restore --no-owner --no-privileges`, unzipped media_27.zip, and wrote a new gitignored settings/local.py with its own SECRET_KEY.
+- **Why:** each stage gets its own folder, virtualenv and database; the 2.7 stage stays untouched.
+- **Logs:** 031-uv-python-310 (exit 2, harmless), 032-mkvirtualenv-215, 033-createdb-215, 034-pg-restore-27-into-215, 035-unzip-media-27.
+- **Result:** the restored DB has 44 page rows (including root), 40 form submissions and 26 original images. Nothing is installed in the new virtualenv yet.

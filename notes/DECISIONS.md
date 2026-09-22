@@ -41,3 +41,16 @@ tools/baseline.py, screenshot_targets.py and dump_db.py call django.setup() and 
 
 ## D12 — Dev SECRET_KEY left in dev.py
 `wagtail start` 2.7 writes a development SECRET_KEY into settings/dev.py. It is kept, because the brief says to keep everything the template generates. It's a throwaway dev key, and local.py overrides it with a private one.
+
+---
+
+# 2.7 → 2.15 hop
+
+## D13 — Stop at 2.15 LTS first
+2.15 is the LTS release that includes the 2.10 form-builder change (`clean_name`). Stopping here applies that change to real restored 2.7 submissions before the big jump to 7.4.
+
+## D14 — Replace SiteMiddleware with Site.find_for_request (owner's choice)
+2.9 deprecated `SiteMiddleware` and `request.site`; 2.11 moved the middleware to `wagtail.contrib.legacy.sitemiddleware`. The smallest change would be to point MIDDLEWARE at the legacy path. The owner chose the path the release notes recommend instead: drop the middleware and call `Site.find_for_request(request)` in the menu tag. **Alternative:** the legacy middleware, which keeps `request.site` for one more hop. Docs: https://docs.wagtail.org/en/v2.15/releases/2.9.html
+
+## D15 — Leave deprecation warnings for the 7.4 hop
+`ugettext_lazy`, `url()`, `wagtail.core.*` imports, `classname=` on blocks, the `db` search backend and the `search()` partial-match warning all still work on 2.15, so they are recorded in notes/deprecations-2.15.txt rather than fixed.
