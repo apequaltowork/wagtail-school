@@ -1,6 +1,5 @@
-Django>=3.2,<3.3
-wagtail>=2.15,<2.16
+Django>=5.2,<5.3
+wagtail>=7.4,<7.5
 # psycopg2-binary>=2.8,<2.9  -- dropped at 2.15: no Python 3.10 wheels (source build needs MSVC); see UPGRADE_LOG B01
 psycopg2-binary>=2.9,<2.10
-# Unidecode: no longer a Wagtail dependency since 2.10 (anyascii), but required to backfill legacy form field clean_name values; see UPGRADE_LOG B04
-Unidecode>=1.1,<2
+# Unidecode>=1.1,<2  -- dropped at 7.4: only needed by Wagtail 2.10-2.16 to backfill legacy form clean_name (done at 2.15, B04); Wagtail 3.0 removed that code path
