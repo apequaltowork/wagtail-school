@@ -53,9 +53,17 @@ editors = [
 admin = [('a01-dashboard', '/admin/')]
 for i, (name, suffix) in enumerate(editors, 2):
     admin.append(('a{:02d}-edit-{}'.format(i, name), '/admin/pages/{}/edit/'.format(page_id(suffix))))
+import wagtail  # noqa: E402
+
+if wagtail.VERSION >= (6, 0):
+    # ModelAdmin was removed in 6.0; the Events/Staff menus are PageListingViewSets (UPGRADE_LOG B07)
+    events_listing, staff_listing = '/admin/events/', '/admin/staff/'
+else:
+    events_listing, staff_listing = '/admin/events/eventpage/', '/admin/staff/staffpage/'
+
 admin += [
-    ('a10-modeladmin-events', '/admin/events/eventpage/'),
-    ('a11-modeladmin-staff', '/admin/staff/staffpage/'),
+    ('a10-modeladmin-events', events_listing),
+    ('a11-modeladmin-staff', staff_listing),
     ('a12-forms-index', '/admin/forms/'),
     ('a13-submissions-enquiry', '/admin/forms/submissions/{}/'.format(page_id('admissions/enrolment-enquiry/'))),
     ('a14-submissions-contact', '/admin/forms/submissions/{}/'.format(page_id('contact-us/'))),

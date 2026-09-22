@@ -1,10 +1,17 @@
 from wagtail import hooks
+from wagtail.admin.views.pages.listing import IndexView
 from wagtail.admin.viewsets.pages import PageListingViewSet
 
 from .models import StaffPage
 
 
+class StaffPageListingIndexView(IndexView):
+    # ModelAdmin had ordering = ('department', ...)
+    default_ordering = 'department'
+
+
 class StaffPageListingViewSet(PageListingViewSet):
+    index_view_class = StaffPageListingIndexView
     model = StaffPage
     name = 'staff'
     menu_label = 'Staff'

@@ -32,7 +32,13 @@ async function shot(page, name, url, { tall = false } = {}) {
   if (tall) {
     // Newer admin UIs use fixed sidebars/footers that break fullPage stitching:
     // grow the viewport to the document height and take a plain screenshot instead.
-    const height = await page.evaluate(() => document.documentElement.scrollHeight);
+    // Wagtail 6+ scrolls the admin inside an inner container, so take the tallest scrollable element.
+    const height = await page.evaluate(() => Math.max(
+      document.documentElement.scrollHeight,
+      ...Array.from(document.querySelectorAll('*'))
+        .filter((el) => /(auto|scroll)/.test(getComputedStyle(el).overflowY))
+        .map((el) => el.scrollHeight),
+    ));
     await page.setViewportSize({ width: 1366, height: Math.max(900, height) });
     await page.waitForTimeout(300);
     await page.screenshot({ path: file });
