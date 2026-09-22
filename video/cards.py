@@ -1,6 +1,7 @@
-"""Intro card, end card and thumbnail for the upgrade video.
+"""Intro card, end card and thumbnail for each video in this folder.
 
-    python video/cards.py          # writes video/upgrade/assets/{intro,end,thumb}.png
+    python video/cards.py                   # every video
+    python video/cards.py claude-workflow   # one video -> video/<key>/assets/{intro,end,thumb}.png
 
 Same design language as the Wagtail Unboxed series cards (same channel), adapted for a
 standalone video. build.py burns the intro and end cards into the MP4 itself.
@@ -16,7 +17,6 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 THEME = HERE / "theme.css"
-ASSETS = HERE / "upgrade" / "assets"
 WIDTH, HEIGHT = 1920, 1080
 
 CHROME_CANDIDATES = [
@@ -24,6 +24,26 @@ CHROME_CANDIDATES = [
     Path(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"),
     Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
 ]
+
+# Per-video card text. The end card and brand details are shared.
+VIDEOS = {
+    "upgrade": {
+        "kicker": "Everything that broke",
+        "title": 'I Upgraded Wagtail <span class="ver">2.7</span> &rarr; <span class="ver">7.4</span>',
+        "tag": "Seven years in one video",
+        "thumb_top": '2.7 <span class="arrow">&rarr;</span> 7.4',
+        "thumb_h1": "Everything<br>that broke.",
+        "thumb_n": "22", "thumb_l": "breakages",
+    },
+    "claude-workflow": {
+        "kicker": "Three prompts, one upgrade",
+        "title": 'How I Prompted an AI to <span class="ver">Upgrade</span> a Wagtail Site',
+        "tag": "The method, and where it needed me",
+        "thumb_top": '2.7 <span class="arrow">&rarr;</span> 7.4',
+        "thumb_h1": "How I briefed<br>the AI.",
+        "thumb_n": "3", "thumb_l": "prompts",
+    },
+}
 
 BRAND = {
     "channel": "@apequaltowork",
@@ -204,25 +224,26 @@ def page(body: str) -> str:
 <style>{CARD_CSS}{THUMB_CSS}{EXTRA_CSS}</style></head><body>{body}</body></html>"""
 
 
-def intro_html() -> str:
+def intro_html(key: str = "upgrade") -> str:
+    v = VIDEOS[key]
     return page(f"""
 <div class="intro">
   <div class="accent"></div>
   <div class="brandline">
     {MARK}
     <div class="word">Wagtail <b>Upgrade</b></div>
-    <div class="tag">Seven years in one video</div>
+    <div class="tag">{v['tag']}</div>
   </div>
   <div class="epwrap">
-    <div class="kicker">Everything that broke</div>
-    <div class="eptitle">I Upgraded Wagtail <span class="ver">2.7</span> &rarr; <span class="ver">7.4</span></div>
+    <div class="kicker">{v['kicker']}</div>
+    <div class="eptitle">{v['title']}</div>
   </div>
   <div class="stack">{BRAND['stack']}</div>
   <div class="repoline">{BRAND['repo']}</div>
 </div>""")
 
 
-def end_html() -> str:
+def end_html(key: str = "upgrade") -> str:
     rows = [("Code", BRAND["repo"]), ("Blog", BRAND["blog"]), ("Website", BRAND["website"]),
             ("YouTube", BRAND["youtube"]), ("LinkedIn", BRAND["linkedin"])]
     links = "\n".join(
@@ -246,14 +267,15 @@ def end_html() -> str:
 </div>""")
 
 
-def thumb_html() -> str:
-    return page("""
+def thumb_html(key: str = "upgrade") -> str:
+    v = VIDEOS[key]
+    return page(f"""
 <div class="thumb">
   <div class="accent"></div>
   <div class="word">Wagtail <b>Upgrade</b></div>
-  <div class="vers">2.7 <span class="arrow">&rarr;</span> 7.4</div>
-  <h1 style="font-size:70px">Everything<br>that broke.</h1>
-  <div class="count"><div class="n">22</div><div class="l">breakages</div></div>
+  <div class="vers">{v['thumb_top']}</div>
+  <h1 style="font-size:70px">{v['thumb_h1']}</h1>
+  <div class="count"><div class="n">{v['thumb_n']}</div><div class="l">{v['thumb_l']}</div></div>
 </div>""")
 
 
@@ -272,9 +294,11 @@ def shoot(chrome: Path, html: str, dest: Path, size: tuple[int, int] = (WIDTH, H
 
 def main() -> None:
     chrome = find_chrome()
-    shoot(chrome, intro_html(), ASSETS / "intro.png")
-    shoot(chrome, end_html(), ASSETS / "end.png")
-    shoot(chrome, thumb_html(), ASSETS / "thumb.png", size=(1280, 720))
+    for key in sys.argv[1:] or list(VIDEOS):
+        assets = HERE / key / "assets"
+        shoot(chrome, intro_html(key), assets / "intro.png")
+        shoot(chrome, end_html(key), assets / "end.png")
+        shoot(chrome, thumb_html(key), assets / "thumb.png", size=(1280, 720))
 
 
 if __name__ == "__main__":

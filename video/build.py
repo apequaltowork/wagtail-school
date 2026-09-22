@@ -303,10 +303,10 @@ def build(ep: Episode, silent: bool, stills_only: bool, only: int | None,
         # card, so they can never drift from brand.py or be forgotten in the edit.
         scenes = [
             Scene(id="intro_card", body="", say=ep.intro_say, hold=ep.intro_hold,
-                  full_page=cards.intro_html()),
+                  full_page=cards.intro_html(ep.key)),
             *ep.scenes,
             Scene(id="end_card", body="", say=ep.outro_say, hold=ep.outro_hold,
-                  full_page=cards.end_html()),
+                  full_page=cards.end_html(ep.key)),
         ]
     else:
         scenes = [ep.scenes[only]]

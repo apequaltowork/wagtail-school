@@ -1,0 +1,71 @@
+How I Prompted an AI to Upgrade a Wagtail Site
+Total: 6.9 min
+
+[00:00:00] intro_card
+    How I prompted an AI to upgrade a Wagtail site, from two point seven to seven point four.
+
+[00:00:04] hook
+    I gave an AI, Claude, three prompts. It built a twenty nineteen Wagtail site, upgraded it twice, and recorded everything. Sixty two commits, a hundred and thirty three command logs, twenty two breakages, twenty nine written decisions. The AI did the typing. The prompts decided whether any of it could be trusted. This video is about those prompts.
+
+[00:00:30] three_prompts
+    Three prompts, run in order. One builds the old site and records a baseline. One upgrades to two fifteen. One jumps to seven point four. Each stage gets its own folder, its own virtual environment and its own database, so nothing later can damage what came before.
+
+[00:00:51] method_title
+    Part one. Eight things in those prompts that did the real work.
+
+[00:00:57] p1_plan
+    One. Plan first, then wait. Every prompt opened by asking for a plan and stopping. That plan is the cheapest place to correct it. It is where I renamed the project folder, chose how Postgres gets installed, and picked between the upgrade paths the docs allow.
+
+[00:01:17] p2_rules
+    Two. Put the rules in a file, not in the chat. The first prompt told it to write a rules file into the project. Which folder is which stage, how to log, how to commit, never to write secrets. The later prompts just say, read that file and follow it. The rules survive between sessions because they live in the repo.
+
+[00:01:41] p3_rec
+    Three. Record every command. A tiny script wraps every command and saves the full output, with the time, the folder and the git commit. That gave me a hundred and thirty three logs. They are the proof behind every claim in the blog and the other video, and the only reason those videos can show real errors instead of recreated ones.
+
+[00:02:05] p4_capture
+    Four. Capture the failure before fixing it. An AI that has read the release notes will happily fix things before they break, and you learn nothing. This line made it let every error happen first. That is exactly how the silent problems surfaced, the ones no release note warned about.
+
+[00:02:26] p5_done
+    Five. Define done as things a machine can check. Not, it works. Checks clean. Migrations clean. Seeds twice from an empty database. Every page returns two hundred. And a baseline, every U R L, the text of every page, the form exports and screenshots, that each upgrade had to match byte for byte.
+
+[00:02:52] p6_data
+    Six. Make the test data realistic, and plant the traps. The form labels were chosen to break the form field naming change, and the submissions had to be created through Wagtail's own code, never hand written. Without that, the biggest data problem of the whole upgrade would never have appeared.
+
+[00:03:13] p7_period
+    Seven. Pin the period, and forbid the shortcuts. Left alone, an AI writes today's code, and then there is nothing to upgrade. The prompt listed the exact twenty nineteen idioms to use, and banned future proofing.
+
+[00:03:30] p8_choose
+    Eight. Say how to choose, and demand sources. When there were two ways to fix something, the prompt said which one to prefer and to write down the other. And every fix had to cite the release notes for that exact version.
+
+[00:03:47] me_title
+    Part two. Where it needed me.
+
+[00:03:51] decisions
+    It stopped and asked whenever there was a real choice. The folder name. Docker or a native Postgres. Whose name goes on the commits. And for the upgrade itself, which replacement to use for site middleware, for model admin, and whether to keep search logging. Each time it gave a recommendation and the trade off. The call was mine.
+
+[00:04:16] windows
+    My prompts were written for Linux. Desktop paths, sudo, bin folders. My machine runs Windows. It adapted all of it, told me before it started, and wrote each adaptation down as a decision, so the later sessions knew too.
+
+[00:04:34] passwords
+    And some things it will not do. It would not type my database superuser password. It gave me the command to run myself. When pasting that into a terminal did not work for me, it wrote a small file I could just double click. The secret never passed through the AI.
+
+[00:04:54] mistakes_title
+    Part three. It made mistakes. Here are the real ones, and what caught each of them.
+
+[00:05:02] mistakes_table
+    Its ignore file hid the site's own style sheets. The search page it built crashed. The event card images were stretched. During the upgrade it removed a package that its own seed script still imported. It drafted the upgrade log with commit hashes that did not exist yet. And in the other video's opening, it claimed eighteen loud errors, which the data did not support.
+
+[00:05:29] mistakes_lesson
+    Not one of those was caught by the AI simply being careful. Each one was caught by a check the prompt required. A crawl, a screenshot, a fresh database, a comparison against the data. That is the whole point of writing done as things a machine can check.
+
+[00:05:47] result
+    And the result. Eleven of thirteen pages pixel identical across seven years of Wagtail. Form exports byte for byte identical. Two silent data problems found and fixed. And a history you can replay one commit at a time.
+
+[00:06:05] checklist
+    So, if you write your own prompt for this. Plan first, and wait. A rules file in the repo. Log every command and capture failures before fixing them. Define done as checks a machine can run against a baseline. Use realistic data with deliberate traps. And say how to choose between fixes, with versioned sources.
+
+[00:06:30] repo
+    Everything is in the repo. The rules file, the session log, the decisions, the upgrade log and all the command logs. And if you want the breakages themselves, watch the other video, everything that broke.
+
+[00:06:45] end_card
+    The prompts, the rules file and every log are in the repo. Thanks for watching.

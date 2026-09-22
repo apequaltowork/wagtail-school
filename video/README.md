@@ -14,7 +14,12 @@ video/
     assets/         intro.png, end.png, thumb.png (1280x720 YouTube thumbnail)
     out/            upgrade.srt, narration.txt (with timecodes); the MP4 is not committed
     youtube.md      title, description, chapters and tags for upload
+  claude-workflow/  companion video: "How I Prompted an AI to Upgrade a Wagtail Site"
+    scenes.py       the prompt method, where the AI needed me, the mistakes the method caught
+    assets/ out/ youtube.md   as above
 ```
+
+`python video/build.py claude-workflow` renders the companion video.
 
 ## Render
 
