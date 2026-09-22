@@ -1,17 +1,20 @@
-from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
+from wagtail import hooks
+from wagtail.admin.viewsets.pages import PageListingViewSet
 
 from .models import EventPage
 
 
-class EventPageAdmin(ModelAdmin):
+class EventPageListingViewSet(PageListingViewSet):
     model = EventPage
+    name = 'events'
     menu_label = 'Events'
-    menu_icon = 'date'
+    icon = 'date'
     menu_order = 200
-    list_display = ('title', 'start_date', 'category', 'live')
-    list_filter = ('category', 'live')
-    search_fields = ('title', 'summary')
-    ordering = ('start_date',)
+    add_to_admin_menu = True
+    list_display = ['title', 'start_date', 'category', 'live']
+    list_filter = ['category', 'live']
 
 
-modeladmin_register(EventPageAdmin)
+@hooks.register('register_admin_viewset')
+def register_event_listing():
+    return EventPageListingViewSet()

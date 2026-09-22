@@ -1,22 +1,20 @@
-from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
+from wagtail import hooks
+from wagtail.admin.viewsets.pages import PageListingViewSet
 
 from .models import StaffPage
 
 
-class StaffPageAdmin(ModelAdmin):
+class StaffPageListingViewSet(PageListingViewSet):
     model = StaffPage
+    name = 'staff'
     menu_label = 'Staff'
-    menu_icon = 'group'
+    icon = 'group'
     menu_order = 210
-    list_display = ('full_name', 'role', 'department')
-    list_filter = ('department',)
-    search_fields = ('first_name', 'last_name', 'role')
-    ordering = ('department__order', 'last_name')
-
-    def full_name(self, obj):
-        return obj.full_name
-    full_name.short_description = 'Name'
-    full_name.admin_order_field = 'last_name'
+    add_to_admin_menu = True
+    list_display = ['title', 'role', 'department']
+    list_filter = ['department']
 
 
-modeladmin_register(StaffPageAdmin)
+@hooks.register('register_admin_viewset')
+def register_staff_listing():
+    return StaffPageListingViewSet()

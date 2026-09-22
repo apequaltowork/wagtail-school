@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'forms',
 
     'wagtail.contrib.forms',
-    'wagtail.contrib.modeladmin',
     'wagtail.contrib.routable_page',
     'wagtail.contrib.settings',
     'wagtail.contrib.table_block',
