@@ -162,11 +162,18 @@ def admin_session(base):
 
 
 def export_csv(base, out):
+    # Wagtail 2.7 exports with ?action=CSV; from the SpreadsheetExportMixin era (2.15 here)
+    # it is ?export=csv and ?action=CSV is silently ignored (returns the HTML listing).
     session = admin_session(base)
     for page in form_pages():
-        url = '{}/admin/forms/submissions/{}/?action=CSV'.format(base, page.pk)
-        response = session.get(url)
-        response.raise_for_status()
+        for query in ('?export=csv', '?action=CSV'):
+            url = '{}/admin/forms/submissions/{}/{}'.format(base, page.pk, query)
+            response = session.get(url)
+            response.raise_for_status()
+            if response.headers.get('Content-Type', '').startswith('text/csv'):
+                break
+        else:
+            sys.exit('No CSV export found for {}'.format(page.slug))
         path = os.path.join(out, 'form_submissions_{}.csv'.format(page.slug))
         with open(path, 'wb') as f:
             f.write(response.content)
