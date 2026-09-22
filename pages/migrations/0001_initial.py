@@ -3,8 +3,8 @@
 from django.db import migrations, models
 import django.db.models.deletion
 import wagtail.contrib.table_block.blocks
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.documents.blocks
 import wagtail.embeds.blocks
 import wagtail.images.blocks
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
                 ('intro', models.TextField(blank=True, verbose_name='intro')),
-                ('body', wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.StructBlock([('text', wagtail.core.blocks.CharBlock(classname='title')), ('size', wagtail.core.blocks.ChoiceBlock(choices=[('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4')]))])), ('paragraph', wagtail.core.blocks.RichTextBlock(icon='pilcrow')), ('image', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('alt_text', wagtail.core.blocks.CharBlock(help_text='Describe the image for screen readers', required=False)), ('caption', wagtail.core.blocks.CharBlock(required=False))])), ('quote', wagtail.core.blocks.StructBlock([('text', wagtail.core.blocks.TextBlock()), ('attribution', wagtail.core.blocks.CharBlock(required=False))])), ('call_to_action', wagtail.core.blocks.StructBlock([('heading', wagtail.core.blocks.CharBlock()), ('text', wagtail.core.blocks.TextBlock(required=False)), ('page', wagtail.core.blocks.PageChooserBlock()), ('button_label', wagtail.core.blocks.CharBlock(default='Find out more'))])), ('embed', wagtail.embeds.blocks.EmbedBlock(help_text='Paste a YouTube or Vimeo URL')), ('document', wagtail.core.blocks.StructBlock([('document', wagtail.documents.blocks.DocumentChooserBlock()), ('label', wagtail.core.blocks.CharBlock(help_text='Defaults to the document title', required=False))])), ('table', wagtail.contrib.table_block.blocks.TableBlock())], blank=True)),
+                ('body', wagtail.fields.StreamField([('heading', wagtail.blocks.StructBlock([('text', wagtail.blocks.CharBlock(classname='title')), ('size', wagtail.blocks.ChoiceBlock(choices=[('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4')]))])), ('paragraph', wagtail.blocks.RichTextBlock(icon='pilcrow')), ('image', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock()), ('alt_text', wagtail.blocks.CharBlock(help_text='Describe the image for screen readers', required=False)), ('caption', wagtail.blocks.CharBlock(required=False))])), ('quote', wagtail.blocks.StructBlock([('text', wagtail.blocks.TextBlock()), ('attribution', wagtail.blocks.CharBlock(required=False))])), ('call_to_action', wagtail.blocks.StructBlock([('heading', wagtail.blocks.CharBlock()), ('text', wagtail.blocks.TextBlock(required=False)), ('page', wagtail.blocks.PageChooserBlock()), ('button_label', wagtail.blocks.CharBlock(default='Find out more'))])), ('embed', wagtail.embeds.blocks.EmbedBlock(help_text='Paste a YouTube or Vimeo URL')), ('document', wagtail.blocks.StructBlock([('document', wagtail.documents.blocks.DocumentChooserBlock()), ('label', wagtail.blocks.CharBlock(help_text='Defaults to the document title', required=False))])), ('table', wagtail.contrib.table_block.blocks.TableBlock())], blank=True)),
                 ('hero_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
             options={

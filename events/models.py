@@ -5,12 +5,12 @@ from django.db import models
 from django.template.response import TemplateResponse
 from django.utils.translation import ugettext_lazy as _
 
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel, FieldRowPanel, MultiFieldPanel, StreamFieldPanel
 )
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
-from wagtail.core.fields import RichTextField, StreamField
-from wagtail.core.models import Page
+from wagtail.fields import RichTextField, StreamField
+from wagtail.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.snippets.edit_handlers import SnippetChooserPanel

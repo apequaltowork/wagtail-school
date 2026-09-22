@@ -4,11 +4,11 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel, InlinePanel, MultiFieldPanel, PageChooserPanel, StreamFieldPanel
 )
-from wagtail.core.fields import StreamField
-from wagtail.core.models import Orderable, Page
+from wagtail.fields import StreamField
+from wagtail.models import Orderable, Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from core.blocks import BaseStreamBlock

@@ -41,7 +41,7 @@ from django.contrib.contenttypes.models import ContentType  # noqa: E402
 try:
     from wagtail.models import Page  # Wagtail 3.0+
 except ImportError:
-    from wagtail.core.models import Page
+    from wagtail.models import Page
 from wagtail.contrib.forms.models import FormSubmission  # noqa: E402
 try:
     from wagtail.documents import get_document_model  # Wagtail 2.8+

@@ -16,7 +16,7 @@ from django.utils import timezone
 from unidecode import unidecode
 
 from wagtail.contrib.forms.models import FormSubmission
-from wagtail.core.models import Page, Site
+from wagtail.models import Page, Site
 from wagtail.documents import get_document_model
 from wagtail.images import get_image_model
 

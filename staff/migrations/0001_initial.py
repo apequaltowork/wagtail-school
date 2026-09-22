@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             name='StaffIndexPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('intro', wagtail.core.fields.RichTextField(blank=True, verbose_name='intro')),
+                ('intro', wagtail.fields.RichTextField(blank=True, verbose_name='intro')),
             ],
             options={
                 'abstract': False,
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(blank=True, max_length=254, verbose_name='email')),
                 ('phone_extension', models.CharField(blank=True, max_length=10, verbose_name='phone extension')),
                 ('qualifications', models.CharField(blank=True, max_length=255, verbose_name='qualifications')),
-                ('bio', wagtail.core.fields.RichTextField(blank=True, verbose_name='bio')),
+                ('bio', wagtail.fields.RichTextField(blank=True, verbose_name='bio')),
                 ('department', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='staff', to='staff.Department')),
                 ('photo', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],

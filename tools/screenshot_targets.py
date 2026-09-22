@@ -17,7 +17,7 @@ django.setup()
 try:
     from wagtail.models import Page  # Wagtail 3.0+
 except ImportError:
-    from wagtail.core.models import Page
+    from wagtail.models import Page
 
 
 def page_id(url_path_suffix):
