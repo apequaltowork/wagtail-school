@@ -6,33 +6,46 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
-    <h1>Search</h1>
+{% include "includes/page_banner.html" with title="Search" %}
 
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>
+<div class="container page-body">
+    <div class="row">
+        <div class="col-lg-8">
+            <form class="search-form mb-4" action="{% url 'search' %}" method="get" role="search">
+                <label class="sr-only" for="search-query">Search the site</label>
+                <div class="input-group">
+                    <input class="form-control form-control-lg" id="search-query" type="search" name="query"{% if search_query %} value="{{ search_query }}"{% endif %} placeholder="Search Kestrel Ridge College">
+                    <div class="input-group-append">
+                        <button class="btn btn-gold" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
 
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+            {% if search_results %}
+                <p class="search-count">{{ search_results.paginator.count }} result{{ search_results.paginator.count|pluralize }} for &ldquo;{{ search_query }}&rdquo;</p>
+                <ol class="search-results list-unstyled">
+                    {% for result in search_results %}
+                        <li>
+                            <h2><a href="{% pageurl result %}">{{ result }}</a></h2>
+                            {% if result.search_description %}
+                                <p>{{ result.search_description }}</p>
+                            {% endif %}
+                            <p class="result-url">{{ result.url }}</p>
+                        </li>
+                    {% endfor %}
+                </ol>
 
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
-        {% endif %}
+                {% if search_results.has_previous %}
+                    <a class="btn btn-outline-navy" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+                {% endif %}
 
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
-        {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
+                {% if search_results.has_next %}
+                    <a class="btn btn-outline-navy" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+                {% endif %}
+            {% elif search_query %}
+                <p>No results found for &ldquo;{{ search_query }}&rdquo;.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
