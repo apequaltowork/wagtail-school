@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-staffpage{% endblock %}
+
+{% block content %}
+<div class="container page-body staff-profile">
+    {% breadcrumbs %}
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            {% if page.photo %}
+                {% image page.photo fill-600x600 class="img-fluid staff-photo" alt=page.full_name %}
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <h1>{{ page.full_name }}</h1>
+            <p class="staff-role lead">{{ page.role }}{% if page.department %} &middot; {{ page.department.name }}{% endif %}</p>
+            {% if page.qualifications %}<p class="staff-qualifications">{{ page.qualifications }}</p>{% endif %}
+            <div class="staff-bio">{{ page.bio|richtext }}</div>
+            <dl class="staff-contact">
+                {% if page.email %}<dt>Email</dt><dd><a href="mailto:{{ page.email }}">{{ page.email }}</a></dd>{% endif %}
+                {% if page.phone_extension %}<dt>Phone</dt><dd>{{ settings.core.SchoolSettings.phone }}, extension {{ page.phone_extension }}</dd>{% endif %}
+            </dl>
+            <a class="btn btn-outline-navy" href="{% pageurl page.get_parent %}">All staff</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

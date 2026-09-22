@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-staffindexpage{% endblock %}
+
+{% block content %}
+{% include "includes/page_banner.html" %}
+
+<div class="container page-body">
+    {% breadcrumbs %}
+    {% if page.intro %}<div class="lead intro">{{ page.intro|richtext }}</div>{% endif %}
+
+    <nav class="department-filter mb-4" aria-label="Filter by department">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link{% if not current_department %} active{% endif %}" href="{% pageurl page %}">All staff</a></li>
+            {% for department in departments %}
+                <li class="nav-item"><a class="nav-link{% if current_department.pk == department.pk %} active{% endif %}" href="?department={{ department.slug }}">{{ department.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% for department, members in staff_groups %}
+        <section class="staff-group">
+            <h2 class="section-title">{{ department.name|default:"Other staff" }}</h2>
+            <div class="row">
+                {% for member in members %}
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <article class="card staff-card h-100">
+                            {% if member.photo %}
+                                {% image member.photo fill-400x400 class="card-img-top" alt=member.full_name %}
+                            {% endif %}
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="{% pageurl member %}">{{ member.full_name }}</a></h3>
+                                <p class="staff-role">{{ member.role }}</p>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% empty %}
+        <p>No staff found.</p>
+    {% endfor %}
+</div>
+{% endblock content %}
