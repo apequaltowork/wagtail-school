@@ -1,0 +1,197 @@
+/* Wagtail Unboxed — slide theme. 1920x1080, dark, teal accent. */
+
+:root {
+  --bg: #0f1117;
+  --bg-soft: #161925;
+  --fg: #eef1f7;
+  --muted: #9aa3b8;
+  --teal: #43b1b0;
+  --teal-dim: #2b6f6e;
+  --amber: #e0a33e;
+  --red: #e06c75;
+  --line: #262b3a;
+  --mono: "Cascadia Mono", "Consolas", "SF Mono", monospace;
+  --sans: "Segoe UI", -apple-system, "Inter", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide {
+  width: 1920px;
+  height: 1080px;
+  padding: 110px 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Accent bar down the left edge */
+.slide::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  background: linear-gradient(180deg, var(--teal), var(--teal-dim));
+}
+
+/* Episode badge, bottom right */
+.badge {
+  position: absolute;
+  right: 60px;
+  bottom: 48px;
+  font-size: 26px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+.badge b { color: var(--teal); font-weight: 600; }
+
+.eyebrow {
+  font-size: 32px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 36px;
+  font-weight: 600;
+}
+
+h1 { font-size: 104px; line-height: 1.05; letter-spacing: -2px; margin: 0 0 32px; font-weight: 700; }
+h2 { font-size: 68px;  line-height: 1.12; letter-spacing: -1px; margin: 0 0 48px; font-weight: 650; }
+.sub { font-size: 40px; color: var(--muted); line-height: 1.4; max-width: 1400px; }
+
+/* ---- title slide ---- */
+.title-slide { align-items: flex-start; }
+.title-slide h1 { font-size: 132px; }
+.rule { width: 180px; height: 8px; background: var(--teal); border-radius: 4px; margin: 8px 0 44px; }
+
+/* ---- bullets ---- */
+ul.bullets { list-style: none; margin: 0; padding: 0; }
+ul.bullets li {
+  font-size: 46px;
+  line-height: 1.35;
+  margin: 0 0 40px;
+  padding-left: 76px;
+  position: relative;
+  color: var(--fg);
+}
+ul.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 8px; top: 24px;
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  background: var(--teal);
+}
+ul.bullets li .dim { color: var(--muted); }
+ul.bullets li.off { opacity: .28; }
+ul.bullets li.off::before { background: var(--muted); }
+
+/* ---- quote / big statement ---- */
+.quote {
+  font-size: 64px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -1px;
+  border-left: 10px solid var(--teal);
+  padding-left: 56px;
+  max-width: 1500px;
+}
+.quote .hl { color: var(--teal); }
+
+/* ---- comparison columns ---- */
+.cols { display: flex; gap: 40px; }
+.col {
+  flex: 1;
+  background: var(--bg-soft);
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+.col.hero { border-color: var(--teal); }
+.col h3 { font-size: 44px; margin: 0 0 24px; }
+.col.hero h3 { color: var(--teal); }
+.col p { font-size: 30px; line-height: 1.45; color: var(--muted); margin: 0 0 18px; }
+.col p b { color: var(--fg); font-weight: 600; }
+
+/* ---- table ---- */
+table { width: 100%; border-collapse: collapse; font-size: 34px; }
+th, td { text-align: left; padding: 24px 28px; border-bottom: 2px solid var(--line); }
+th { color: var(--teal); font-size: 30px; text-transform: uppercase; letter-spacing: 2px; }
+td.k { color: var(--fg); font-weight: 600; width: 34%; }
+td.v { color: var(--muted); }
+
+/* ---- code ---- */
+pre.code {
+  background: var(--bg-soft);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 44px 48px;
+  font-family: var(--mono);
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  white-space: pre;
+}
+pre.code .c { color: var(--muted); }            /* comment */
+pre.code .k { color: var(--teal); }             /* keyword */
+pre.code .s { color: var(--amber); }            /* string */
+pre.code .hl { background: rgba(67,177,176,.16); display: block; margin: 0 -48px; padding: 0 48px; }
+pre.code .bad { color: var(--red); }
+.filename { font-family: var(--mono); font-size: 30px; color: var(--muted); margin-bottom: 20px; }
+
+/* ---- terminal ---- */
+.term {
+  background: #0a0c11;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  font-family: var(--mono);
+  font-size: 36px;
+  line-height: 1.55;
+  padding: 0 0 36px;
+  overflow: hidden;
+}
+.term .bar { background: #161925; padding: 18px 28px; font-size: 26px; color: var(--muted); border-bottom: 2px solid var(--line); }
+.term .body { padding: 32px 40px; white-space: pre-wrap; }
+.term .p { color: var(--teal); }     /* prompt */
+.term .o { color: var(--muted); }    /* output */
+.term .cur { background: var(--fg); color: var(--fg); }
+
+/* ---- checklist (yes/no) ---- */
+.checks { font-size: 44px; line-height: 1.9; }
+.checks .yes::before { content: "✓ "; color: var(--teal); font-weight: 700; }
+.checks .no::before  { content: "✗ "; color: var(--red);  font-weight: 700; }
+.checks .no { color: var(--muted); }
+
+/* ---- tree (treebeard paths) ---- */
+.tree { font-family: var(--mono); font-size: 40px; line-height: 2.1; }
+.tree .node { display: flex; align-items: center; gap: 28px; }
+.tree .path { color: var(--teal); width: 340px; }
+.tree .label { color: var(--fg); }
+.tree .meta { color: var(--muted); font-size: 32px; }
+.tree .node.off { opacity: .25; }
+
+/* ---- animated terminal (term.py) ---- */
+.term-big { font-size: 32px; line-height: 1.5; }
+.term-big .body { min-height: 560px; }
+.term .hl-out { color: var(--teal); }
+.term .err-out { color: var(--red); }
+/* Solid block cursor; it reads as "typing" even in a single frame. */
+.term .cur {
+  background: var(--teal);
+  display: inline-block;
+  width: .55em;
+  vertical-align: baseline;
+}

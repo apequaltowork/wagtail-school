@@ -14,3 +14,8 @@ __pycache__/
 # tools
 tools/screenshots/node_modules/
 .claude/
+
+# video renders (upload the MP4; keep scripts, subtitles and cards)
+/video/*/out/work/
+/video/*/out/*.mp4
+/video/__pycache__/

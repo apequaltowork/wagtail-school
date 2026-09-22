@@ -1,0 +1,134 @@
+I Upgraded Wagtail 2.7 to 7.4 - Everything That Broke
+Total: 12.2 min
+
+[00:00:00] intro_card
+    I upgraded a Wagtail two point seven site to Wagtail seven point four. Here is everything that broke.
+
+[00:00:04] hook
+    Twenty two things broke. Most of them were loud errors that take a minute each to fix. Four of them broke silently. Green checks, working pages, and quietly lost data. Those four are what this video is really about.
+
+[00:00:21] the_site
+    The test subject is a school website. Kestrel Ridge College. It is fictional, but it is built like a real one. Forty three pages, StreamField everywhere, events, staff profiles, snippets, site settings, and two forms with forty real submissions.
+
+[00:00:41] period_code
+    And it is written exactly the way a twenty nineteen project was written. Wagtail core imports. Stream field panels and image chooser panels. Model admin. Base setting. Django's u get text lazy, the old url function, and the site middleware. Every one of these lines is about to break.
+
+[00:01:03] labels
+    The enrolment form has labels with apostrophes, a slash, a question mark and accented characters. That is deliberate. Keep an eye on them. They come back later.
+
+[00:01:17] baseline
+    Before touching anything, I recorded a baseline from the running site. Every U R L and its status. The visible text of every page, which is how you prove StreamField content survives. The form submissions, exported with Wagtail's own C S V export. Twenty nine screenshots. And a database dump. Every stage gets compared against this.
+
+[00:01:44] route
+    Wagtail recommends upgrading one release at a time. I did two hops. First to two fifteen, the long term support release that contains a big form builder change. Then straight to seven point four, skipping seventeen releases, because that is how I actually upgrade client sites. And I wanted to know what that costs.
+
+[00:02:08] hop1
+    Hop one. Two point seven to two fifteen.
+
+[00:02:14] b01_psycopg
+    The first thing to break is not Wagtail. It is the database driver. Wagtail two fifteen is the first release that supports Python three ten, and the psycopg two driver from twenty nineteen has no build for it, so pip tries to compile it and asks for a C plus plus compiler. Bump it to two point nine and move on.
+
+[00:02:36] b03_middleware
+    Then a classic. The system check says no issues. And the very first page request crashes. No module named wagtail core middleware. Middleware only loads when a request comes in, so the check never sees it.
+
+[00:02:53] b03_fix
+    Site middleware was deprecated in two point nine and moved in two eleven. The fix is one line. Instead of request dot site, ask the site model for the current site.
+
+[00:03:07] b04_how27
+    Now the big one. In Wagtail two point seven, each form submission is stored under a key that is computed from the field's label, every single time. Parent guardian's full name becomes parent guardians, dash, full, dash, name. Wagtail two point ten made that key a stored database field called clean name, and generates it differently, with underscores.
+
+[00:03:33] b04_addfield
+    Make migrations adds that field with an empty default, and no data migration. So after migrate, all fourteen form fields have an empty key. Here is what a production server then serves.
+
+[00:03:48] b04_broken
+    The ten field enrolment form is now one field, named nothing. The admin submissions list shows none of the stored values. And the C S V export has ten columns, all called subscribe to our newsletter, and every value is none. The data is still in the database. Nothing can read it.
+
+[00:04:10] b04_check_crash
+    Wagtail does repair this. But inside a system check, not a migration. So I ran the check. And the repair itself crashes. It needs the unidecode library. Wagtail two point seven depended on it. Wagtail two fifteen does not. The upgrade removed the package the upgrade needs.
+
+[00:04:33] b04_fixed
+    Install unidecode, run the check once more, and Wagtail backfills all fourteen keys with the old hyphenated names. Every key matches the stored data, and all thirty enquiries are back, in the form, the admin and the C S V.
+
+[00:04:51] b04_lessons
+    So. Add unidecode to your requirements. Run manage dot py check on the server after you deploy, because until something runs the system checks, your live forms are broken. And know that any field you add later gets an underscore key, so one form ends up with two naming styles for good.
+
+[00:05:11] b05_csv
+    One more quiet one. The admin's C S V export moved from action equals C S V to export equals C S V. The old address still returns two hundred, just with the H T M L page instead of the file. I could not find it in the release notes.
+
+[00:05:30] hop1_result
+    Six breakages in hop one, including a database driver and a moved import in the seed command. After that, the crawl matched two point seven byte for byte, including both C S V exports, and twelve front end pages were pixel identical.
+
+[00:05:48] hop2
+    Hop two. Two fifteen straight to seven point four. Installing it was the easy part. It worked first time.
+
+[00:05:58] import_wall
+    Then the check failed eight times in a row, one missing import at a time. Model admin. Wagtail core. u get text lazy. Stream field panel. Base setting. The url function. The search query model. And the base U R L setting. The surprise is that none of these printed a single deprecation warning on two fifteen.
+
+[00:06:23] updatemodulepaths
+    The biggest change of the whole upgrade was a single command. Wagtail update module paths rewrote nineteen files, even inside old migrations. Its help text still says two point x. It does not replace the removed panel classes though. That part is by hand.
+
+[00:06:43] modeladmin_code
+    Model admin was removed in Wagtail six. Both of my model admins listed pages, and snippet view sets cannot register pages. The core replacement is the page listing view set. Same menu, same columns. One catch. It lists in tree order until you set a default ordering on the index view.
+
+[00:07:06] modeladmin_shot
+    Here it is. Model admin on the left, the page listing view set on the right.
+
+[00:07:14] b15_green
+    With the imports fixed, make migrations found only small form changes. Migrate ran sixty four migrations cleanly. Pages return two hundred. Everything looks fine.
+
+[00:07:28] b15_query
+    Then ask the database a JSON question about StreamField content. Operator does not exist. Text contains J S O N b. The body columns are still plain text.
+
+[00:07:42] b15_why
+    Here is why. In Wagtail three to five, you added use jason field, and make migrations wrote a migration that converted the column to J S O N. From Wagtail six, that option is ignored and never appears in migrations. So if you skip three to five, the conversion is never generated. A fresh database gets J S O N. Your upgraded one keeps text. And no tool tells you.
+
+[00:08:12] b15_fix
+    The fix is a small hand written migration per app that converts the column in place. On a fresh database it does nothing. Afterwards, the same query returns two, the open day events that have a call to action.
+
+[00:08:27] b16_lost
+    The restored site had two logged search queries. After migrate, zero.
+
+[00:08:35] b16_source
+    The migration that should copy them has been a no-op since Wagtail six. The comment in its source says any project that needed it would already have run the real one, on Wagtail five. Skip Wagtail five, and this data is gone.
+
+[00:08:51] b16_recover
+    I got it back only because I had taken a database dump before migrating.
+
+[00:08:57] b16_lesson
+    This is the strongest argument I found for upgrading one release at a time. And if you skip anyway, take a dump right before migrate, and check every table you care about afterwards.
+
+[00:09:10] b19_static
+    Another silent one. The old static files storage setting was removed in Django five one, and Django ignores settings it does not know. No error, no warning. Production just stops getting hashed file names, and visitors keep seeing old C S S after every deploy.
+
+[00:09:31] b21_radio
+    On the front end, pixel diffing found exactly one visual break. The radio buttons and check boxes turned bold, with no gap.
+
+[00:09:42] b21_fix
+    Django four changed those widgets from a list to divs, so the twenty nineteen C S S stopped matching. Retarget two selectors, and the form is back to zero pixels different.
+
+[00:09:55] b22_wblock
+    And Wagtail seven four renames the StreamField block classes to w block. The old names still work, for now. I moved all fifteen selectors across, and the pages are still pixel identical.
+
+[00:10:11] the_rest
+    The rest. Form submission data is now a dictionary, so any script that parses it crashes. Search got better, it now finds seven results for music instead of one. My own seed script imported unidecode without declaring it. And after upgrading, rebuild the search index and the references index.
+
+[00:10:33] result
+    The result. Every U R L status identical. Forty nine of fifty one pages with identical text, and the other two are search pages finding more. Both C S V exports byte for byte identical. Eleven of thirteen front end pages pixel identical. And zero warnings.
+
+[00:10:55] home_compare
+    Seven years of Wagtail, and the home page has not moved a single pixel.
+
+[00:11:02] editor_compare
+    The editor, on the other hand, is a completely different place to work.
+
+[00:11:08] checklist_1
+    If you are about to do this. Record a baseline first. If you use the form builder, stop somewhere between two ten and two sixteen, add unidecode, and run the check. Pass through Wagtail five if you can. And dump the database right before you migrate.
+
+[00:11:28] checklist_2
+    Search your settings for names Django no longer reads. Run update module paths, then fix what it cannot. Pixel diff the front end. And migrate a fresh database too, because it finds the imports your live site never touches.
+
+[00:11:45] repo
+    Everything is public. One commit per step, so you can follow the whole upgrade in order, with a tag for each stage. Every log, every screenshot, the full list of twenty two breakages, and the blog post that goes with this video.
+
+[00:12:03] end_card
+    The code, every log and every screenshot are on GitHub. Thanks for watching.
