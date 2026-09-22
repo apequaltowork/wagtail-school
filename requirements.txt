@@ -2,3 +2,5 @@ Django>=3.2,<3.3
 wagtail>=2.15,<2.16
 # psycopg2-binary>=2.8,<2.9  -- dropped at 2.15: no Python 3.10 wheels (source build needs MSVC); see UPGRADE_LOG B01
 psycopg2-binary>=2.9,<2.10
+# Unidecode: no longer a Wagtail dependency since 2.10 (anyascii), but required to backfill legacy form field clean_name values; see UPGRADE_LOG B04
+Unidecode>=1.1,<2
