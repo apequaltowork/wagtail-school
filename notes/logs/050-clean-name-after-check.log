@@ -1,0 +1,25 @@
+# rec 050-clean-name-after-check
+# time:    2026-09-22 10:40:55 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c exec(open('tools/form_keys_report.py', encoding='utf-8').read())
+# commit:  337976d
+# ----------------------------------------------------------------
+== enrolment-enquiry (30 submissions)
+  Parent/Guardian's full name                          clean_name=''                                               NOT IN DATA
+  Email address                                        clean_name=''                                               NOT IN DATA
+  Phone number                                         clean_name=''                                               NOT IN DATA
+  Student's first name                                 clean_name=''                                               NOT IN DATA
+  Year level of entry                                  clean_name=''                                               NOT IN DATA
+  Preferred start term                                 clean_name=''                                               NOT IN DATA
+  Languages spoken at home (e.g. Français, Español)    clean_name=''                                               NOT IN DATA
+  How did you hear about us?                           clean_name=''                                               NOT IN DATA
+  Questions or comments                                clean_name=''                                               NOT IN DATA
+  Subscribe to our newsletter                          clean_name=''                                               NOT IN DATA
+== contact-us (10 submissions)
+  Your name                                            clean_name=''                                               NOT IN DATA
+  Email                                                clean_name=''                                               NOT IN DATA
+  Subject                                              clean_name=''                                               NOT IN DATA
+  Message                                              clean_name=''                                               NOT IN DATA
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  0s

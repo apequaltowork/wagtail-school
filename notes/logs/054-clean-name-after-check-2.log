@@ -1,0 +1,25 @@
+# rec 054-clean-name-after-check-2
+# time:    2026-09-22 10:41:15 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c exec(open('tools/form_keys_report.py', encoding='utf-8').read())
+# commit:  337976d
+# ----------------------------------------------------------------
+== enrolment-enquiry (30 submissions)
+  Parent/Guardian's full name                          clean_name='parentguardians-full-name'                      matches data
+  Email address                                        clean_name='email-address'                                  matches data
+  Phone number                                         clean_name='phone-number'                                   matches data
+  Student's first name                                 clean_name='students-first-name'                            matches data
+  Year level of entry                                  clean_name='year-level-of-entry'                            matches data
+  Preferred start term                                 clean_name='preferred-start-term'                           matches data
+  Languages spoken at home (e.g. Français, Español)    clean_name='languages-spoken-at-home-eg-francais-espanol'   matches data
+  How did you hear about us?                           clean_name='how-did-you-hear-about-us'                      matches data
+  Questions or comments                                clean_name='questions-or-comments'                          matches data
+  Subscribe to our newsletter                          clean_name='subscribe-to-our-newsletter'                    matches data
+== contact-us (10 submissions)
+  Your name                                            clean_name='your-name'                                      matches data
+  Email                                                clean_name='email'                                          matches data
+  Subject                                              clean_name='subject'                                        matches data
+  Message                                              clean_name='message'                                        matches data
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

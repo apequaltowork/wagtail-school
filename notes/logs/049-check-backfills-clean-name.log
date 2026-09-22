@@ -1,0 +1,40 @@
+# rec 049-check-backfills-clean-name
+# time:    2026-09-22 10:40:53 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py check
+# commit:  337976d
+# ----------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\wagtail\contrib\forms\models.py", line 151, in _migrate_legacy_clean_name
+    from unidecode import unidecode
+ModuleNotFoundError: No module named 'unidecode'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\django\wagtail-school-215\manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\commands\check.py", line 63, in handle
+    self.check(
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\base.py", line 419, in check
+    all_issues = checks.run_checks(
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\checks\registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\checks\model_checks.py", line 34, in check_all_models
+    errors.extend(model.check(**kwargs))
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\wagtail\contrib\forms\models.py", line 170, in check
+    messages = cls._migrate_legacy_clean_name()
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\wagtail\contrib\forms\models.py", line 154, in _migrate_legacy_clean_name
+    raise Exception(description) from error
+Exception: You have form submission data that was created on an older version of Wagtail and requires the unidecode library to retrieve it correctly. Please install the unidecode package.
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  1s

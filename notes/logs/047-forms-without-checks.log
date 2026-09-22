@@ -1,0 +1,31 @@
+# rec 047-forms-without-checks
+# time:    2026-09-22 10:40:31 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c exec(open('tools/forms_without_checks.py', encoding='utf-8').read())
+# commit:  337976d
+# ----------------------------------------------------------------
+Front-end form field names: ['', 'description', 'viewport']
+Form fields built by FormBuilder: ['']
+Admin listing contains a seeded parent email: False
+Export ?action=CSV  -> 200 text/html; charset=utf-8
+Traceback (most recent call last):
+  File "D:\django\wagtail-school-215\manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\base.py", line 398, in execute
+    output = self.handle(*args, **options)
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\core\management\commands\shell.py", line 87, in handle
+    exec(options['command'], globals())
+  File "<string>", line 1, in <module>
+  File "<string>", line 26, in <module>
+  File "D:\django\.virtualenvs\wagtail-school-215\lib\site-packages\django\http\response.py", line 407, in content
+    raise AttributeError(
+AttributeError: This StreamingHttpResponse instance has no `content` attribute. Use `streaming_content` instead.. Did you mean: 'context'?
+# ----------------------------------------------------------------
+# exit code: 1
+# duration:  2s

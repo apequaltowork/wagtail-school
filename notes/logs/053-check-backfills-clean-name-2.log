@@ -1,0 +1,16 @@
+# rec 053-check-backfills-clean-name-2
+# time:    2026-09-22 10:41:13 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py check
+# commit:  337976d
+# ----------------------------------------------------------------
+System check identified some issues:
+
+INFOS:
+forms.ContactFormField: Added `clean_name` on 4 form field(s)
+forms.FormField: Added `clean_name` on 10 form field(s)
+
+System check identified 2 issues (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

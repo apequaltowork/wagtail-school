@@ -1,0 +1,22 @@
+# rec 055-forms-after-backfill
+# time:    2026-09-22 10:41:26 +0530
+# folder:  /d/django/wagtail-school-215
+# command: D:\django\.virtualenvs/wagtail-school-215/Scripts/python.exe manage.py shell -c exec(open('tools/forms_without_checks.py', encoding='utf-8').read()); from wagtail.contrib.forms.utils import get_field_clean_name; print(); print('A NEW field with the same label would get:'); [print('  {!r:<52} -> {!r}'.format(l, get_field_clean_name(l))) for l in ["Parent/Guardian's full name", 'Languages spoken at home (e.g. Français, Español)', 'How did you hear about us?']]
+# commit:  337976d
+# ----------------------------------------------------------------
+Front-end form field names: ['description', 'email-address', 'how-did-you-hear-about-us', 'languages-spoken-at-home-eg-francais-espanol', 'parentguardians-full-name', 'phone-number', 'preferred-start-term', 'questions-or-comments', 'students-first-name', 'subscribe-to-our-newsletter', 'viewport', 'year-level-of-entry']
+Form fields built by FormBuilder: ['parentguardians-full-name', 'email-address', 'phone-number', 'students-first-name', 'year-level-of-entry', 'preferred-start-term', 'languages-spoken-at-home-eg-francais-espanol', 'how-did-you-hear-about-us', 'questions-or-comments', 'subscribe-to-our-newsletter']
+Admin listing contains a seeded parent email: True
+Export ?action=CSV  -> 200 text/html; charset=utf-8
+Export ?export=csv  -> 200 text/csv
+   Submission date,Parent/Guardian's full name,Email address,Phone number,Student's first name,Year level of entry,Preferred start term,"Languages spoken at home (e.g. Français, Español)",How did you hear about us?,Questions or comments,Subscribe to our newsletter
+   2026-03-27 21:06:16.451089+00:00,Anh McAllister,anh.mcallister@example.com,(02) 5550 7868,Eloise,Year 3,Term 2,,Social media,,True
+   2026-03-29 15:52:00.674396+00:00,Vanessa Castellano,vanessa.castellano@example.com,(02) 5550 8574,Theo,Year 4,Term 3,Português,Friend or family,,False
+
+A NEW field with the same label would get:
+  "Parent/Guardian's full name"                        -> 'parentguardians_full_name'
+  'Languages spoken at home (e.g. Français, Español)'  -> 'languages_spoken_at_home_eg_francais_espanol'
+  'How did you hear about us?'                         -> 'how_did_you_hear_about_us'
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s
