@@ -90,3 +90,15 @@ Docs: https://docs.wagtail.org/en/v7.4/releases/5.0.html
 
 ## D25 — Keep psycopg2-binary 2.9
 Django 5.2 supports psycopg2 ≥ 2.8.4, and 2.9.x has Python 3.12 wheels. Moving to psycopg 3 is optional and not needed for this hop.
+
+## D26 — StreamField text → jsonb with hand-written RunSQL
+There's no supported way to regenerate the 3.0-era `use_json_field` AlterField on 7.4. The field state is already "JSON", so Django sees no change. A `RunSQL` migration per app (`ALTER COLUMN body TYPE jsonb USING body::jsonb`) is the smallest correct fix: it's reversible, a no-op on fresh databases, and leaves model state unchanged. **Alternative:** upgrade through 5.x once to let the real AlterField run, which is what D21 chose not to do.
+
+## D27 — Search behaviour change accepted
+The `database` backend returns more (and better) matches than the old `db` backend (B18). I'm keeping the new behaviour rather than restricting search to titles; the baseline comparison records it as an expected difference.
+
+## D28 — CSS future-proofed for w-block-* now
+7.4 keeps both class names, so doing nothing would still pass today. The brief asks for zero deprecations, and the legacy names are explicitly scheduled for removal, so the selectors moved now. Pixel diffs prove there's no visual change.
+
+## D29 — Recovering the search log instead of accepting the loss
+The lost data is small (2 queries), but the recovery shows the general technique: keep the pre-upgrade dump and restore the specific tables through the new models. tools/recover_search_queries.py is idempotent.

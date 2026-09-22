@@ -1,0 +1,26 @@
+# rec 129-final-admin-forms-74
+# time:    2026-09-22 11:17:01 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py shell -c 
+from django.test import Client
+from django.contrib.auth import get_user_model
+from forms.models import FormPage, ContactPage
+import csv, io
+from wagtail.contrib.forms.models import FormSubmission
+c = Client(); c.force_login(get_user_model().objects.get(username='admin'))
+for page in [FormPage.objects.get(), ContactPage.objects.get()]:
+    listing = c.get('/admin/forms/submissions/%d/' % page.pk).content.decode()
+    missing = [s.pk for s in FormSubmission.objects.filter(page=page) if s.form_data[next(iter(s.form_data))] not in listing and not s.form_data[next(iter(s.form_data))] is None]
+    r = c.get('/admin/forms/submissions/%d/?export=csv' % page.pk)
+    rows = list(csv.reader(io.StringIO(b''.join(r.streaming_content).decode())))
+    print(page.slug, 'submissions', FormSubmission.objects.filter(page=page).count(), '| CSV rows', len(rows)-1, '| CSV columns', len(rows[0]), '| empty cells', sum(1 for row in rows[1:] for cell in row if cell in ('', 'None')))
+
+# commit:  2c9547a
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+enrolment-enquiry submissions 30 | CSV rows 30 | CSV columns 11 | empty cells 19
+contact-us submissions 10 | CSV rows 10 | CSV columns 5 | empty cells 0
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

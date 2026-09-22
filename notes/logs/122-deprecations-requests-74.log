@@ -1,0 +1,35 @@
+# rec 122-deprecations-requests-74
+# time:    2026-09-22 11:16:24 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py shell -c 
+from django.test import Client
+from django.contrib.auth import get_user_model
+c = Client()
+for p in ['/', '/about/', '/events/', '/events/past/', '/our-staff/', '/admissions/enrolment-enquiry/', '/contact-us/', '/search/?query=music']:
+    print(c.get(p).status_code, p)
+c.force_login(get_user_model().objects.get(username='admin'))
+for p in ['/admin/', '/admin/pages/3/edit/', '/admin/events/', '/admin/staff/', '/admin/forms/', '/admin/settings/core/schoolsettings/2/', '/admin/snippets/']:
+    print(c.get(p).status_code, p)
+
+# commit:  2c9547a
+# ----------------------------------------------------------------
+61 objects imported automatically (use -v 2 for details).
+
+200 /
+200 /about/
+200 /events/
+200 /events/past/
+200 /our-staff/
+200 /admissions/enrolment-enquiry/
+200 /contact-us/
+200 /search/?query=music
+200 /admin/
+200 /admin/pages/3/edit/
+200 /admin/events/
+200 /admin/staff/
+200 /admin/forms/
+200 /admin/settings/core/schoolsettings/2/
+200 /admin/snippets/
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  3s

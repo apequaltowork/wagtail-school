@@ -1,0 +1,11 @@
+# rec 132-pg-dump-74
+# time:    2026-09-22 11:19:50 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe tools/dump_db.py dumps/wagtail_school_74.dump
+# commit:  2c9547a
+# ----------------------------------------------------------------
+pg_dump -Fc wagtail_school_74 -> dumps/wagtail_school_74.dump
+wrote dumps/wagtail_school_74.dump (349,407 bytes)
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

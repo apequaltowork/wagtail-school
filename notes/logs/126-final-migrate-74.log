@@ -1,0 +1,13 @@
+# rec 126-final-migrate-74
+# time:    2026-09-22 11:16:49 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe manage.py migrate
+# commit:  2c9547a
+# ----------------------------------------------------------------
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, core, events, forms, home, pages, sessions, staff, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailsearchpromotions, wagtailusers
+Running migrations:
+  No migrations to apply.
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  2s

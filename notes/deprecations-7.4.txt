@@ -1,0 +1,6 @@
+Warnings remaining on Wagtail 7.4.3 / Django 5.2.17 / Python 3.12
+Collected with python -Wa from: notes/logs/121-deprecations-check-74.log, notes/logs/122-deprecations-requests-74.log
+
+
+Result: no DeprecationWarning, PendingDeprecationWarning, RemovedInDjango*Warning or RemovedInWagtail*Warning.
+All 18 warnings in notes/deprecations-2.15.txt are resolved (see UPGRADE_LOG B07-B22).

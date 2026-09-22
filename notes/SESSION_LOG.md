@@ -82,3 +82,31 @@
 
 ## 2026-09-22 11:50 — Plan
 - Read the upgrade considerations for 2.16, 3.0, 4.0, 4.1, 4.2, 5.0, 5.1, 5.2, 6.0, 6.1, 6.2, 6.3, 6.4, 7.0, 7.1, 7.2, 7.3 and 7.4, and the Django 4.0 / 5.0 / 5.1 removals. The plan was approved with PageListingViewSet for the Page ModelAdmins and search_promotions for query logging (DECISIONS D21–D25).
+
+## 2026-09-22 12:00 — Install (no breakage)
+- requirements: Django>=5.2,<5.3 and wagtail>=7.4,<7.5 (Unidecode commented out, later restored: B20). Installed wagtail 7.4.3, Django 5.2.17, Pillow 12.3.0 and modelsearch 1.3.2 (log 080); pip check is clean (081).
+
+## 2026-09-22 12:05 — The import wall (B07–B14)
+- `-Wa check` failed eight times, one missing import at a time: modeladmin (082), wagtail.core (083; fixed with `wagtail updatemodulepaths`, 084/085), ugettext_lazy (086), StreamFieldPanel (087), BaseSetting (088), url() (089), search Query (090), then W003 BASE_URL (091). Clean at 092 with no Python warnings. One commit per fix.
+
+## 2026-09-22 12:20 — Migrations and data (B15, B16)
+- makemigrations only produced form-field AlterFields (093). The migrate on the restored 2.15 data ran 64 migrations cleanly (095).
+- Column types before and after (094, 096): Wagtail converted revisions, log entries and form_data to jsonb, but our StreamField bodies stayed text. JSON lookups failed (097), so I added RunSQL conversion migrations (098–101).
+- The 2 logged search queries were dropped by wagtailsearch.0008, because search_promotions.0004 has been a no-op since 6.0 (102). Recovered them from the 2.15 dump with tools/recover_search_queries.py (103).
+
+## 2026-09-22 12:35 — Runtime, indexes, verification (B17–B19)
+- Requests to 17 front-end URLs and every page editor: all 200 (104). update_index indexed 73 objects (105) and rebuild_references_index 116 (106).
+- Crawl against runserver on port 8074: the tooling broke on form_data now being a dict (B17, 107). After the fix (108), only the two search pages differ from 2.7 (B18: the database backend finds more). counts, URL statuses, form keys and both CSV exports are identical.
+- STATICFILES_STORAGE was silently ignored (B19, 109) → STORAGES; collectstatic writes hashed files again (111).
+
+## 2026-09-22 12:45 — Fresh database (B20)
+- Throwaway `wagtail_school_74_fresh`: migrate OK (112). seed_demo failed on `import unidecode` (113) → restored the requirement (114). The seed then matched the 2.7 counts (115). The throwaway DB was dropped and its media pruned (116).
+
+## 2026-09-22 12:55 — Front end and admin (B21, B22)
+- Screenshots (117): the enrolment form options were bold (B21, Django 4.0 widget markup) → CSS fixed, now pixel-identical. StreamField CSS moved to w-block-* (B22), still pixel-identical. The PageListingViewSets got ModelAdmin's default ordering back. Admin screenshots now measure the inner scroll container (119, 120).
+- Final screenshots (130), test submission deleted (131). compare.md: 11 of 13 front-end pages pixel-identical with 2.7.
+
+## 2026-09-22 13:05 — Final verification
+- pip check (123), `-Wa check` with no issues (124), makemigrations --check (125), migrate with nothing to apply (126). Baseline compare (127): identical except the 2 search pages (B18). All 14 form fields match the stored data (128). Admin listing and CSV: 30 + 10 submissions, every value present (129).
+- notes/deprecations-7.4.txt: 0 warnings (121, 122). pip freeze in notes/check-7.4/pip-freeze.txt.
+- dumps/wagtail_school_74.dump and media_74.zip; tagged v7.4.

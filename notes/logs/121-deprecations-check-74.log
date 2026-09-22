@@ -1,0 +1,10 @@
+# rec 121-deprecations-check-74
+# time:    2026-09-22 11:16:23 +0530
+# folder:  /d/django/wagtail-school-74
+# command: D:\django\.virtualenvs/wagtail-school-74/Scripts/python.exe -Wa manage.py check
+# commit:  2c9547a
+# ----------------------------------------------------------------
+System check identified no issues (0 silenced).
+# ----------------------------------------------------------------
+# exit code: 0
+# duration:  1s

@@ -1,8 +1,10 @@
 # Kestrel Ridge College — Wagtail 2.7 demo site
 
-> **This folder is the 2.15 stage** (`wagtail-school-215`, branch `upgrade/2.15`, tag `v2.15`):
-> Wagtail 2.15.6 LTS, Django 3.2, Python 3.10, database `wagtail_school_215`, runserver port 8215.
-> What broke and how it was fixed is in `notes/UPGRADE_LOG.md` (B01–B06). The rest of this README describes the original 2.7 build.
+> **This folder is the 7.4 stage** (`wagtail-school-74`, branch `upgrade/7.4`, tag `v7.4`):
+> Wagtail 7.4.3 LTS, Django 5.2 LTS, Python 3.12, database `wagtail_school_74`, runserver port 8074.
+> Upgraded 2.7 → 2.15 → 7.4. Every breakage (B01–B22) is in `notes/UPGRADE_LOG.md`; screenshots
+> side by side in `notes/screenshots/compare.md`. The ModelAdmin menus are now `PageListingViewSet`s,
+> and search logging uses `wagtail.contrib.search_promotions`. The rest of this README describes the original 2.7 build.
 
 A deliberately **period-accurate Wagtail 2.7 / Django 2.2 codebase** for a fictional Australian
 K–12 school. It exists to be upgraded on camera for
