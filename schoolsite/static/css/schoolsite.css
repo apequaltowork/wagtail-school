@@ -131,6 +131,7 @@ main:focus { outline: none; }
 .section-nav li.current a { font-weight: 700; color: var(--navy); }
 
 /* Cards */
+.card-img-top, .img-fluid { height: auto; }
 .event-card, .staff-card { border: 0; box-shadow: 0 4px 16px rgba(12, 26, 51, .12); border-radius: 0; }
 .event-card .card-title, .staff-card .card-title { font-size: 1.15rem; }
 .event-card .card-title a, .staff-card .card-title a { text-decoration: none; color: var(--navy); }
